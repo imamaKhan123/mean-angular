@@ -1,0 +1,63 @@
+<header class="nav-top">
+    <i class="material-icons">
+        person
+    </i>
+    <span>lawnhdai</span>
+  </header>
+  
+  
+  <div class="sidenav">
+    <div class="logo">
+      <img  src="../../../assets/img/Image 14.png" />
+    </div>
+    <ul class="">
+      <li class="nav-item ">
+          <a class="icons">
+            <button style="background: transparent ; border: none" (click)="toogle()">
+              <i class="material-icons">menu</i>
+            </button>
+          </a>
+          <a class="icons" href="#">
+            <!--<img   src="../../../assets/img/outline_call_white_18dp.png" />-->
+            <img  src="../../../assets/img/Path 323.png" />		
+          </a>
+      </li>          
+      <li class="nav-item " routerLinkActive="active">
+          <a class="" [routerLink]="['/companies']">
+            <div class="badge">100</div>
+            <i class="material-icons">mail_outline</i>
+            <span>COMPANIES</span>
+          </a>
+      </li>
+      
+      <li class="nav-item" routerLinkActive="active">
+          <a class="" [routerLink]="['/orders']">
+              <img  src="../../../assets/img/Rectangle 844.png" />	
+            <span>ORDERS</span>
+          </a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+          <a class="" [routerLink]="['/users']">
+              <img  src="../../../assets/img/Ellipse 7.png" />	
+            <span>USERS</span>
+          </a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+          <a class=" disabled" [routerLink]="['/products']">
+              <img  src="../../../assets/img/produc.png" />
+            <span>PRODUCTS</span>
+          </a>
+      </li>
+      <li class="nav-item"   (click)="toogle()" routerLinkActive="active">
+          <a class="" [routerLink]="['/settings']">
+              <img  src="../../../assets/img/Path 1064.png" />
+            <span>SETTINGS</span>
+          </a>
+      </li>
+    
+     </ul>
+  
+  </div>
+  <div class="content">  
+<router-outlet></router-outlet>
+</div>

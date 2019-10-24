@@ -1,0 +1,50 @@
+<div class="button-row">
+    <a mat-raised-button color="primary" [routerLink]="['/companies']"><mat-icon>list</mat-icon></a>
+  </div>
+  <form [formGroup]="bookForm" (ngSubmit)="onFormSubmit(bookForm.value)">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="companyID" formControlName="companyID"
+             [errorStateMatcher]="matcher">
+      <mat-error>
+        <span *ngIf="!bookForm.get('companyID').valid && bookForm.get('companyID').touched">Please enter companyID</span>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="companyName" formControlName="companyName"
+             [errorStateMatcher]="matcher">
+      <mat-error>
+        <span *ngIf="!bookForm.get('companyName').valid && bookForm.get('companyName').touched">Please enter companyName</span>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="companyPhone" formControlName="companyPhone"
+             [errorStateMatcher]="matcher">
+      <mat-error>
+        <span *ngIf="!bookForm.get('companyPhone').valid && bookForm.get('companyPhone').touched">Please enter companyPhone</span>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <textarea matInput placeholder="companyEmail" formControlName="companyEmail"
+             [errorStateMatcher]="matcher"></textarea>
+      <mat-error>
+        <span *ngIf="!bookForm.get('companyEmail').valid && bookForm.get('companyEmail').touched">Please enter companyEmail</span>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="companyAddress" formControlName="companyAddress"
+             [errorStateMatcher]="matcher">
+      <mat-error>
+        <span *ngIf="!bookForm.get('companyAddress').valid && bookForm.get('companyAddress').touched">Please enter companyAddress</span>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="companyDescription" formControlName="companyDescription"
+             [errorStateMatcher]="matcher">
+      <mat-error>
+        <span *ngIf="!bookForm.get('companyDescription').valid && bookForm.get('companyDescription').touched">Please enter companyDescription</span>
+      </mat-error>
+    </mat-form-field>
+    <div class="button-row">
+      <button type="submit" [disabled]="!bookForm.valid" mat-raised-button color="primary"><mat-icon>save</mat-icon></button>
+    </div>
+  </form>

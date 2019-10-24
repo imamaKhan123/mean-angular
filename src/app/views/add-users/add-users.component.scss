@@ -1,0 +1,435 @@
+a {
+	text-decoration: none;
+}
+.space{
+	height: 200px;
+}
+.nav-top {
+	display: flex;
+	align-items: center;
+	position: fixed;
+	z-index: -1;
+	color: #9a9a9a;
+	border-bottom: 2px solid #e7e8eb;
+
+	padding: 10px 20px;
+	width: 100%;
+	height: 30px;
+	background-color: #ffffff;
+	
+}
+.Chead{
+	display: block;
+    width: 100%;
+	
+	color: #868686;
+	border-bottom: 1px solid #e7e8eb;
+    /* margin: 0px !important; */
+    height: fit-content;
+    padding: 0% 3%;
+    position: relative;
+    /* margin-right: -671px; */
+   
+}
+.Chead3{
+	display: block;
+    width: 100%;
+	
+	color: #868686;
+	border-bottom: 1px solid #e7e8eb;
+    /* margin: 0px !important; */
+    height: fit-content;
+	padding: 1% 0%;
+	position: relative;
+    /* margin-right: -671px; */
+   
+}
+.Chead2{
+	display: flex;
+    width: 96%;
+    color: #868686;
+    margin: 0px 130px 5px 0px;
+	border-bottom: 2px solid #e7e8eb;
+    /* margin: 0px !important; */
+    height: fit-content;
+    padding: 1% 3%;
+    float: right;
+    position: relative;
+    /* margin-right: -671px; */
+   
+}
+
+.hleft{
+	width: 20%;
+	display: inline-flex;
+	margin: 0% 0%;
+    border-radius: 10%;
+}
+.hleft2{
+	width: 20%;
+	display: inline-flex;
+	margin: 0% 0%;
+    border-radius: 10%;
+}
+.hright{
+	width: fit-content !important;
+	display: contents;
+	float: right;
+	border: 1px solid #f0f0f0;
+	padding: 0.3% 1%;
+    border-radius: 10%;
+}
+.hright2{
+	text-align: right;
+	font-weight: 500;
+
+}
+.heading1{
+    float: right;
+    padding: 1%;
+	margin-right:100px;
+}
+.clear_button{
+	background-color: transparent;
+	border: none;
+}
+.left{
+	float: left !important;
+    color: #626571;
+    padding: 11px 0px;
+}
+.select2{
+	
+	width: 100%;
+}
+.sel select{
+	border: 1px solid #9a9a9a;
+	margin: 10px 0px;
+	text-align: left !important;
+}
+.theme-pink {
+	--radius: 2em;
+	--baseFg: #c70062;
+	--baseBg: #ffe3f1;
+	--accentFg: #c70062;
+	--accentBg: #ffaad4;
+  }
+select {
+	-webkit-appearance: button;
+    -moz-appearance: button;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -webkit-padding-end: 20px;
+    -moz-padding-end: 20px;
+    -webkit-padding-start: 2px;
+    -moz-padding-start: 2px;
+    background-color: transparent; /* Fallback color if gradients are not supported */
+    background-image: url('../../../assets/img/keyboard_arrow_down-24px.svg'), -webkit-linear-gradient(top, #E5E5E5, #F4F4F4); /* For Chrome and Safari */
+    background-image: url('../../../assets/img/keyboard_arrow_down-24px.svg'), -moz-linear-gradient(top, #E5E5E5, #F4F4F4); /* For old Firefox (3.6 to 15) */
+    background-image: url('../../../assets/img/keyboard_arrow_down-24px.svg'), -ms-linear-gradient(top, #E5E5E5, #F4F4F4); /* For pre-releases of Internet Explorer  10*/
+    background-image: url('../../../assets/img/keyboard_arrow_down-24px.svg') -o-linear-gradient(top, #E5E5E5, #F4F4F4); /* For old Opera (11.1 to 12.0) */
+    background-image: url('../../../assets/img/keyboard_arrow_down-24px.svg'), linear-gradient(to bottom, #E5E5E5, #F4F4F4); /* Standard syntax; must be last */
+    background-position: center left;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 2px;
+    box-shadow: none;
+    color: #b1b1b1;
+    font-size: 14px;
+    margin: 0;
+    overflow: hidden;
+	padding-top: 2px;
+	padding-left: 12%;
+    padding-bottom: 2px;
+    text-overflow: ellipsis;
+    margin-left: 5px;
+    white-space: nowrap;      /* Remove default arrow */
+	background-image:url('../../../assets/img/keyboard_arrow_down.png') ;   /* Add custom arrow */
+ }
+ select option:hover{
+	 width: inherit;
+	 background-color: #8e919f;
+ }
+.tbl2 td, th {  
+	border: 1px solid #e7e8eb !important;
+	text-align: right;
+	color: #b1b1b1;
+	padding: 5px 5px;
+  }
+  td ,th{
+	  width: 50px !important;
+  }
+  
+  table {
+	border-collapse: collapse;
+	width: 100%;
+  }
+  
+  th, td {
+	padding: 10px;
+  }
+
+
+.input-search{
+	border:none;
+}
+.sidenav {
+    width: 80px;
+
+    padding: 5px;
+ 
+    height: 100vh;
+    position: sticky;
+    border-left: 3px solid #8e919f;  
+   
+    margin: 0px 0 0 0%;
+    float: right;
+    background: #292f4c;
+}
+
+
+
+   
+  
+  .sidenav ul  {
+  padding-inline-start: 0px !important;
+
+  }
+  .heading{
+	  float: right;
+	  display: block;
+	  margin:2% ;
+	  
+  }
+  
+  .sidenav ul li {
+    padding: 5px 5px;
+    text-decoration: none;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    
+    color: #626571;
+    display: block;
+  }
+  .sidenav ul{
+	  margin-top:0px !important; 
+  }
+  .content-inner{
+	  border: 1px solid #e7e8eb; 
+	  margin-top: 30px;
+	  padding-bottom: 20% !important;
+	
+	   margin: 2% 6% 0% 3%;
+	   padding: 0% 2%;
+	   overflow-y: auto;
+
+  }
+  .tbl-box{
+	  display: inline-block;
+	  width: 3%;
+	  height: 50%;
+	  background-color: #064579;
+
+  }
+  @media only screen and (max-width: 600px) {
+	.content-inner{
+		border: 1px solid #e7e8eb; 
+		margin-top: 30px;
+	  
+	  margin: 2% 25% 0% 3%;
+  
+	}
+	table, td, th {  
+		border: 1px solid #bebebe;
+	
+		text-align: right;
+		color: #626571;
+	  }
+	  .tbl3, td, th {  
+		border: 1px solid #bebebe;
+	
+		text-align: right;
+		color: #626571;
+	  }
+	  table tr td button i{
+		  padding: 5px;
+		  color: #252525;
+	  }
+	  
+	  table {
+		border-collapse: collapse;
+		width: 100%;
+	  }
+	  
+	  th, td {
+		padding: 5px 5px;
+	  }
+	  .content-inner{
+		  overflow-x: auto;
+      }
+      .hrigt{
+          overflow-x: auto;
+      }
+
+  }
+  .content{
+	  
+    width: 100%;
+    position: absolute;
+    background-color: white;
+    height: 100%;
+	margin-top: 30px;
+	margin-right: 80px;
+	z-index: -1;
+	
+	overflow-y: auto;
+  }
+
+  .company{
+	  width: 100px;
+	  height: 100px;
+	  margin: 3%;
+	  display: inline-block;
+  }
+  .logo img{
+	width: 65px;
+    height: 40px;
+
+	background-color: #0093d8;
+	border: 1px solid rgb(219, 217, 217);  
+  
+  }
+  .icons{
+	  display: block;
+	  margin: 0px 0px;
+  }
+  .logo{
+	border-bottom: 2px solid #252525;
+    padding: 5px 0px;
+  }
+  .badge{
+    color: black;
+    border: 1px solid #626571;
+    width: fit-content;
+	height: auto;
+	margin:0px ;
+	display: grid;
+    border-radius: 25% 30%;
+    position: relative;
+    top: 13px;
+    right: -3px;
+    background-color: #626571;
+    font-size: 12px;
+    font-weight: bolder;
+    
+}
+.profile-image{
+ width: 40px;
+ height: 40px;
+ display: inline-flex;
+
+ border: 1px solid #252525;
+ border-radius: 25px;
+ z-index: -1;
+ 
+}
+.img2{
+	align-content: center;    
+	z-index: -1;
+	width: 40px;
+	height: 40px;
+}
+.profile{
+	
+	display: inline-block;
+	text-align: center;
+	width: fit-content;
+	
+   }
+input{    
+    height:30px;
+    width: 150px;
+    margin:  1% 0% 0% 1%;
+    padding-left:5px;
+  
+    border: 1px solid #e7e8eb;  
+    
+	}
+	input ::placeholder{
+		font-size: 15px;
+		color: #bebebe;
+	}
+    .tbl1 th, td{
+        border: none !important; 
+		padding: 0px;
+		text-align: right;
+    }
+    .tbl1 th{
+        font-size: 15px;
+        font-weight: 500;
+      
+	}
+	.select2 select {
+		border: 1px solid #cecece;
+
+	}
+   
+  .sidenav ul li a span {
+   
+	font-size: 10px;
+	letter-spacing: -0.55;
+    text-align: center;
+    margin-bottom: 3px;
+	margin-top: -3px;
+	
+
+
+
+    align-items: center;
+    align-content: center;
+    
+    color: #626571;
+    display: block;
+    
+
+    
+    
+  }
+  .sidenav ul li i{
+    font-size: 25px;    
+    color: #626571;
+  }
+  .sidenav ul .active{
+	  border-right: 3px solid #0093d8; 
+
+  }
+  .sidenav ul .active i{
+	color: #0093d8; 
+	
+}
+.sidenav ul .active a span{
+	color: #0093d8; 
+	
+}
+  .sidenav a:hover {
+    color: #064579;
+  }
+ 
+  
+
+// ---------------------------------------
+// important stuff starts here
+label {
+  font-size: 16px;
+  color: #707070;
+font-family: "Noto Sans Hebrew";
+text-align: right;
+  /* text-align: right; */
+  position: absolute;
+  display: inline-block;
+  margin: -0.5% 0% 0% 7%;
+transform-origin: top right;
+font-weight: 200;
+
+}

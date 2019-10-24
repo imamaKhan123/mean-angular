@@ -1,0 +1,144 @@
+/* You can add global styles to this file, and also import other style files */
+
+ body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* You can add global styles to this file, and also import other style files */
+
+
+body{
+    margin: 0px !important;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    font-size: 10px;
+}
+table {
+    border-color: transparent;
+}
+i{
+    font-size: 18px !important;
+    color: #aeaeae !important;
+}
+.nav-top span{
+    font-size: 14px !important;
+}
+.nav-top{
+    height: 44px !important;
+box-shadow: 0px 3px 7px rgba(0,0,0,0.05) !important;
+border-bottom: 2px solid #e7e8eb !important;
+
+}
+.content{
+    margin-top: 44px !important;
+}
+.primary-btn{
+    color: #fcfcfd;
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #242941;
+    border: none;
+    font-size: 11px;
+    margin: 7% 1% !important;
+    width: 154px;
+    height: 30px;
+
+    padding: 1% 10% !important;
+  }
+  .clear-btn{
+    color: #242941;
+    display: inline-block;
+    border-radius: 4px;
+    font-size: 11px;
+    background-color: #fcfcfd;
+    border: 1px solid #8e919f;
+    margin: 7% 1% !important;
+    width: 154px;
+    height: 30px;
+
+    padding: 1% 10% !important;
+  }
+  .heading1 h5{
+
+	font-size: 28px ;
+
+color: #545454;
+font-family: "Noto Sans Hebrew";
+text-align: right;
+font-weight: 200 !important;
+}
+.heading1{
+    float: right;
+    padding: 1%;
+	margin-right:60px;
+}
+.sidenav{
+    width: 80px !important;
+}
+.sidenav ul li{
+    border-bottom: 2px solid #252525;
+}
+.Chead0{
+	display: block;
+    width: 100%;
+	
+	color: #868686;
+	border-bottom: 2px solid #e7e8eb;
+    /* margin: 0px !important; */
+    height: fit-content;
+	padding: 0% 0% 0% 2%;
+	position: relative;
+    /* margin-right: -671px; */
+   
+}
+
+.profile-image{
+   
+    border: none !important;
+  
+   }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.content-inner{
+    margin: 1.5% 115px 0% 28px !important;
+}
+::placeholder{
+    font-size: 12px !important;
+}
+.Chead{
+    border-bottom: 2px solid #e7e8eb !important;
+}
+.blue-active{
+    border-left: 4px solid #0093d8 !important; 
+ 
+}
+.s{
+    margin-top: 10px !important;
+}
+.blueme{
+    color: #0093d8 !important;
+
+}
+.c{
+    cursor: pointer;
+}
+.dropup, .dropright, .dropdown, .dropleft {
+    position: fixed !important ;
+}
+.no-border{
+    z-index: -1 !important;
+}
+.wid150{
+   padding-right: 130px !important;
+}
+.dropdown-item {
+    font-size: 14px !important;
+}
+a :focus{
+    color : #ffabf7 !important;
+ }
+ a .hleft0 span  {
+   color : #bebebe !important;
+ }
+ .tbl5 ul{
+    text-decoration: none;
+    list-style-type: none !important;
+}

@@ -1,0 +1,181 @@
+
+      <div class="Chead0">
+        <div class="hleft">
+            
+                        <button class="primary-btn">save</button>
+                        
+                    
+                            <button class="clear-btn">cancel</button>
+                    
+        </div>
+        
+        <div class="heading1">
+                    <h5>נהל סוגי דוחות</h5>
+                    
+               
+        </div>
+        
+</div>
+
+<div class="contentinner">
+<div class="tabs">
+    <ul>
+       
+            <a routerLink="/list-of-reports" routerLinkActive="active">
+                <li >רשימת סוגים</li>
+               
+
+            </a>  
+            <a routerLink="/manage-account" id="" routerLinkActive="active">
+                <li>  הגדר תבנית </li>
+               
+
+            </a> 
+          
+          
+            <a routerLink="/manage-report-types" routerLinkActive="active">
+                <li>הגדר דוח </li>
+               
+
+            </a> 
+          
+        </ul>
+    </div>
+
+    <div class="Chead4" >
+        <div class="hleft1">
+                <div class="hleft0">
+                        <i class="material-icons">delete</i>
+                </div>
+                 <div class="hleft0">
+                        <i class="material-icons">add</i><span>&nbsp;תיווך</span> 
+                </div>
+              
+        </div>
+        <div class="hleft1 hright3">
+                
+                <div class="hleft0 wid90 space2 ns">
+                        
+                                <span class=" no-padding">
+                                        <select  class="wid90">
+                                                <option value="0">מיין</option>
+                                                <option value="1">סוגי חשבונות</option>
+                                                <option value="2">BMW</option>
+                                                <option value="3">Citroen</option>									  
+                                         </select>
+                                    
+                                
+                                 </span> 
+                         
+                </div>
+                <div class="hleft0 padded ">
+                    1/5
+                      
+                                <input type="number" min="1" max="10" value="10" class="form-control " [(ngModel)]="number2" (keyup)="number()" id="number-input"  mdbInput />
+                          
+                            הצג
+                </div>
+                <div class="hleft0 right">
+                        <input type="text" class="form-control input-search " [(ngModel)]="searchText" (keyup)="searchItems()" id="search-input" placeholder="search"
+                        mdbInput>
+                </div>
+
+
+        </div>
+        
+        
+       <br/> 
+       <br/> 
+        
+    </div>
+
+<div class="">
+   <!--<ul>
+       
+         <li>
+                
+                <span class="cols col5">                                 
+                    <i class="material-icons">delete</i>
+                </span>
+                <span class="cols col4">                                 
+                    <i class="material-icons">edit</i>                              
+                </span>
+                <span class="cols col8">                                 
+                    <h6> (יפוג בתאריך 08.10.2019)</h6> 
+                </span>
+                <span class="cols col2">                                 
+                        <span class="m2">
+                               
+                                <span class="m2 t padded">Zwi Berland</span>
+                                 <img class="img2 profile-image" src="../../../assets/img/1.png" width="30px" height="30px">
+                            </span>
+                 </span>
+                                           
+         </li>
+        
+         
+        </ul>-->
+<!--
+<table mdbTable #tableEl="mdbTable" class="z-depth-1">
+    <thead>
+    <tr>
+      <th *ngFor="let head of headElements; let i = index" scope="col">{{head}}
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let el of elements; let i = index">
+      <th *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex"
+          scope="row">{{el.id}}</th>
+      <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.first}}</td>
+      <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.last}}</td>
+      <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.handle}}</td>
+    </tr>
+    </tbody>
+    <tfoot class="grey lighten-5 w-100">
+    <tr>
+      <td colspan="4">
+        <mdb-table-pagination [tableEl]="tableEl" [searchDataSource]="elements"></mdb-table-pagination>
+      </td>
+    </tr>
+    </tfoot>
+  </table>-->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <div class="md-form">
+         
+          
+        </div>
+      </div>
+      <table mdbTable #tableEl="mdbTable"  hover="true" striped="true" class=" tbl2">
+        
+        <tbody #row>
+        <tr mdbTableCol (rowCreated)="onRowCreate($event)" (rowRemoved)="onRowRemove($event)" *ngFor="let el of elements; let i = index">
+          <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex"></td>
+          <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex"></td>
+          <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex"></td>
+          <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex"></td>
+          <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex"></td>
+
+          <th *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex" scope="row"> <i class="material-icons">delete</i></th>
+          <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex" > <i class="material-icons">edit</i></td>
+          <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex"> (יפוג בתאריך 08.10.2019)</td>
+          <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.handle}} <img class="img2 profile-image" src="../../../assets/img/1.png" width="30px" height="30px"></td>
+       
+        </tr>
+        </tbody>
+        <tfoot class="grey lighten-5 w-100">
+        <tr>
+          <td colspan="4">
+            <mdb-table-pagination [tableEl]="tableEl" paginationAlign="" [searchDataSource]="elements"></mdb-table-pagination>
+          </td>
+        </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>
+
+</div>	
+

@@ -1,0 +1,132 @@
+.navbar{
+    width: webkit-fill-available;
+    height: 3%;
+    background-color: #2196F3;
+    margin: -5% !important;
+  }
+   .app-header{
+    margin:0px !important;
+    background-color: #fcfcfd;
+    border-bottom: 3px solid rgb(219, 217, 217);  
+    padding: 5px;
+    height : 30px;
+    position : fixed;
+    width: -webkit-fill-available;
+
+}
+.log{
+  padding: 7px 0px;
+  text-align: center;
+  display: inline-block;
+}
+.name{
+  padding: 7px 0px;
+    text-align: center;
+    display: inline-block;
+    
+}
+.profile{
+  display: block;
+  
+
+}
+.app-header span{
+  padding: 5px;
+  text-align: center;
+
+}
+i{
+  padding: 5px;
+}
+.logo img{
+  width: 80px;
+  height: 50px;
+  margin-top: 5px;
+  border: 1px solid rgb(219, 217, 217);  
+
+}
+  .sidenav {
+    width: 80px;
+
+    padding: 0.5%;
+ 
+    height: 100%;
+    position: sticky;
+    border-left: 3px solid rgb(219, 217, 217);  
+   
+    margin: 0px 0 0 0%;
+    float: right;
+    background: #333232;
+}
+
+
+   
+  
+  .sidenav ul  {
+  padding-inline-start: 0px !important;
+
+  }
+  
+  .sidenav ul li {
+    padding: 5px 5px;
+    text-decoration: none;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    
+    color: #ffffff;
+    display: block;
+   
+
+    
+    
+  }
+  .badge{
+    color:white;
+    border:1px solid blue;
+    width: auto;
+    height: auto;
+    margin: 0;
+    border-radius: 50%;
+    position:absolute;
+    top:-13px;
+    right:-8px;
+    padding:5px;
+}
+  .sidenav ul li a span {
+   
+    font-size: small;
+    text-align: center;
+    margin-bottom: 3px;
+    margin-top: -3px;
+
+
+
+    align-items: center;
+    align-content: center;
+    
+    color: #ffffff;
+    display: block;
+    background: #333232;
+
+    
+    
+  }
+  .sidenav ul li i{
+    font-size: 25px;    
+    color: #ffffff;
+  }
+  .sidenav a:hover {
+    color: #064579;
+  }
+  
+  .main {
+    margin-left: 140px; /* Same width as the sidebar + left position in px */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
