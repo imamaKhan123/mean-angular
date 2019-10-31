@@ -3,6 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import {MatSidenavModule} from '@angular/material/sidenav';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BookComponent } from './views/companies/book.component';
@@ -43,8 +44,10 @@ import { ManageClientsComponent } from './views/manage-clients/manage-clients.co
 import { AddClentsComponent } from './views/add-clents/add-clents.component';
 import { EditClentsComponent } from './views/edit-clents/edit-clents.component';
 import { ShowClentsComponent } from './views/show-clents/show-clents.component';
-import { UserService } from './user.service';
-import { AuthService } from './auth.service';
+import {DataTableModule} from "angular-6-datatable";
+import { AngularSlickgridModule } from 'angular-slickgrid';
+import { UserService } from './services/user.service';
+import { AuthService } from './services/auth.service';
 import {
   MatInputModule,
   MatPaginatorModule,
@@ -54,11 +57,12 @@ import {
   MatIconModule,
   MatButtonModule,
   MatCardModule,
-    
+  MatRadioModule,
+  MatBadgeModule,
   MatFormFieldModule } from "@angular/material";
   import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { ApiService } from './api.service';
+import { ApiService } from './services/api.service';
 import { BookEditComponent } from './views/book-edit/book-edit.component';
 import { SettingsComponent } from './views/settings/settings.component';
 import { OrdersComponent } from './views/orders/orders.component';
@@ -70,6 +74,7 @@ import { EmailComponent } from './views/email/email.component';
 import { ManageClientTypesComponent } from './views/manage-client-types/manage-client-types.component';
 import { ManageReportTypesComponent } from './views/manage-report-types/manage-report-types.component';
 import { ListOfReportsComponent } from './views/list-of-reports/list-of-reports.component';
+import { ManageCustomersComponent } from './views/manage-customers/manage-customers.component';
 const appRoutes: Routes = [
   {
     path: 'companies',
@@ -110,6 +115,7 @@ const appRoutes: Routes = [
   { path: 'manage-account-types', component: ManageAccountTypesComponent },
   { path: 'add-new-face', component: AddNewFaceComponent},
   { path: 'manage-face-type', component: ManageFaceTypeComponent},
+  { path: 'manage-face-types', component: ManageFaceTypesComponent},
   { path: 'procedure-for-face', component: ProcedureForFaceComponent},
   { path: 'new-account-type', component: NewAccountTypeComponent},
   { path: 'data-connection', component: DataConnectionComponent},
@@ -124,6 +130,7 @@ const appRoutes: Routes = [
   { path: 'call-log', component: CallLogComponent},
   { path: 'sms', component: SmsComponent},
   { path: 'manage-clients', component: ManageClientsComponent},
+  { path: 'manage-customers', component: ManageCustomersComponent},
   { path: 'manage-client-types', component: ManageClientTypesComponent},
   { path: 'manage-report-types', component: ManageReportTypesComponent},
   { path: 'list-of-reports', component: ListOfReportsComponent},
@@ -176,16 +183,21 @@ const appRoutes: Routes = [
     EmailComponent,
     ManageClientTypesComponent,
     ManageReportTypesComponent,
-    ListOfReportsComponent
+    ListOfReportsComponent,
+    ManageCustomersComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
+    AngularSlickgridModule.forRoot(),
+    MatSidenavModule,
+    DataTableModule,
+    MatBadgeModule,
   BrowserModule,
   MDBBootstrapModule.forRoot(),
   FormsModule,
   ReactiveFormsModule,
   HttpClientModule,
- 
+  MatRadioModule,
   MatInputModule,
   MatTableModule,
   MatPaginatorModule,

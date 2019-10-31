@@ -19,7 +19,7 @@ export class ListOfReportsComponent implements OnInit {
   searchText: string = '';
   number2: number = 10;
   previous: string;
-
+ 
   maxVisibleItems: number = 8;
 
   constructor(private cdRef: ChangeDetectorRef) {}

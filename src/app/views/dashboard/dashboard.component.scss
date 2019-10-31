@@ -18,35 +18,7 @@ a {
 	background-color: #ffffff;
 	
 }
-
-
-.Chead{
-	display: block;
-    width: 100%;
-	
-	color: #868686;
-	border-bottom: 2px solid #e7e8eb;
-    /* margin: 0px !important; */
-    height: 80px;
-    padding: 1% 3%;
-    position: relative;
-    /* margin-right: -671px; */
-   
-}
-.heading1{
-	float: right;
-	margin-right:80px;
-	padding: 1%;
-	
-}
-.heading1 h5{
-
-	line-height: 14px;
-	color: #545454;
-	font-family: "Noto Sans Hebrew";
-	font-size: 18px;
-	text-align: right;
-} .content-inner{
+.content-inner{
 
 	margin-top: 30px;
   
@@ -117,7 +89,7 @@ a {
     height: 100px;
     margin: 2%;
     padding: 1%;
-	border: 2px solid #e7e8eb; 
+    border: 1px solid #f2f3f5;
     display: inline-block;
     text-align: center;
   }
@@ -195,15 +167,4 @@ a {
   }
   
 
-@media only screen and (max-width: 600px) {
-	.Chead{
-	  display: block;
-    width: 100%;
-    text-align: right;
-    /* margin: 0px !important; */
-    height: 50px;
-    padding: 1% 25% 0% 3%;
-	position: relative;
-	}
-
-}
+ 

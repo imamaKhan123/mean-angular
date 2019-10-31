@@ -5,35 +5,7 @@ a {
 .space{
 	height: 200px;
 }
-.nav-top {
-	display: flex;
-	align-items: center;
-	position: fixed;
-	z-index: -1;
-	color: #9a9a9a;
-	border-bottom: 2px solid #e7e8eb;
 
-	padding: 10px 20px;
-	width: 100%;
-	height: 30px;
-	background-color: #ffffff;
-	
-	
-}
-
-.Chead{
-	display: block;
-    width: 100%;
-	
-	color: #868686;
-	border-bottom: 2px solid #e7e8eb;
-    /* margin: 0px !important; */
-    height: fit-content;
-    padding: 0% 3%;
-    position: relative;
-    /* margin-right: -671px; */
-   
-}
 .Chead3{
 	display: block;
     width: 100%;
@@ -87,11 +59,7 @@ a {
 	font-weight: 500;
 
 }
-.heading1{
-    float: right;
-    padding: 1%;
-	margin-right:100px;
-}
+
 .clear_button{
 	background-color: transparent;
 	border: none;
@@ -307,22 +275,7 @@ select {
 	border-bottom: 2px solid #252525;
     padding: 5px 0px;
   }
-  .badge{
-    color: black;
-    border: 1px solid #626571;
-    width: fit-content;
-	height: auto;
-	margin:0px ;
-	display: grid;
-    border-radius: 25% 30%;
-    position: relative;
-    top: 13px;
-    right: -3px;
-    background-color: #626571;
-    font-size: 12px;
-    font-weight: bolder;
-    
-}
+ 
 .profile-image{
  width: 40px;
  height: 40px;

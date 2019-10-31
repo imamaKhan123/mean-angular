@@ -10,7 +10,7 @@ body{
     margin: 0px !important;
     overflow-x: hidden;
     overflow-y: hidden;
-    font-size: 10px;
+    font-size: 14px;
 }
 table {
     border-color: transparent;
@@ -23,14 +23,12 @@ i{
     font-size: 14px !important;
 }
 .nav-top{
-    height: 44px !important;
+    filter: drop-shadow(0px 3px 3.5px rgba(0,0,0,0.05));
 box-shadow: 0px 3px 7px rgba(0,0,0,0.05) !important;
 border-bottom: 2px solid #e7e8eb !important;
 
 }
-.content{
-    margin-top: 44px !important;
-}
+
 .primary-btn{
     color: #fcfcfd;
     display: inline-block;
@@ -38,7 +36,7 @@ border-bottom: 2px solid #e7e8eb !important;
     background-color: #242941;
     border: none;
     font-size: 11px;
-    margin: 7% 1% !important;
+    margin: 2% 1% !important;
     width: 154px;
     height: 30px;
 
@@ -51,29 +49,29 @@ border-bottom: 2px solid #e7e8eb !important;
     font-size: 11px;
     background-color: #fcfcfd;
     border: 1px solid #8e919f;
-    margin: 7% 1% !important;
+    margin: 2% 1% !important;
     width: 154px;
     height: 30px;
 
     padding: 1% 10% !important;
   }
   .heading1 h5{
-
-	font-size: 28px ;
-
-color: #545454;
-font-family: "Noto Sans Hebrew";
-text-align: right;
-font-weight: 200 !important;
+    font-size: 31px;
+    line-height: 28px;
+    color: #545454;
+    font-family: "Noto Sans Hebrew";
+    text-align: right;
+    font-weight: 200 !important;
 }
 .heading1{
-    float: right;
-    padding: 1%;
-	margin-right:60px;
+    float: right !important;
+    /* margin-right: 40px; */
+    padding: 0% 0% !important;
+    margin-right: 0px !important;
+    right: 0 !important;
+    display: block !important;
 }
-.sidenav{
-    width: 80px !important;
-}
+
 .sidenav ul li{
     border-bottom: 2px solid #252525;
 }
@@ -82,7 +80,7 @@ font-weight: 200 !important;
     width: 100%;
 	
 	color: #868686;
-	border-bottom: 2px solid #e7e8eb;
+	border-bottom: 1px solid #e7e8eb;
     /* margin: 0px !important; */
     height: fit-content;
 	padding: 0% 0% 0% 2%;
@@ -98,13 +96,25 @@ font-weight: 200 !important;
    }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .content-inner{
-    margin: 1.5% 115px 0% 28px !important;
+    
+    margin: 1.5% 2% 0% 2% !important;
+    padding: 0% 0%;
 }
 ::placeholder{
     font-size: 12px !important;
 }
 .Chead{
-    border-bottom: 2px solid #e7e8eb !important;
+    
+        display: block;
+        width: 100%;
+        
+        color: #868686;
+        /* margin: 0px !important; */
+        height: fit-content !important;
+        padding: 10px 2%;
+        position: relative;
+        /* margin-right: -671px; */
+       border-bottom: 1px solid #e7e8eb !important;
 }
 .blue-active{
     border-left: 4px solid #0093d8 !important; 
@@ -121,16 +131,21 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     cursor: pointer;
 }
 .dropup, .dropright, .dropdown, .dropleft {
-    position: fixed !important ;
+    
+    z-index: 1 !important;
 }
-.no-border{
-    z-index: -1 !important;
+.dropdown.show .dropdown-menu {
+    position: absolute !important;
+    margin-top: -5px;
 }
 .wid150{
    padding-right: 130px !important;
 }
 .dropdown-item {
     font-size: 14px !important;
+}
+.dropdown-menu{
+    min-width: 7rem !important;
 }
 a :focus{
     color : #ffabf7 !important;
@@ -141,4 +156,41 @@ a :focus{
  .tbl5 ul{
     text-decoration: none;
     list-style-type: none !important;
+}
+.hleft0{
+    margin: 0% 0% 0% 0.5% !important;
+}
+.Chead3{
+    padding: 1% 2% !important;
+}
+.hleft {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    display: inline-flex;
+}
+h6 {
+    width: max-content;
+    -webkit-margin-before: 0px !important;
+    margin-block-start: 0px !important;
+    -webkit-margin-after: 0px !important;
+    margin-block-end: 0px !important;
+    -webkit-margin-start: 0px !important;
+    margin-inline-start: 0px !important;
+    -webkit-margin-end: 0px;
+    float: right;
+}
+.pagination .page-item.active .page-link {
+    background-color:#242941;
+}
+.page-item.active .page-link {
+    background-color:#303550;
+}
+.slickgrid-container .slick-header-columns .slick-header-column.ui-state-default {
+    color: #aeaeae;
+    font-weight: 400;
+}
+button:not(:disabled), [type="button"]:not(:disabled), [type="reset"]:not(:disabled), [type="submit"]:not(:disabled) {
+    cursor: pointer;
+    color:  #aeaeae;
 }

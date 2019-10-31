@@ -65,7 +65,8 @@
                                 הצג
                     </div>
                     <div class="hleft0 right">
-                            <input class="input-search" type="text" placeholder="חיפוש חשבון">
+                           <input type="text" class="form-control input-search " [(ngModel)]="searchText" (keyup)="searchItems()" id="search-input" placeholder="search"
+                        mdbInput>
                     </div>
 
 
@@ -122,226 +123,279 @@
     </div>
      </div>
 <div class=" contentinner">
-        
-
-       
-        <div class="tbl5">
-                <ul>
-                    <li>
-                        <span class="cols col6">                                 
-                            <h6></h6> 
-                        </span>
-                        <span class="cols col5">                                 
-                            <h6> </h6> 
-                        </span>
-                        <span class="cols col4">                                 
-                            <h6> תמונת חשבון</h6> 
-                        </span>
-                        <span class="cols col3">                                 
-                             <h6> אמייל</h6> 
-                        </span>
-                        <span class="cols col2">                                 
-                            <h6>מס' חשבון</h6> 
-                         </span>
-                         <span class="cols col1">                                 
-                            <h6>שם חברה</h6> 
-                        </span>                              
-                    </li>
-                    <li>
-                            <span class="cols col6">                                 
-                                <h6>025-5698-99</h6> 
-                            </span>
-                            <span class="cols col5">                                 
-                                <h6>78</h6> 
-                            </span>
-                            <span class="cols col4">                                 
-                                   
-                                    <img class="img2 profile-image" src="../../../assets/img/1.png" width="30px" height="30px">
+    <div class="tbl5">
+        <ul>
+            <li>
+                <span class="cols col6">                                 
+                    <h6></h6> 
+                </span>
+                <span class="cols col5">                                 
+                    <h6> </h6> 
+                </span>
+                <span class="cols col4">                                 
+                    <h6> תמונת חשבון</h6> 
+                </span>
+                <span class="cols col3">                                 
+                     <h6> אמייל</h6> 
+                </span>
+                <span class="cols col2">                                 
+                    <h6>מס' חשבון</h6> 
+                 </span>
+                 <span class="cols col1">                                 
+                    <h6>שם חברה</h6> 
+                </span>                              
+            </li>
+            <li>
+                    <span class="cols col6">                                 
+                        <h6>025-5698-99</h6> 
+                    </span>
+                    <span class="cols col5">                                 
+                        <h6>78</h6> 
+                    </span>
+                    <span class="cols col4">                                 
                            
-                            </span>
-                            <span class="cols col3">                                 
-                                 <h6>zxc00012@gmail.com</h6> 
-                            </span>
-                            <span class="cols col2">                                 
-                                <h6>8532</h6> 
-                             </span>
-                             <span class="cols col1">                                 
-                                    <i class="material-icons m2">edit</i>
-                                    <span class="m2">
-                                           
-                                        <span class="m2 t padded">צבי ברלנד</span>
-                                         <img class="img2 profile-image" src="../../../assets/img/1.png" width="30px" height="30px">
-                                    </span>
-                            </span>                              
-                     </li>
-                     <li>
-                            <span class="cols col6">                                 
-                                <h6>025-5698-99</h6> 
-                            </span>
-                            <span class="cols col5">                                 
-                                <h6>78</h6> 
-                            </span>
-                            <span class="cols col4">                                 
-                                   
-                                    <img class="img2 profile-image" src="../../../assets/img/1.png" width="30px" height="30px">
-                           
-                            </span>
-                            <span class="cols col3">                                 
-                                 <h6>zxc00012@gmail.com</h6> 
-                            </span>
-                            <span class="cols col2">                                 
-                                <h6>8532</h6> 
-                             </span>
-                             <span class="cols col1">                                 
-                                    <i class="material-icons m2">edit</i>
-                                    <span class="m2">
-                                           
-                                        <span class="m2 t padded">צבי ברלנד</span>
-                                         <img class="img2 profile-image2" src="../../../assets/img/1.png" width="30px" height="30px">
-                                    </span>
-                            </span>                              
-                     </li>
-                     <li>
-                            <span class="cols col6">                                 
-                                <h6>025-5698-99</h6> 
-                            </span>
-                            <span class="cols col5">                                 
-                                <h6>78</h6> 
-                            </span>
-                            <span class="cols col4">                                 
-                                   
-                                    <img class="img2 profile-image" src="../../../assets/img/1.png" width="30px" height="30px">
-                           
-                            </span>
-                            <span class="cols col3">                                 
-                                 <h6>zxc00012@gmail.com</h6> 
-                            </span>
-                            <span class="cols col2">                                 
-                                <h6>8532</h6> 
-                             </span>
-                             <span class="cols col1">                                 
-                                    <i class="material-icons m2">edit</i>
-                                    <span class="m2">
-                                           
-                                        <span class="m2 t padded">צבי ברלנד</span>
-                                         <img class="img2 profile-image" src="../../../assets/img/1.png" width="30px" height="30px">
-                                    </span>
-                            </span>                              
-                     </li> 
-                    <li>
-                            <span class="cols col6">                                 
-                                <h6>025-5698-99</h6> 
-                            </span>
-                            <span class="cols col5">                                 
-                                <h6>78</h6> 
-                            </span>
-                            <span class="cols col4">                                 
-                                   
-                                    <img class="img2 profile-image" src="../../../assets/img/1.png" width="30px" height="30px">
-                           
-                            </span>
-                            <span class="cols col3">                                 
-                                 <h6>zxc00012@gmail.com</h6> 
-                            </span>
-                            <span class="cols col2">                                 
-                                <h6>8532</h6> 
-                             </span>
-                             <span class="cols col1">                                 
-                                    <i class="material-icons m2">edit</i>
-                                    <span class="m2">
-                                           
-                                        <span class="m2 t padded">צבי ברלנד</span>
-                                         <img class="img2 profile-image" src="../../../assets/img/1.png" width="30px" height="30px">
-                                    </span>
-                            </span>                              
-                     </li>
-                     
-
-                   
-                     <li>
-                            <span class="cols col6">                                 
-                                <h6>025-5698-99</h6> 
-                            </span>
-                            <span class="cols col5">                                 
-                                <h6>78</h6> 
-                            </span>
-                            <span class="cols col4">                                 
-                                   
-                                    <img class="img2 profile-image" src="../../../assets/img/1.png" width="30px" height="30px">
-                           
-                            </span>
-                            <span class="cols col3">                                 
-                                 <h6>zxc00012@gmail.com</h6> 
-                            </span>
-                            <span class="cols col2">                                 
-                                <h6>8532</h6> 
-                             </span>
-                             <span class="cols col1">                                 
-                                    <i class="material-icons m2">edit</i>
-                                    <span class="m2">
-                                           
-                                        <span class="m2 t padded">צבי ברלנד</span>
-                                         <img class="img2 profile-image" src="../../../assets/img/1.png" width="30px" height="30px">
-                                    </span>
-                            </span>                              
-                     </li>
-                        
-
-                     
-                    </ul>
-
-         <!--   <table class="tbl2">
-                <colgroup>
-                    <col span="1" style="width: 30%;">
-                    <col span="1" style="width: 25%;">
-                    <col span="1" style="width: 10%;">
-                    <col span="1" style="width: 10%;">
-                    <col span="1" style="width: 10%;">
-                    <col span="1" style="width: 15%;">
-                    
-                 </colgroup>
-                 
-                <tr>
-                  <th>edit</th>
-                  <th>access </th>
-                  <th>company</th>
-                  <th>edit</th>
-                  <th>access </th>
-                  <th>company</th>
-                  
-
-                </tr>
-                
-                <tr>
-                    <td>
-                      <span style="margin: 2px">986868</span>
-                     </td>
-                    <td>
-                       <span style="margin: 2px">986868</span>
-                    </td>
-                    <td>
-                        <span style="margin: 2px">
                             <img class="img2 profile-image" src="../../../assets/img/1.png" width="30px" height="30px">
-                        </span>
-                    </td>
-                    <td>
-                            <span style="margin: 2px">emaildjc sdsd</span>
-                    </td>    
-                    <td>
-                        <span style="margin: 2px">986868</span>
-                    </td>
-                    <td>
-                        <i class="material-icons">edit</i>
-                        <span style="margin: 2px">
-                               
-                            <span style="margin: 2px">kj bkj</span>
-                             <img class="img2 profile-image" src="../../../assets/img/1.png" width="30px" height="30px">
-                        </span>
-                    </td>
-                </tr>
-               
-          </table>-->
+                   
+                    </span>
+                    <span class="cols col3">                                 
+                         <h6>zxc00012@gmail.com</h6> 
+                    </span>
+                    <span class="cols col2">                                 
+                        <h6>8532</h6> 
+                     </span>
+                     <span class="cols col1">                                 
+                            <i class="material-icons m2">edit</i>
+                            <span class="m2">
+                                   
+                                <span class="m2 t padded">צבי ברלנד</span>
+                                 <img class="img2 profile-image" src="../../../assets/img/1.png" width="30px" height="30px">
+                            </span>
+                    </span>                              
+             </li>
+             <li>
+                    <span class="cols col6">                                 
+                        <h6>025-5698-99</h6> 
+                    </span>
+                    <span class="cols col5">                                 
+                        <h6>78</h6> 
+                    </span>
+                    <span class="cols col4">                                 
+                           
+                            <img class="img2 profile-image" src="../../../assets/img/1.png" width="30px" height="30px">
+                   
+                    </span>
+                    <span class="cols col3">                                 
+                         <h6>zxc00012@gmail.com</h6> 
+                    </span>
+                    <span class="cols col2">                                 
+                        <h6>8532</h6> 
+                     </span>
+                     <span class="cols col1">                                 
+                            <i class="material-icons m2">edit</i>
+                            <span class="m2">
+                                   
+                                <span class="m2 t padded">צבי ברלנד</span>
+                                 <img class="img2 profile-image2" src="../../../assets/img/1.png" width="30px" height="30px">
+                            </span>
+                    </span>                              
+             </li>
+             <li>
+                    <span class="cols col6">                                 
+                        <h6>025-5698-99</h6> 
+                    </span>
+                    <span class="cols col5">                                 
+                        <h6>78</h6> 
+                    </span>
+                    <span class="cols col4">                                 
+                           
+                            <img class="img2 profile-image" src="../../../assets/img/1.png" width="30px" height="30px">
+                   
+                    </span>
+                    <span class="cols col3">                                 
+                         <h6>zxc00012@gmail.com</h6> 
+                    </span>
+                    <span class="cols col2">                                 
+                        <h6>8532</h6> 
+                     </span>
+                     <span class="cols col1">                                 
+                            <i class="material-icons m2">edit</i>
+                            <span class="m2">
+                                   
+                                <span class="m2 t padded">צבי ברלנד</span>
+                                 <img class="img2 profile-image" src="../../../assets/img/1.png" width="30px" height="30px">
+                            </span>
+                    </span>                              
+             </li> 
+            <li>
+                    <span class="cols col6">                                 
+                        <h6>025-5698-99</h6> 
+                    </span>
+                    <span class="cols col5">                                 
+                        <h6>78</h6> 
+                    </span>
+                    <span class="cols col4">                                 
+                           
+                            <img class="img2 profile-image" src="../../../assets/img/1.png" width="30px" height="30px">
+                   
+                    </span>
+                    <span class="cols col3">                                 
+                         <h6>zxc00012@gmail.com</h6> 
+                    </span>
+                    <span class="cols col2">                                 
+                        <h6>8532</h6> 
+                     </span>
+                     <span class="cols col1">                                 
+                            <i class="material-icons m2">edit</i>
+                            <span class="m2">
+                                   
+                                <span class="m2 t padded">צבי ברלנד</span>
+                                 <img class="img2 profile-image" src="../../../assets/img/1.png" width="30px" height="30px">
+                            </span>
+                    </span>                              
+             </li>
+             
+
+           
+             <li>
+                    <span class="cols col6">                                 
+                        <h6>025-5698-99</h6> 
+                    </span>
+                    <span class="cols col5">                                 
+                        <h6>78</h6> 
+                    </span>
+                    <span class="cols col4">                                 
+                           
+                            <img class="img2 profile-image" src="../../../assets/img/1.png" width="30px" height="30px">
+                   
+                    </span>
+                    <span class="cols col3">                                 
+                         <h6>zxc00012@gmail.com</h6> 
+                    </span>
+                    <span class="cols col2">                                 
+                        <h6>8532</h6> 
+                     </span>
+                     <span class="cols col1">                                 
+                            <i class="material-icons m2">edit</i>
+                            <span class="m2">
+                                   
+                                <span class="m2 t padded">צבי ברלנד</span>
+                                 <img class="img2 profile-image" src="../../../assets/img/1.png" width="30px" height="30px">
+                            </span>
+                    </span>                              
+             </li>
+                
+
+             
+            </ul>
+
+ <!--   <table class="tbl2">
+        <colgroup>
+            <col span="1" style="width: 30%;">
+            <col span="1" style="width: 25%;">
+            <col span="1" style="width: 10%;">
+            <col span="1" style="width: 10%;">
+            <col span="1" style="width: 10%;">
+            <col span="1" style="width: 15%;">
+            
+         </colgroup>
+         
+        <tr>
+          <th>edit</th>
+          <th>access </th>
+          <th>company</th>
+          <th>edit</th>
+          <th>access </th>
+          <th>company</th>
+          
+
+        </tr>
+        
+        <tr>
+            <td>
+              <span style="margin: 2px">986868</span>
+             </td>
+            <td>
+               <span style="margin: 2px">986868</span>
+            </td>
+            <td>
+                <span style="margin: 2px">
+                    <img class="img2 profile-image" src="../../../assets/img/1.png" width="30px" height="30px">
+                </span>
+            </td>
+            <td>
+                    <span style="margin: 2px">emaildjc sdsd</span>
+            </td>    
+            <td>
+                <span style="margin: 2px">986868</span>
+            </td>
+            <td>
+                <i class="material-icons">edit</i>
+                <span style="margin: 2px">
+                       
+                    <span style="margin: 2px">kj bkj</span>
+                     <img class="img2 profile-image" src="../../../assets/img/1.png" width="30px" height="30px">
+                </span>
+            </td>
+        </tr>
+       
+  </table>-->
+</div>
+    <div class="container">
+        <div class="row">
+          <div class="col-md-6 mx-auto">
+            <div class="md-form">
+             
+              
+            </div>
+          </div>
+          <table mdbTable #tableEl="mdbTable"  hover="true"  class=" tbl2">
+            <thead>
+                <th></th>
+                <th></th>
+                <th><h6> תמונת חשבון</h6></th>                                
+                <th><h6> אמייל</h6></th>  
+                <th><h6>מס' חשבון</h6> </th>  
+                <th><h6>שם חברה</h6> </th>       
+                                          
+            </thead>
+            <tbody #row>
+            <tr mdbTableCol (rowCreated)="onRowCreate($event)" (rowRemoved)="onRowRemove($event)" *ngFor="let el of elements; let i = index">
+              <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex"><h6>025-5698-99</h6> </td>
+              <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex"><h6>78</h6> </td>
+              <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex" scope="row"> 
+                <span class="cols col4">                                 
+                           
+                    <img class="img2 profile-image" src="../../../assets/img/1.png" width="30px" height="30px">
+           
+            </span></td>
+              <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex" ><h6>zxc00012@gmail.com</h6> </td>
+              <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex"><h6>333</h6></td>
+              <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">
+                <span class="cols1 col1">                                 
+                    <i class="material-icons m2">edit</i>
+                    <span class="m2">
+                           
+                        <span class="m2 t padded">צבי ברלנד</span>
+                         <img class="img2 profile-image" src="../../../assets/img/1.png" width="30px" height="30px">
+                    </span>
+            </span>
+            </td>
+           
+        </tr>
+            </tbody>
+            <tfoot class="grey lighten-5 w-100">
+            <tr>
+              <td colspan="4">
+                <mdb-table-pagination [tableEl]="tableEl" paginationAlign="" [searchDataSource]="elements"></mdb-table-pagination>
+              </td>
+            </tr>
+
+            </tfoot>
+          </table>
         </div>
+      </div>
+       
+       
         
 </div>	
 
