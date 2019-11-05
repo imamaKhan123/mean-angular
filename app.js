@@ -9,7 +9,11 @@ var  bodyParser = require('body-parser');
 var apiRouter = require('./routes/book');
 var api = require('./routes/users');
 var company = require('./routes/company');
+var companies = require('./routes/companies');
 var user = require('./routes/user');
+var sysUser = require('./routes/sysUserRoles');
+var subCompUser = require('./routes/subCompUserRole');
+var CompanyTemplate = require('./routes/companyTemplates');
 
 var app = express();
 
@@ -37,7 +41,10 @@ app.use('/', express.static(path.join(__dirname, 'dist/mean-angular6')));
 app.use('/api', apiRouter);
 app.use('/users', api);
 app.use('/company', company);
-app.use('/user',user);
+app.use('/companyTemplate', CompanyTemplate);
+app.use('/SysUser',sysUser);
+app.use('/SubCompUser',subCompUser);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

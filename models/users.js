@@ -4,23 +4,25 @@ const bcrypt = require('bcrypt');
 
 // User Schema
 const UserSchema = mongoose.Schema({
-  name: {
-    type: String
-  },
-  email: {
-    type: String,
-    required: true
-  },
-  username: {
-    type: String,
-    required: true
-  },
-  password: {
-    type: String,
-    required: true
-  }
+    profilePic: String,
+    name:  String ,
+    email: {type:String ,  unique: [true, "email must be unique"], required:true},
+    bio: String ,
+    address:  String ,
+    phone: String ,
+    isEmailVerified:  Boolean,
+    isSubCompanyUser: Boolean,
+    premium : Boolean,
+    template:String,
+    company: {type: mongoose.Schema.Types.ObjectId, 
+    ref: 'Company'}, 
+    SysUserRole: {type: mongoose.Schema.Types.ObjectId, 
+    ref: 'sysUser'}, 
+    SubCompUserRole: {type: mongoose.Schema.Types.ObjectId, 
+    ref: 'subCompUser'}
+    
 });
-
+/*
 const User = module.exports = mongoose.model('User', UserSchema);
 
 module.exports.getUserById = function(id, callback){
@@ -47,4 +49,5 @@ module.exports.comparePassword = function(candidatePassword, hash, callback){
     if(err) throw err;
     callback(null, isMatch);
   });
-}
+}*/
+module.exports = mongoose.model('User',UserSchema);

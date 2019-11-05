@@ -52,10 +52,10 @@ router.get('/:id', function(req, res, next) {
 
 /* SAVE BOOK */
 router.post('/',/*upload.single('productImage'),*/ function(req, res, next) {
-  //console.log(req.file);
+  console.log(req.file);
   Company.create(req.body, function (err, post) {
     if (err) return next(err);
-    res.json(post);
+    else res.json(post);
   });
 });
 
@@ -63,7 +63,7 @@ router.post('/',/*upload.single('productImage'),*/ function(req, res, next) {
 router.put('/:id', function(req, res, next) {
   Company.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
     if (err) return next(err);
-    res.json(post);
+    else res.json(post);
   });
 });
 

@@ -3,13 +3,14 @@ var Schema = mongoose.Schema;
 var bcrypt = require('bcrypt');
 
 var sysUserSchema = new Schema({
-    _id : {type :mongoose.Schema.Types.ObjectId , required:true ,unique:true},
-    name: {type: String} ,
-    subscriptionManage: {type: Boolean ,default: false} ,
-    isAdmin: {type: Boolean ,default: false} ,
-    compManage:{type:Boolean ,default: false},
-    subCompAccountManage:{type:String ,default: false},
-    roleManage: {type: Boolean ,default: false}
+    //_id : {type :mongoose.Schema.Types.ObjectId , required:true ,unique:true},
+    id: String,
+    name:  String,
+    subscriptionManage: Boolean ,
+    isAdmin: Boolean,
+    compManage:Boolean,
+    subCompAccountManage:Boolean,
+    roleManage: Boolean 
 });
 /*
 schema.statics.hashPassword = function hashPassword(password){

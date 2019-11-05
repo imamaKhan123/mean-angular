@@ -1,5 +1,6 @@
-const express = require('express');
-const router = express.Router();
+var express = require('express');
+var router = express.Router();
+var mongoose = require('mongoose');
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 var User = require('../models/users.js');
@@ -7,8 +8,14 @@ var User = require('../models/users.js');
 /* GET users listing. */
 
 
+
+
+/* GET ALL USERS */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  User.find(function (err, products) {
+    if (err) return next(err);
+    res.json(products);
+  });
 });
 
 
@@ -16,9 +23,15 @@ router.get('/', function(req, res, next) {
 // router.get('/', function(req, res, next) {
 //   res.send('respond with a resource');
 // });
-
+router.post('/',/*upload.single('productImage'),*/ function(req, res, next) {
+  //console.log(req.file);
+  User.create(req.body, function (err, post) {
+    if (err) return next(err);
+    else res.json(post);
+  });
+});
 // Register
-router.post('/register', (req, res, next) => {
+/*router.post('/register', (req, res, next) => {
   let newUser = new User({
     name: req.body.name,
     email: req.body.email,
@@ -119,5 +132,5 @@ function isValidUser(req,res,next){
   if(req.isAuthenticated()) next();
   else return res.status(401).json({message:'Unauthorized Request'});
 }
-
+*/
 module.exports = router;

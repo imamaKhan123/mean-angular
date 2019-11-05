@@ -1,0 +1,74 @@
+<div class="Chead">
+    <div class="hleft">
+        
+        <button type="submit" class="primary-btn" [disabled]="!Form.valid" mat-raised-button >save</button>
+
+        <button class="clear-btn"  [routerLink]="['/companies']">cancel</button>
+    </div>
+    <div class="heading1">
+        <h5>Add roles</h5>
+    </div>
+    
+</div>
+<div class="wid">
+  <form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)">
+    <mat-form-field class="wid">
+      <input matInput placeholder="name" formControlName="name"
+             [errorStateMatcher]="matcher">
+      <mat-error>
+        <span *ngIf="!Form.get('name').valid && Form.get('name').touched">Please enter name</span>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="wid">
+      <input matInput placeholder="customerManage" formControlName="customerManage"
+             [errorStateMatcher]="matcher">
+      <mat-error>
+        <span *ngIf="!Form.get('customerManage').valid && Form.get('customerManage').touched">Please enter customerManage</span>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="wid">
+      <input matInput placeholder="inquiryManage" formControlName="inquiryManage"
+             [errorStateMatcher]="matcher">
+      <mat-error>
+        <span *ngIf="!Form.get('inquiryManage').valid && Form.get('inquiryManage').touched">Please enter inquiryManage</span>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="categoryManage" formControlName="categoryManage"
+             [errorStateMatcher]="matcher">
+      <mat-error>
+        <span *ngIf="!Form.get('categoryManage').valid && Form.get('categoryManage').touched">Please enter categoryManage</span>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="templateManage" formControlName="templateManage"
+             [errorStateMatcher]="matcher">
+      <mat-error>
+        <span *ngIf="!Form.get('templateManage').valid && Form.get('templateManage').touched">Please enter templateManage</span>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="isCompanyAdmin" formControlName="isCompanyAdmin"
+             [errorStateMatcher]="matcher">
+      <mat-error>
+        <span *ngIf="!Form.get('isCompanyAdmin').valid && Form.get('isCompanyAdmin').touched">Please enter companyDescription</span>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="isCommonUser" formControlName="isCommonUser"
+               [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!Form.get('isCommonUser').valid && Form.get('isCommonUser').touched">Please enter companyDescription</span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="roleManage" formControlName="roleManage"
+               [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!Form.get('roleManage').valid && Form.get('roleManage').touched">Please enter companyDescription</span>
+        </mat-error>
+      </mat-form-field>
+      <button type="submit" class="primary-btn" [disabled]="!Form.valid" mat-raised-button >save</button>
+
+  </form>
+</div>

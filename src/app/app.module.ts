@@ -5,6 +5,9 @@ import { NgModule } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { AppRoutingModule } from './app-routing.module';
+import { AddRolesService} from './services/add-roles.service';
+import { AddusersService} from './services/addusers.service';
+import { AddSubCompUserRolesService} from './services/add-sub-comp-user-roles.service';
 import { AppComponent } from './app.component';
 import { BookComponent } from './views/companies/book.component';
 import { BookDetailComponent } from './views/book-detail/book-detail.component';
@@ -59,6 +62,8 @@ import {
   MatCardModule,
   MatRadioModule,
   MatBadgeModule,
+  MatSelectModule,
+  MatCheckboxModule,
   MatFormFieldModule } from "@angular/material";
   import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -75,6 +80,11 @@ import { ManageClientTypesComponent } from './views/manage-client-types/manage-c
 import { ManageReportTypesComponent } from './views/manage-report-types/manage-report-types.component';
 import { ListOfReportsComponent } from './views/list-of-reports/list-of-reports.component';
 import { ManageCustomersComponent } from './views/manage-customers/manage-customers.component';
+import { SetupProductReportComponent } from './views/setup-product-report/setup-product-report.component';
+import { AddRolesComponent } from './views/add-roles/add-roles.component';
+import { AddSubCompRolesComponent } from './views/add-sub-comp-roles/add-sub-comp-roles.component';
+import { CompanyTemplateComponent } from './views/company-template/company-template.component';
+import { AddSubCompUserComponent } from './views/add-sub-comp-user/add-sub-comp-user.component';
 const appRoutes: Routes = [
   {
     path: 'companies',
@@ -98,6 +108,10 @@ const appRoutes: Routes = [
   ]
 } ,
   { path: 'products', component: ProductsComponent },
+  { path: 'add-roles', component: AddRolesComponent },
+  { path: 'add-subCompUserRoles', component: AddSubCompRolesComponent },
+  { path: 'Add-CompanyTemplate', component: CompanyTemplateComponent },
+  { path: 'setup-product-report', component: SetupProductReportComponent },
   { path: 'settings', component: SettingsComponent },
   { path: 'orders', component: OrdersComponent },
   { path: 'home', component: HomeComponent },
@@ -121,6 +135,7 @@ const appRoutes: Routes = [
   { path: 'data-connection', component: DataConnectionComponent},
   { path: 'manage-modules', component: ManageModulesComponent},
   { path: 'new-user', component: NewUserComponent},
+  { path: 'add-sub-comp-user', component: AddSubCompUserComponent},
   { path: 'type-of-inquiry', component: TypeOfInquiryComponent},
   { path: 'add-new-account', component: AddNewAccountComponent},
   { path: 'clients', component: ClientsComponent},
@@ -184,7 +199,12 @@ const appRoutes: Routes = [
     ManageClientTypesComponent,
     ManageReportTypesComponent,
     ListOfReportsComponent,
-    ManageCustomersComponent
+    ManageCustomersComponent,
+    SetupProductReportComponent,
+    AddRolesComponent,
+    AddSubCompRolesComponent,
+    CompanyTemplateComponent,
+    AddSubCompUserComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -192,6 +212,8 @@ const appRoutes: Routes = [
     MatSidenavModule,
     DataTableModule,
     MatBadgeModule,
+    MatSelectModule,
+    MatCheckboxModule,
   BrowserModule,
   MDBBootstrapModule.forRoot(),
   FormsModule,
@@ -211,7 +233,14 @@ const appRoutes: Routes = [
   TooltipModule.forRoot(),
   ModalModule.forRoot()
   ],
-  providers: [ApiService, UserService,AuthService],
+  providers: [
+    ApiService,
+    UserService,
+    AddRolesService,
+    AuthService,
+    AddusersService,
+    AddSubCompUserRolesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -46,14 +46,16 @@
 </div> 
 <div class="content-inner">
 
-  <table mat-table #table [dataSource]="dataSource">
+  <table mat-table #table style="width: -webkit-fill-available;" [dataSource]="dataSource">
 
     
-    <ng-container matColumnDef="companyID">
+    <ng-container matColumnDef="name">
       <th  *matHeaderCellDef style="display: none;">CompanyID </th>
-      <td mat-cell *matCellDef="let element" class="isbn-col">  <img src="../../../assets/img/1.png" alt="company">|{{element.companyID}} </td>
-  <img src="../../../assets/img/1.png" alt="company">
-     
+      <td mat-cell *matCellDef="let element" class="isbn-col">  
+        <img src="../../../assets/img/1.png" alt="company">|{{element.name}} |
+        <a mat-raised-button color="primary" routerLink="company-edit/', book._id"><mat-icon>edit</mat-icon></a>
+
+      </td>
     </ng-container>    
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="['company-details/', row._id]"></tr>

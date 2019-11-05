@@ -3,8 +3,9 @@ var Schema = mongoose.Schema;
 var bcrypt = require('bcrypt');
 
 var companyTemplatesSchema = new Schema({
-    _id : {type :mongoose.Schema.Types.ObjectId , required:true ,unique:true},
-    company : {type :mongoose.Schema.Types.ObjectId , ref:'companies'},
+    //_id : {type :mongoose.Schema.Types.ObjectId , required:true ,unique:true},
+    company : {type: mongoose.Schema.Types.ObjectId, 
+        ref: 'Company'},
     title: {type: String} ,
     description: {type: String} ,
     inputFields: {type: String} ,

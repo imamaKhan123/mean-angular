@@ -180,6 +180,9 @@ h6 {
     -webkit-margin-end: 0px;
     float: right;
 }
+.mat-input-element {
+    caret-color: #707070;
+}
 .pagination .page-item.active .page-link {
     background-color:#242941;
 }
@@ -193,4 +196,16 @@ h6 {
 button:not(:disabled), [type="button"]:not(:disabled), [type="reset"]:not(:disabled), [type="submit"]:not(:disabled) {
     cursor: pointer;
     color:  #aeaeae;
+}
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+    height: 0px;
+   display: none;
+}
+.mat-raised-button:not([class*=mat-elevation-z]) {
+line-height: inherit !important;
+}
+.mat-form-field {
+    display: inline-block;
+    position: relative;
+    text-align: right !important;
 }

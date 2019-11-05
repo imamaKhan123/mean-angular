@@ -107,14 +107,17 @@ background-image:url('../../../assets/img/search-p.png') ;
    
 }
 .hleft0{
-	width: fit-content;
-	display: inline-flex;
-    padding: 0.3% 1%;
-    margin: 0% 3% 0% 0.5%;
-	border-radius: 3px;
-    box-shadow: 0px 3px 7px rgba(0,0,0,0.09);
-    background-color: #ffffff;
-    border: 1px solid #f2f3f5;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 25px;
+  display: inline-flex;
+  padding: 0.3% 1%;
+  margin: 0% 3% 0% 0.5%;
+  border-radius: 3px;
+  box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.09);
+  background-color: #ffffff;
+  border: 1px solid #f2f3f5;
 }
 .hleft0 ::after{
     margin-right: 20px;
@@ -143,19 +146,7 @@ select:hover{
 
 .hleft  i{
     text-align: center;
-    padding: 1%;
-   
-}
-
-
-.heading1 h5{
-
-	font-size: 20px !important;
-line-height: 4px;
-color: #545454;
-font-family: "Noto Sans Hebrew";
-text-align: right;
-font-weight: 600;
+    padding: 1%;  
 }
 .hleft2{
 	width: 20%;
@@ -264,7 +255,7 @@ select {
   }
   .hright2{
     float: right;
-    margin-right: 70px;
+    margin-right: 20px;
   }
 
 
@@ -432,7 +423,7 @@ width: fit-content;
 
 	  margin-top: 30px;
 	  padding-bottom: 20% !important;
-   margin: 0% 90px 0% 16.5%;
+   margin: 0% 20px 0% 16.5%;
 	   padding: 0% 0%;
 	   overflow-y: auto;
 

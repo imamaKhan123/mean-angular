@@ -1,0 +1,67 @@
+<div class="Chead">
+    <div class="hleft">
+        
+        <button type="submit" class="primary-btn" [disabled]="!Form.valid" mat-raised-button >save</button>
+
+        <button class="clear-btn"  [routerLink]="['/companies']">cancel</button>
+    </div>
+    <div class="heading1">
+        <h5>Add roles</h5>
+    </div>
+    
+</div>
+<div class="wid">
+  <form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)">
+    <mat-form-field class="wid">
+      <input matInput placeholder="ID" formControlName="id"
+             [errorStateMatcher]="matcher">
+      <mat-error>
+        <span *ngIf="!Form.get('id').valid && Form.get('id').touched">Please enter ID</span>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="wid">
+      <input matInput placeholder="Role Name" formControlName="name"
+             [errorStateMatcher]="matcher">
+      <mat-error>
+        <span *ngIf="!Form.get('name').valid && Form.get('name').touched">Please enter Role Name</span>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="wid">
+      <input matInput placeholder="subscriptionManage" formControlName="subscriptionManage"
+             [errorStateMatcher]="matcher">
+      <mat-error>
+        <span *ngIf="!Form.get('subscriptionManage').valid && Form.get('subscriptionManage').touched">Please enter subscriptionManage</span>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="isAdmin" formControlName="isAdmin"
+             [errorStateMatcher]="matcher">
+      <mat-error>
+        <span *ngIf="!Form.get('isAdmin').valid && Form.get('isAdmin').touched">Please enter isAdmin</span>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="compManage" formControlName="compManage"
+             [errorStateMatcher]="matcher">
+      <mat-error>
+        <span *ngIf="!Form.get('compManage').valid && Form.get('compManage').touched">Please enter compManage</span>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="subCompAccountManage" formControlName="subCompAccountManage"
+             [errorStateMatcher]="matcher">
+      <mat-error>
+        <span *ngIf="!Form.get('subCompAccountManage').valid && Form.get('subCompAccountManage').touched">Please enter companyDescription</span>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="roleManage" formControlName="roleManage"
+               [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!Form.get('roleManage').valid && Form.get('roleManage').touched">Please enter companyDescription</span>
+        </mat-error>
+      </mat-form-field>
+      <button type="submit" class="primary-btn" [disabled]="!Form.valid" mat-raised-button >save</button>
+
+  </form>
+</div>

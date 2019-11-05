@@ -13,7 +13,7 @@ export class BookComponent implements OnInit {
 
   constructor(private api: ApiService) { }
   books: any;
-  displayedColumns = ['companyID' ];
+  displayedColumns = ['name' ];
 dataSource = new BookDataSource(this.api);
 
 

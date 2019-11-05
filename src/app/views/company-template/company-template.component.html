@@ -1,0 +1,69 @@
+<div class="Chead">
+    <div class="hleft">
+        
+        <button type="submit" class="primary-btn" [disabled]="!Form.valid" mat-raised-button >save</button>
+
+        <button class="clear-btn"  [routerLink]="['/companies']">cancel</button>
+    </div>
+    <div class="heading1">
+        <h5>Add Company Template</h5>
+    </div>
+    
+</div>
+<div class="wid">
+  <form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)">
+    <mat-form-field class="wid">
+      <input matInput placeholder="company"
+             [errorStateMatcher]="matcher">
+      <mat-error>
+        <!--        <div class=" hright2 sel">
+            <label>סמן מותגים</label>
+            <select name="select" [(ngModel)]="selectedOption">
+                <option *ngFor="let data of roles" [value]="data._id">
+                  {{data.name}}
+                </option>
+
+            </select>
+            
+
+            <p>Selected option: {{ selectedOption }}</p>
+            
+            
+        </div>    -->
+      </mat-error>
+      <mat-form-field>
+        <mat-select  formControlName="company" placeholder="Select Company" [(ngModel)]="selectedOption">
+          <mat-option *ngFor="let data of companies" [value]="data._id">
+            {{ data.name }}
+          </mat-option>
+        </mat-select>
+        <mat-hint>{{selectedOption}}</mat-hint>
+      </mat-form-field>
+
+    </mat-form-field>
+    <mat-form-field class="wid">
+      <input matInput placeholder="title" formControlName="title"
+             [errorStateMatcher]="matcher">
+      <mat-error>
+        <span *ngIf="!Form.get('title').valid && Form.get('title').touched">Please enter title</span>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="wid">
+      <input matInput placeholder="description" formControlName="description"
+             [errorStateMatcher]="matcher">
+      <mat-error>
+        <span *ngIf="!Form.get('description').valid && Form.get('description').touched">Please enter description</span>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="inputFields" formControlName="inputFields"
+             [errorStateMatcher]="matcher">
+      <mat-error>
+        <span *ngIf="!Form.get('inputFields').valid && Form.get('inputFields').touched">Please enter inputFields</span>
+      </mat-error>
+    </mat-form-field>
+  
+      <button type="submit" class="primary-btn" [disabled]="!Form.valid" mat-raised-button >save</button>
+
+  </form>
+</div>
