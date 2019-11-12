@@ -66,19 +66,11 @@ export class UserService {
       map(this.extractData),
       catchError(this.handleError));
   }
-  getUsers() {
-    return this._http.get<any[]>('http://localhost:3000/users/usersList',httpOptions).pipe(
-      map(users => {
-        const newUsers = [];
-        for (let user of users) {
-          const email = user.email;
-          const uName = user.username;
-          newUsers.push({ email: email, username: uName });
-        }
-        return newUsers;
-      }),
-      tap(users => console.log(users))
-    );
+
+  getUsers(): Observable<any> {
+    return this._http.get('http://localhost:3000/users/usersList', httpOptions).pipe(
+      map(this.extractData),
+      catchError(this.handleError));
   }
 
   user(){

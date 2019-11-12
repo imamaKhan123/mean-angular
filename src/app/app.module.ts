@@ -87,7 +87,7 @@ import { AddRolesComponent } from './views/add-roles/add-roles.component';
 import { AddSubCompRolesComponent } from './views/add-sub-comp-roles/add-sub-comp-roles.component';
 import { CompanyTemplateComponent } from './views/company-template/company-template.component';
 import { AddSubCompUserComponent } from './views/add-sub-comp-user/add-sub-comp-user.component';
-import { UniqueEmailValidatiorDirective } from './views/unique-email-validatior.directive';
+import {  UniqueEmailValidatorDirective } from './views/unique-email-validatior.directive';
 
 const appRoutes: Routes = [
   {
@@ -212,7 +212,7 @@ export function tokenGetter() {
     AddSubCompRolesComponent,
     CompanyTemplateComponent,
     AddSubCompUserComponent,
-    UniqueEmailValidatiorDirective
+    UniqueEmailValidatorDirective
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

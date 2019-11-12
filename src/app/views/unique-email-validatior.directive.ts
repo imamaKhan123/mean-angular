@@ -8,7 +8,9 @@ export function uniqueEmailValidator(userService: UserService): AsyncValidatorFn
   return (c: AbstractControl): Promise<ValidationErrors | null> | Observable<ValidationErrors | null> => {
     return userService.checkEmail(c.value).pipe(
       map(users => {
-        return users && users !=null ? { 'uniqueEmail': true } : null;
+        console.log("printing users")
+        console.log(users)
+        return users ===null ?null  : { 'uniqueEmail': true } ;
       })
     );
   };

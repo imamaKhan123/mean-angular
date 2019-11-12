@@ -3,19 +3,20 @@ import { Router } from '@angular/router';
 import { FormControl, FormGroupDirective,AbstractControl, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { UserService } from '../../services/user.service';
 import { AuthService } from '../../services/auth.service';
-import { uniqueEmailValidator } from '../unique-email-validatior.directive';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
+  users: {};
+  emailError:String;
   Form: FormGroup;
   name:  String='' ;
   email: String=''; 
   password: String='' ;
   SysUserRole:String='';
-  
+ 
 
   constructor(private _router:Router,private UserApi: UserService, private validateService:UserService , private formBuilder: FormBuilder,private authService : AuthService) { }
 
@@ -23,16 +24,33 @@ export class RegisterComponent implements OnInit {
     this.Form = this.formBuilder.group({
       'name' : [null, Validators.required],
       'email' :   ['',
-      Validators.required, // sync validator
-      uniqueEmailValidator(this.UserApi) // async validator
-    ],
+      Validators.required],
     'password':[null, Validators.required]
 
     });
-    this.UserApi.getUsers().subscribe();
+  
     
   }
-
+  onTextChange(searchValue: string): void {  
+    console.log(searchValue);
+    if(searchValue){
+    this.UserApi.checkEmail(searchValue)
+    .subscribe(res => {
+      //console.log(res);
+      this.users= res;
+      console.log(this.users);
+      if (this.users){
+        this.emailError="Email Already exist";
+      }
+      else{
+        this.emailError='';
+      }
+    }, err => {
+      console.log(err);
+    });
+  }
+    
+  }
   onFormSubmit(form:NgForm) {
     console.log(form)
     this.UserApi.register(form)

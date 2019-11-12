@@ -2,69 +2,32 @@
 -webkit-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
 -moz-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
 box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);">
-  <!-- <div class="col-sm-12" style="text-align:center;">
-    Register
-  </div> -->
+ 
 
   <div class="col-sm-10">
-    <h2 class="page-header">Register</h2><!--
-<form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)">
-  <div class="form-group">
-    <label>Name</label>
-    <input type="text" [(ngModel)]="name" name="name"  formControlName="name">
-  </div>
-  <div class="form-group">
-    <label>Email</label>
-    <input type="text" [(ngModel)]="email" name="email"  formControlName="email">
-  </div>
-  <div class="form-group">
-    <label>Password</label>
-    <input type="password" [(ngModel)]="password" name="password"  formControlName="password">
-  </div>
-  <input type="submit" class="btn btn-primary" value="Submit">
-  <button class="btn btn-primary" routerLink="/login">Login</button>
-</form>-->
-<form [formGroup]="Form">
-  <div class="form-group">
-    <label>Username</label>
-    <input type="text" class="form-control" formControlName="name">
-    <div class="text-danger" *ngIf="username.invalid && (username.dirty || username.touched)">
-      Username is required
-    </div>
-  </div>
-  <div class="form-group">
-    <label>Email</label>
-    <input type="email" class="form-control" formControlName="email">
-    <div class="text-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
-      <div *ngIf="email.errors['required']">Email is required</div>
-      <div *ngIf="email.errors['uniqueEmail']">Email already exists</div>
-    </div>
-  </div>
-  <div class="form-group">
-    <label>Email confirm</label>
-    <input type="email" class="form-control" formControlName="emailConfirm">
-    <div class="text-danger" *ngIf="emailConfirm.invalid && (emailConfirm.dirty || emailConfirm.touched)">
-      <div *ngIf="emailConfirm.errors['required']">Email confirm is required</div>
-      <div *ngIf="emailConfirm.errors['compare']">Email confirm do not match</div>
-      <div *ngIf="emailConfirm.errors['uniqueEmail']">Email confirm already exists</div>
-    </div>
-  </div>
-  <div class="form-group">
-    <label>Password</label>
-    <input type="password" class="form-control" formControlName="password">
-    <div class="text-danger" *ngIf="password.invalid && (password.dirty || password.touched)">
-      Password is required
-    </div>
-  </div>
-  <div class="form-group">
-    <label>Password confirm</label>
-    <input type="password" class="form-control" formControlName="passwordConfirm">
-    <div class="text-danger" *ngIf="pwConfirm.invalid && (pwConfirm.dirty || pwConfirm.touched)">
-      <div *ngIf="pwConfirm.errors['required']">Password confirm is required</div>
-      <div *ngIf="pwConfirm.errors['compare']">Password confirm do not match</div>
-    </div>
-  </div>
-  <button type="button" class="btn btn-primary" [disabled]="reactiveForm.invalid">Submit</button>
-</form>
+    <h2 class="page-header">Register</h2>
+    <form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)">
+      <mat-form-field class="wid">
+        <input matInput placeholder="name" formControlName="name" [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!Form.get('name').valid && Form.get('name').touched">Please enter name</span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="wid">
+        <input matInput placeholder="Email" formControlName="email" (input)="onTextChange($event.target.value)"
+          [errorStateMatcher]="matcher">
+          <span>{{emailError}}</span>
+        
+      </mat-form-field>
+      <mat-form-field class="wid">
+        <input matInput placeholder="password" formControlName="password" [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!Form.get('password').valid && Form.get('password').touched">Please enter password</span>
+        </mat-error>
+      </mat-form-field>
+      <button type="submit" class="primary-btn" [disabled]="!Form.valid" mat-raised-button>save</button>
+
+    </form>
+
   </div>
 </div>
