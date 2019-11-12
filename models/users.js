@@ -1,13 +1,17 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
-
-
 // User Schema
 const UserSchema = mongoose.Schema({
     profilePic: String,
     name:  String ,
-    email: {type:String ,  unique: [true, "email must be unique"], required:true},
+    email: {
+      type: String,
+      unique: true
+    },
     bio: String ,
+    hash: String,
+    salt: String,
+    password:String,
     address:  String ,
     phone: String ,
     isEmailVerified:  Boolean,
@@ -22,24 +26,49 @@ const UserSchema = mongoose.Schema({
     ref: 'subCompUser'}
     
 });
-/*
-const User = module.exports = mongoose.model('User', UserSchema);
+UserSchema.methods.setPassword = function(password){
+  this.salt = crypto.randomBytes(16).toString('hex');
+  this.hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64, 'sha512').toString('hex');
+};
+UserSchema.methods.validPassword = function(password) {
+  var hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64, 'sha512').toString('hex');
+  return this.hash === hash;
+};
+UserSchema.methods.generateJwt = function() {
+  var expiry = new Date();
+  expiry.setDate(expiry.getDate() + 7);
 
+  return jwt.sign({
+    _id: this._id,
+    email: this.email,
+    name: this.name,
+    exp: parseInt(expiry.getTime() / 1000),
+  }, "MY_SECRET"); 
+};
+
+module.exports = mongoose.model('User',UserSchema);
 module.exports.getUserById = function(id, callback){
   User.findById(id, callback);
 }
 
-module.exports.getUserByUsername = function(username, callback){
-  const query = {username: username}
+module.exports.getUserByname = function(name, callback){
+  const query = {name: name}
+  User.findOne(query, callback);
+}
+module.exports.getUserByemail = function(email, callback){
+  const query = {email: email}
   User.findOne(query, callback);
 }
 
-module.exports.addUser = function(newUser, callback){
+module.exports.Hash = function(password, callback){
   bcrypt.genSalt(10, (err, salt) => {
-    bcrypt.hash(newUser.password, salt, (err, hash) => {
+    if(err) throw (err); 
+    bcrypt.hash(password, salt, (err, hash) => {
       if(err) throw err;
-      newUser.password = hash;
-      newUser.save(callback);
+      password = hash;
+      console.log(password);
+      return password;
+      
     });
   });
 }
@@ -49,5 +78,4 @@ module.exports.comparePassword = function(candidatePassword, hash, callback){
     if(err) throw err;
     callback(null, isMatch);
   });
-}*/
-module.exports = mongoose.model('User',UserSchema);
+}

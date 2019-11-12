@@ -1,6 +1,7 @@
 import { BrowserModule  } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { JwtModule } from '@auth0/angular-jwt';
 import { NgModule } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -51,6 +52,7 @@ import {DataTableModule} from "angular-6-datatable";
 import { AngularSlickgridModule } from 'angular-slickgrid';
 import { UserService } from './services/user.service';
 import { AuthService } from './services/auth.service';
+import { AuthGuard } from './services/authguard.guard';
 import {
   MatInputModule,
   MatPaginatorModule,
@@ -85,6 +87,8 @@ import { AddRolesComponent } from './views/add-roles/add-roles.component';
 import { AddSubCompRolesComponent } from './views/add-sub-comp-roles/add-sub-comp-roles.component';
 import { CompanyTemplateComponent } from './views/company-template/company-template.component';
 import { AddSubCompUserComponent } from './views/add-sub-comp-user/add-sub-comp-user.component';
+import { UniqueEmailValidatiorDirective } from './views/unique-email-validatior.directive';
+
 const appRoutes: Routes = [
   {
     path: 'companies',
@@ -151,6 +155,9 @@ const appRoutes: Routes = [
   { path: 'list-of-reports', component: ListOfReportsComponent},
   { path: 'register', component: RegisterComponent}
 ];
+export function tokenGetter() {
+  return localStorage.getItem('access_token');
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -204,7 +211,8 @@ const appRoutes: Routes = [
     AddRolesComponent,
     AddSubCompRolesComponent,
     CompanyTemplateComponent,
-    AddSubCompUserComponent
+    AddSubCompUserComponent,
+    UniqueEmailValidatiorDirective
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -231,7 +239,14 @@ const appRoutes: Routes = [
   MatFormFieldModule,BrowserAnimationsModule,
   BsDropdownModule.forRoot(),
   TooltipModule.forRoot(),
-  ModalModule.forRoot()
+  ModalModule.forRoot(),
+  JwtModule.forRoot({
+    config: {
+      tokenGetter: tokenGetter,
+      whitelistedDomains: ['localhost:3000'],
+      blacklistedRoutes: ['localhost:3000/user/auth']
+    }
+  })
   ],
   providers: [
     ApiService,

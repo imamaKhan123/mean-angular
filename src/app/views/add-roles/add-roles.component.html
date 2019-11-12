@@ -10,6 +10,7 @@
     </div>
     
 </div>
+<div class="content-inner">
 <div class="wid">
   <form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)">
     <mat-form-field class="wid">
@@ -64,4 +65,5 @@
       <button type="submit" class="primary-btn" [disabled]="!Form.valid" mat-raised-button >save</button>
 
   </form>
+</div>
 </div>

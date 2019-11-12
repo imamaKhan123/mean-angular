@@ -14,7 +14,7 @@ import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Valida
   styleUrls: ['./add-users.component.scss']
 })
 export class AddUsersComponent implements OnInit {
-
+ 
   constructor(private router: Router, private api: AddRolesService,private UserApi: UserService,private CT: CompanyTemplateService,  private Com: ApiService, private formBuilder: FormBuilder) { }
   Form: FormGroup;
   roles: any;

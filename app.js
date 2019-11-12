@@ -4,7 +4,9 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var  cors = require('cors');
-var  bodyParser = require('body-parser');
+var bodyParser=require('body-parser');
+var jwt = require('jsonwebtoken');
+var expressJwt = require('express-jwt');
 
 var apiRouter = require('./routes/book');
 var api = require('./routes/users');
@@ -16,6 +18,7 @@ var subCompUser = require('./routes/subCompUserRole');
 var CompanyTemplate = require('./routes/companyTemplates');
 
 var app = express();
+
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -33,6 +36,7 @@ app.use((req, res, next) => {
   next();
 });
   
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

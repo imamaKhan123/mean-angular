@@ -31,33 +31,24 @@ export class UserService {
     let body = res;
     return body || { };
   }
+
+
   postBook(data): Observable<any> {
-    return this._http.post(apiUrl, data, httpOptions)
+    return this._http.post('http://localhost:3000/users/usersList', data, httpOptions)
       .pipe(
         catchError(this.handleError)
       );
   }
-
-
-  validateRegister(user){
-    if(user.name == undefined || user.email == undefined || user.username == undefined || user.password == undefined){
-      return false;
-    } else {
-      return true;
-    }
-  }
-
-  validateEmail(email){
-    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(email);
-  }
  
   register(body:any){
-    return this._http.post('http://127.0.0.1:3000/users/register',body,{
-      observe:'body',
-      headers:new HttpHeaders().append('Content-Type','application/json')
-    });
+    return this._http.post(apiUrl, body, httpOptions)
+    .pipe(
+      catchError(this.handleError)
+    );
   }
+
+
+
 
   login(body:any){
     return this._http.post('http://127.0.0.1:3000/users/login',body,{
@@ -67,8 +58,31 @@ export class UserService {
     });
   }
 
+
+  checkEmail(email:string) {
+    const api='http://127.0.0.1:3000/users/email';
+    const url = `${api}/${email}`;
+    return this._http.get(url, httpOptions).pipe(
+      map(this.extractData),
+      catchError(this.handleError));
+  }
+  getUsers() {
+    return this._http.get<any[]>('http://localhost:3000/users/usersList',httpOptions).pipe(
+      map(users => {
+        const newUsers = [];
+        for (let user of users) {
+          const email = user.email;
+          const uName = user.username;
+          newUsers.push({ email: email, username: uName });
+        }
+        return newUsers;
+      }),
+      tap(users => console.log(users))
+    );
+  }
+
   user(){
-    return this._http.get('http://127.0.0.1:3000/users/user',{
+    return this._http.get('http://localhost:3000/users/usersList',{
       observe:'body',
       withCredentials:true,
       headers:new HttpHeaders().append('Content-Type','application/json')

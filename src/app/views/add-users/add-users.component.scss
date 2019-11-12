@@ -415,7 +415,18 @@ input{
   .sidenav a:hover {
     color: #064579;
   }
- 
+  .mat-form-field-appearance-legacy .mat-form-field-underline {
+    height: 0px;
+   display: none;
+}
+.mat-raised-button:not([class*=mat-elevation-z]) {
+line-height: inherit !important;
+}
+.mat-form-field {
+    display: inline-block;
+    position: relative;
+    text-align: right !important;
+}
   
 
 // ---------------------------------------
