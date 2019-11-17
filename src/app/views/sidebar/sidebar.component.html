@@ -1,0 +1,89 @@
+<div class="main">
+    <header class="nav-top">
+      <i class="material-icons">
+        person
+      </i>
+      <span>lawnhdai</span>
+  
+    </header>
+  
+  
+    <div class="sidenav" [@changeDivSize]=currentState>
+      <div class="logo">
+        <img src="../../../assets/img/Image 14.png" />
+      </div>
+      <ul class="">
+        <li class="nav-item ">
+          <a class="icons">
+            <button style="background: transparent ; border: none" (click)="changeState()">
+              <span>
+                <i class="material-icons"> menu</i>
+              </span>
+            </button>
+          </a>
+          <a class="icons" href="#">
+            <button style="background: transparent ; border: none">
+              <span>
+                <i class="material-icons"> call</i>
+              </span>
+            </button>
+          </a>
+        </li>
+        <li class="nav-item " routerLinkActive="active">
+          <a class="" [routerLink]="['/companies']">
+            <span>
+              <i matBadge="15" matBadgePosition="before" class="material-icons">mail_outline</i>
+  
+            </span>
+            <span>COMPANIES</span>
+          </a>
+        </li>
+  
+        <li class="nav-item" routerLinkActive="active">
+          <a class="" [routerLink]="['/orders']">
+            <span>
+              <img src="../../../assets/img/Rectangle 844.png" />
+            </span>
+            <span>ORDERS</span>
+          </a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="" [routerLink]="['/users']">
+            <span>
+              <img src="../../../assets/img/Ellipse 7.png" />
+            </span>
+            <span>USERS</span>
+          </a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class=" disabled" [routerLink]="['/products']">
+            <span>
+              <img src="../../../assets/img/produc.png" />
+            </span>
+            <span>PRODUCTS</span>
+          </a>
+        </li>
+        <li class="nav-item" (click)="toogle()" routerLinkActive="active">
+          <a class="" [routerLink]="['/settings']">
+            <span>
+              <img src="../../../assets/img/Path 1064.png" />
+            </span>
+            <span>SETTINGS</span>
+          </a>
+        </li>
+        <li class="nav-item"  routerLinkActive="active">
+          <a class="" >
+            <span>
+              <img src="../../../assets/img/Path 1064.png" />
+            <button (click)="logout()"> LOGOUT</button>
+            </span>
+          </a>
+        </li>
+  
+      </ul>
+  
+    </div>
+   <!-- <div class="content">
+      <router-outlet></router-outlet>
+    </div>-->
+  </div>

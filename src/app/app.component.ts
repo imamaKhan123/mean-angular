@@ -14,7 +14,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
         
         width: '217px',
        
-      })),
+      })), 
       transition('initial=>final', animate('1500ms')),
       transition('final=>initial', animate('2000ms'))
     ]),

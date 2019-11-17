@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
+import { UserService } from './../../services/user.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -7,7 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  username:String='';
+  constructor(private _user:UserService, private _router:Router) { 
+    this._user.SingleUser()
+    .subscribe(
+      data=>this.addName(data),
+      error=>this._router.navigate(['/login'])
+    )
+  }
+  addName(data){
+    this.username = data.username;
+  }
 
   ngOnInit() {  }
   toogle(){

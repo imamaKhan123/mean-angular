@@ -1,28 +1,27 @@
-<div class="row col-sm-10" style="margin-top:40px; padding:20px; background-color:#eff0f2;border-radius:15px;
--webkit-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
--moz-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
-"
->
-  <div class="col-sm-12" style="text-align:center;">
-    Login
-  </div>
+<div class="row col-sm-10 plate">
 
-  
-<form class="col-sm-12" (submit)="onLoginSubmit()">
-  <div class="form-group ">
-    <label>Username</label>
-    <input type="text" class="form-control" [(ngModel)]="username" name="username">
-  </div>
-  <div class="form-group">
-    <label>Password</label>
-    <input type="password" class="form-control" [(ngModel)]="password" name="password">
-  </div>
-  <input type="submit" class="btn btn-primary" value="Login">
- 
-  
-    <button class="btn btn-primary"  (click)="moveToRegister()">Register</button>
-   
-</form>
 
+  <div class="col-sm-12" style="text-align: center;">
+    <h2 class="page-header">Login</h2>
+    <form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)">
+      <mat-form-field appearance="outline" style="width: 100%">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"
+          type="text" placeholder="email" [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!Form.get('email').valid && Form.get('email').touched">Please enter valid email</span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" style="width: 100%">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" type="password" placeholder="Password">
+     
+      </mat-form-field>
+      <button type="submit" class="primary-btn" style="height: 40px; padding: 0px !important;" [disabled]="!Form.valid"
+        mat-raised-button>Login</button>
+      <button t class="primary-btn" style="height: 40px; padding: 0px !important;" (click)="moveToRegister()"
+        mat-raised-button>Register</button>
+    </form>
+
+  </div>
 </div>

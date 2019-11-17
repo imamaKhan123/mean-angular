@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+var  SALT_WORK_FACTOR = 10;
+var jwt = require('jsonwebtoken');
 // User Schema
 const UserSchema = mongoose.Schema({
     profilePic: String,
@@ -26,31 +28,36 @@ const UserSchema = mongoose.Schema({
     ref: 'subCompUser'}
     
 });
-UserSchema.methods.setPassword = function(password){
-  this.salt = crypto.randomBytes(16).toString('hex');
-  this.hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64, 'sha512').toString('hex');
-};
-UserSchema.methods.validPassword = function(password) {
-  var hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64, 'sha512').toString('hex');
-  return this.hash === hash;
-};
-UserSchema.methods.generateJwt = function() {
-  var expiry = new Date();
-  expiry.setDate(expiry.getDate() + 7);
+UserSchema.pre('save', function(next) {
+  var user = this;
 
-  return jwt.sign({
-    _id: this._id,
-    email: this.email,
-    name: this.name,
-    exp: parseInt(expiry.getTime() / 1000),
-  }, "MY_SECRET"); 
-};
+  // only hash the password if it has been modified (or is new)
+  if (!user.isModified('password')) return next();
+
+  // generate a salt
+  bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt) {
+      if (err) return next(err);
+
+      // hash the password using our new salt
+      bcrypt.hash(user.password, salt, function(err, hash) {
+          if (err) return next(err);
+
+          // override the cleartext password with the hashed one
+          user.password = hash;
+          next();
+      });
+  });
+});
 
 module.exports = mongoose.model('User',UserSchema);
 module.exports.getUserById = function(id, callback){
   User.findById(id, callback);
 }
-
+module.exports.isValid = function(hashedpassword, user){
+  console.log(user.password);
+  console.log(hashedpassword);
+  return  bcrypt.compareSync(hashedpassword,user.password);
+}
 module.exports.getUserByname = function(name, callback){
   const query = {name: name}
   User.findOne(query, callback);
@@ -59,23 +66,13 @@ module.exports.getUserByemail = function(email, callback){
   const query = {email: email}
   User.findOne(query, callback);
 }
-
-module.exports.Hash = function(password, callback){
-  bcrypt.genSalt(10, (err, salt) => {
-    if(err) throw (err); 
-    bcrypt.hash(password, salt, (err, hash) => {
-      if(err) throw err;
-      password = hash;
-      console.log(password);
-      return password;
-      
-    });
+module.exports.comparePassword = function(candidatePassword, user,cb) {
+ // console.log(candidatePassword);
+ // console.log("paaswor",user.password);
+  bcrypt.compare(candidatePassword, user.password, function(err, isMatch) {
+      if (err) return cb(err);
+      cb(null, isMatch);
   });
-}
 
-module.exports.comparePassword = function(candidatePassword, hash, callback){
-  bcrypt.compare(candidatePassword, hash, (err, isMatch) => {
-    if(err) throw err;
-    callback(null, isMatch);
-  });
-}
+};
+

@@ -1,4 +1,5 @@
 import { BrowserModule  } from '@angular/platform-browser';
+import { MatPasswordStrengthModule } from '@angular-material-extensions/password-strength';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt';
@@ -88,73 +89,9 @@ import { AddSubCompRolesComponent } from './views/add-sub-comp-roles/add-sub-com
 import { CompanyTemplateComponent } from './views/company-template/company-template.component';
 import { AddSubCompUserComponent } from './views/add-sub-comp-user/add-sub-comp-user.component';
 import {  UniqueEmailValidatorDirective } from './views/unique-email-validatior.directive';
+import { SetTemplateComponent } from './views/set-template/set-template.component';
+import { SidebarComponent } from './views/sidebar/sidebar.component';
 
-const appRoutes: Routes = [
-  {
-    path: 'companies',
-    
-    children: [
-      { path: '',  component: BookComponent ,pathMatch: 'full' },
-      { path: 'company-create', component: BookCreateComponent    },
-      { path: 'company-details/:id', component: BookDetailComponent },
-     
-    ]
-  
-  },
- 
- 
-  { path: 'company-edit/:id', component: BookEditComponent   },
-  { path: '', component: LoginComponent },
-  {path: 'users',
-  children: [
-    { path: '',  component: UsersComponent,pathMatch: 'full' },
-    { path: 'addusers', component: AddUsersComponent }
-  ]
-} ,
-  { path: 'products', component: ProductsComponent },
-  { path: 'add-roles', component: AddRolesComponent },
-  { path: 'add-subCompUserRoles', component: AddSubCompRolesComponent },
-  { path: 'Add-CompanyTemplate', component: CompanyTemplateComponent },
-  { path: 'setup-product-report', component: SetupProductReportComponent },
-  { path: 'settings', component: SettingsComponent },
-  { path: 'orders', component: OrdersComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'add-account', component: AddAccountComponent },
- { path: 'addusers' , component: AddUsersComponent},
-  { path: 'admin', component: AdminComponent },
-  { path: 'dashboard', component:DashboardComponent },
-  { path: 'usersearch', component:UsersearchComponent  },
-  { path: 'accounts', component: AccountSearchComponent  },
-  { path: 'account-details', component:AccountDetailsComponent },
-  { path: 'payments', component:PaymentsComponent },
-  { path: 'inquiries', component: InquireiesComponent },
-  { path: 'manage-account', component: ManageAccountComponent },
-  { path: 'manage-account-types', component: ManageAccountTypesComponent },
-  { path: 'add-new-face', component: AddNewFaceComponent},
-  { path: 'manage-face-type', component: ManageFaceTypeComponent},
-  { path: 'manage-face-types', component: ManageFaceTypesComponent},
-  { path: 'procedure-for-face', component: ProcedureForFaceComponent},
-  { path: 'new-account-type', component: NewAccountTypeComponent},
-  { path: 'data-connection', component: DataConnectionComponent},
-  { path: 'manage-modules', component: ManageModulesComponent},
-  { path: 'new-user', component: NewUserComponent},
-  { path: 'add-sub-comp-user', component: AddSubCompUserComponent},
-  { path: 'type-of-inquiry', component: TypeOfInquiryComponent},
-  { path: 'add-new-account', component: AddNewAccountComponent},
-  { path: 'clients', component: ClientsComponent},
-  { path: 'customers', component: CustomersComponent},
-  { path: 'add-clients', component: AddClentsComponent},
-  { path: 'add-customers', component: AddCustomersComponent},
-  { path: 'call-log', component: CallLogComponent},
-  { path: 'sms', component: SmsComponent},
-  { path: 'manage-clients', component: ManageClientsComponent},
-  { path: 'manage-customers', component: ManageCustomersComponent},
-  { path: 'manage-client-types', component: ManageClientTypesComponent},
-  { path: 'manage-report-types', component: ManageReportTypesComponent},
-  { path: 'list-of-reports', component: ListOfReportsComponent},
-  { path: 'register', component: RegisterComponent}
-];
 export function tokenGetter() {
   return localStorage.getItem('access_token');
 }
@@ -212,15 +149,17 @@ export function tokenGetter() {
     AddSubCompRolesComponent,
     CompanyTemplateComponent,
     AddSubCompUserComponent,
-    UniqueEmailValidatorDirective
+    UniqueEmailValidatorDirective,
+    SetTemplateComponent,
+    SidebarComponent
   ],
   imports: [
-    RouterModule.forRoot(appRoutes),
     AngularSlickgridModule.forRoot(),
     MatSidenavModule,
     DataTableModule,
     MatBadgeModule,
     MatSelectModule,
+    MatPasswordStrengthModule.forRoot(),
     MatCheckboxModule,
   BrowserModule,
   MDBBootstrapModule.forRoot(),
@@ -234,6 +173,8 @@ export function tokenGetter() {
   MatSortModule,
   MatProgressSpinnerModule,
   MatIconModule,
+  
+  AppRoutingModule,
   MatButtonModule,
   MatCardModule,
   MatFormFieldModule,BrowserAnimationsModule,
@@ -253,6 +194,7 @@ export function tokenGetter() {
     UserService,
     AddRolesService,
     AuthService,
+    AuthGuard,
     AddusersService,
     AddSubCompUserRolesService
   ],

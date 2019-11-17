@@ -1,31 +1,39 @@
-<div class="row col-sm-10" style="margin-top:40px; padding:20px; background-color:#eff0f2;border-radius:15px;
--webkit-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
--moz-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);">
- 
-
-  <div class="col-sm-10">
+<div class="row col-sm-10 plate">
+  <div class="col-sm-12" style="text-align: center;">
     <h2 class="page-header">Register</h2>
     <form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)">
-      <mat-form-field class="wid">
-        <input matInput placeholder="name" formControlName="name" [errorStateMatcher]="matcher">
+      <mat-form-field appearance="outline" style="width: 100%">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" type="text" placeholder="name" [errorStateMatcher]="matcher">
         <mat-error>
           <span *ngIf="!Form.get('name').valid && Form.get('name').touched">Please enter name</span>
         </mat-error>
       </mat-form-field>
-      <mat-form-field class="wid">
-        <input matInput placeholder="Email" formControlName="email" (input)="onTextChange($event.target.value)"
-          [errorStateMatcher]="matcher">
-          <span>{{emailError}}</span>
-        
-      </mat-form-field>
-      <mat-form-field class="wid">
-        <input matInput placeholder="password" formControlName="password" [errorStateMatcher]="matcher">
+      <mat-form-field appearance="outline" style="width: 100%">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" type="text" placeholder="email"
+          (input)="onTextChange($event.target.value)" [errorStateMatcher]="matcher">
         <mat-error>
-          <span *ngIf="!Form.get('password').valid && Form.get('password').touched">Please enter password</span>
+          <span *ngIf="!Form.get('email').valid && Form.get('email').touched">Please enter valid email</span>
         </mat-error>
+        <span class="error-class" *ngIf="this.users">{{emailError}}</span>
       </mat-form-field>
-      <button type="submit" class="primary-btn" [disabled]="!Form.valid" mat-raised-button>save</button>
+      <mat-form-field appearance="outline" style="width: 100%" [color]="passwordComponent.color">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" #password type="password" placeholder="Password">
+        <mat-hint aria-live="polite">
+          {{password.value.length}} / {{passwordComponent.max}}
+        </mat-hint>
+      </mat-form-field>
+      <mat-password-strength #passwordComponent (onStrengthChanged)="onStrengthChanged($event)"
+        [password]="password.value">
+      </mat-password-strength>
+      <button type="submit" class="primary-btn" style="height: 40px; padding: 0px !important;"
+        [disabled]="!Form.valid|| this.users" mat-raised-button>Register</button>
+        <button t class="primary-btn" style="height: 40px; padding: 0px !important;"
+        (click)="moveToLogin()" mat-raised-button>Login</button>
+     
+
 
     </form>
 

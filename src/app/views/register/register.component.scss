@@ -1,0 +1,22 @@
+.error-class{
+    font-size: 75%;
+    color: #f44336;
+    position: absolute;
+    display: block;
+    padding-top: 16px !important;
+}
+.mat-form-field {
+    display: block !important;
+    position: relative;
+    text-align: left;
+}
+.mat-raised-button[disabled]:not([class*=mat-elevation-z]) {
+    color: #8f8e8e ;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-label{
+
+  color: rgb(85, 83, 83) !important;
+}
+.mat-input-element {
+    color:#242941 !important ;}
