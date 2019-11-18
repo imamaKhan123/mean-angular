@@ -36,11 +36,7 @@ export class AdminComponent implements OnInit {
 
   }
   logout(){
-    this._user.logout()
-    .subscribe(
-      data=>{console.log(data);this._router.navigate(['/login'])},
-      error=>console.error(error)
-    )
+    this._user.logout();
   }
 
 }

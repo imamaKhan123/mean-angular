@@ -42,7 +42,7 @@ import { CustomersComponent } from './views/customers/customers.component';
 import { AddCustomersComponent } from './views/add-customers/add-customers.component';
 import { CallLogComponent } from './views/call-log/call-log.component';
 import { SmsComponent } from './views/sms/sms.component';
-import { EmailComponent } from './views/email/email.component';
+import { EmailComponent } from './views/messages/email.component';
 import { ManageClientTypesComponent } from './views/manage-client-types/manage-client-types.component';
 import { ManageReportTypesComponent } from './views/manage-report-types/manage-report-types.component';
 import { ListOfReportsComponent } from './views/list-of-reports/list-of-reports.component';
