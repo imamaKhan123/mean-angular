@@ -63,6 +63,7 @@ import {
   MatIconModule,
   MatButtonModule,
   MatCardModule,
+  MatDialogModule,
   MatRadioModule,
   MatBadgeModule,
   MatSelectModule,
@@ -78,7 +79,7 @@ import { CustomersComponent } from './views/customers/customers.component';
 import { AddCustomersComponent } from './views/add-customers/add-customers.component';
 import { CallLogComponent } from './views/call-log/call-log.component';
 import { SmsComponent } from './views/sms/sms.component';
-import { EmailComponent } from './views/messages/email.component';
+import { EmailComponent } from './views/messages/messages.component';
 import { ManageClientTypesComponent } from './views/manage-client-types/manage-client-types.component';
 import { ManageReportTypesComponent } from './views/manage-report-types/manage-report-types.component';
 import { ListOfReportsComponent } from './views/list-of-reports/list-of-reports.component';
@@ -91,6 +92,8 @@ import { AddSubCompUserComponent } from './views/add-sub-comp-user/add-sub-comp-
 import {  UniqueEmailValidatorDirective } from './views/unique-email-validatior.directive';
 import { SetTemplateComponent } from './views/set-template/set-template.component';
 import { SidebarComponent } from './views/sidebar/sidebar.component';
+import { NewTasksComponent } from './views/new-tasks/new-tasks.component';
+import { AutomaticTaskComponent } from './views/automatic-task/automatic-task.component';
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');
@@ -151,7 +154,9 @@ export function tokenGetter() {
     AddSubCompUserComponent,
     UniqueEmailValidatorDirective,
     SetTemplateComponent,
-    SidebarComponent
+    SidebarComponent,
+    NewTasksComponent,
+    AutomaticTaskComponent
   ],
   imports: [
     AngularSlickgridModule.forRoot(),
@@ -173,7 +178,7 @@ export function tokenGetter() {
   MatSortModule,
   MatProgressSpinnerModule,
   MatIconModule,
-  
+  MatDialogModule,
   AppRoutingModule,
   MatButtonModule,
   MatCardModule,

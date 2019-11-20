@@ -42,7 +42,7 @@ import { CustomersComponent } from './views/customers/customers.component';
 import { AddCustomersComponent } from './views/add-customers/add-customers.component';
 import { CallLogComponent } from './views/call-log/call-log.component';
 import { SmsComponent } from './views/sms/sms.component';
-import { EmailComponent } from './views/messages/email.component';
+import { EmailComponent } from './views/messages/messages.component';
 import { ManageClientTypesComponent } from './views/manage-client-types/manage-client-types.component';
 import { ManageReportTypesComponent } from './views/manage-report-types/manage-report-types.component';
 import { ListOfReportsComponent } from './views/list-of-reports/list-of-reports.component';
@@ -54,6 +54,9 @@ import { CompanyTemplateComponent } from './views/company-template/company-templ
 import { AddSubCompUserComponent } from './views/add-sub-comp-user/add-sub-comp-user.component';
 import { SetTemplateComponent } from './views/set-template/set-template.component';
 import { SidebarComponent } from './views/sidebar/sidebar.component';
+import { NewTasksComponent } from './views/new-tasks/new-tasks.component';
+import { AutomaticTaskComponent } from './views/automatic-task/automatic-task.component';
+
 
 
 const appRoutes: Routes = [
@@ -76,7 +79,8 @@ const appRoutes: Routes = [
     { path: 'addusers', component: AddUsersComponent }
   ]
 } , { path: 'admin',component: AdminComponent} ,
-{ path: '', component: SidebarComponent, outlet: "sidebar" },
+  { path: 'messages',component: EmailComponent} ,
+  { path: '', component: SidebarComponent, outlet: "sidebar" },
   { path: 'products', component: ProductsComponent  },
   { path: 'add-roles', component: AddRolesComponent },
   { path: 'add-subCompUserRoles', component: AddSubCompRolesComponent },
@@ -119,7 +123,9 @@ const appRoutes: Routes = [
   { path: 'manage-client-types', component: ManageClientTypesComponent},
   { path: 'manage-report-types', component: ManageReportTypesComponent},
   { path: 'list-of-reports', component: ListOfReportsComponent},
-  { path: 'register', component: RegisterComponent}
+  { path: 'register', component: RegisterComponent},
+  { path: 'create-new-task', component: NewTasksComponent},
+  { path: 'automatic-task', component: AutomaticTaskComponent}
 ];
 
 @NgModule({

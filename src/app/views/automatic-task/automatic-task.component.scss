@@ -1,4 +1,4 @@
-
+ 
 a {
 	text-decoration: none;
 }
@@ -91,16 +91,23 @@ a {
 .btn2{
   font-size: 15px;
 line-height: 6px;
-color: #797979;
+color: #ffffff;
 font-family: "Noto Sans Hebrew";
 text-align: center;
 width: 90px;
-height: 30px;
-background-color: #d9d9d9;
+height: 40px;
+background-color: #292f4c;
 border: 1px solid #d9d9d9;
 border-radius: 4px;
 margin: 1% 0%;
 
+}
+.fol{
+  margin-bottom: 0px !important;
+  height: 36px;
+  background: transparent;
+  border: none;
+  padding: 0px !important;
 }
 .select2{
 	
@@ -136,6 +143,7 @@ select {
     border-radius: 2px;
     box-shadow: none;
     color: #b1b1b1;
+    background-color: #ffffff !important;
     font-size: inherit;
     margin: 0;
     overflow: hidden;
@@ -144,7 +152,7 @@ select {
     padding-bottom: 2px;
     text-overflow: ellipsis;
     white-space: nowrap;      /* Remove default arrow */
-	background-image:url('../../../assets/img/keyboard_arrow_down-24px.svg') ;   /* Add custom arrow */
+	background-image:url('../../../assets/img/down-arrow.png') ;   /* Add custom arrow */
  }
  select option:hover{
 	 width: inherit;
@@ -321,7 +329,8 @@ text-align: right;
   }
   .icons{
 	  display: block;
-	  margin: 0px 0px;
+    margin: 0px 0px;
+    
   }
   .logo{
 	border-bottom: 2px solid #252525;
@@ -367,11 +376,11 @@ text-align: right;
 	
    }
 input{    
-    height:30px;
+    height:40px;
     width: 150px;
     margin:  1% 0% 0% 1%;
     padding-left:5px;
-    border-radius: 6px;
+    border-radius: 2px;
   
     border: 2px solid #e7e8eb;  
     
@@ -389,7 +398,7 @@ input{
         padding: 12px 20px;
         box-sizing: border-box;
         border: 2px solid #d9d9d9;;
-        border-radius: 4px;        
+        border-radius: 2px;        
         resize: none;
         margin: 10px 0px;
       }
@@ -404,6 +413,7 @@ input{
       
 	}
 	.select2 select {
+    height: 40px;
 		border: 1px solid #cecece;
 
 	}
@@ -488,15 +498,47 @@ text-align: right;
 
 }
 .tbl5 ul li{
-    background-color: #f5f6fa;
-    border: 2px solid #eeeeee;
+  background-color: #ffffff;
+  border:1px solid #d9d9d9;
     text-decoration: none;
 	padding: 4px 0%;
 	margin-bottom: 10px;
 }
-.tbl5  ul li:first-child{
-    background-color: #fcfcfc;
-border: 1px solid #f2f3f5;
+.box1{
+  width: 27%;
+  float: right;
+  display: block;
+}
+.my-btn{
+  width: 130px !important;
+    color: #707070 !important;
+    height: 34px !important;
+    background-color: #d9d9d9 !important;
+    border: 1px solid #d9d9d9 !important;
+    border-radius: 3px !important;
+}
+.m{
+  margin: 10px 0px;
+}
+.ico{
+  font-size: 27px !important;
+ 
+  position: absolute;
+  display: block;
+}
+.sell{
+  margin-left: 30px;
+    text-align: right;
+    width: 100%;
+    padding-right: 9px;
+}
+.plus{
+  display: inline-block;
+  color: #707070 !important;
+  font-size: 30px !important;
+  font-weight: bolder !important;
+  margin-top: -3px !important;
+  margin-left: 5px;
 }
 .wi{
     width: 300px;
@@ -533,12 +575,11 @@ width: fit-content;
 	
     
   } .col1{
-	width: 10%;
-	border-left: 1px solid #cecece;
+	width: 6%;
   }
 
   .col2{
-	width: 13%;
+	width: 4%;
   }
   .col3{
 	width: 11%;
@@ -582,6 +623,6 @@ width: fit-content;
 
   }
   span {
-    font-size: 12px;
+    font-size: 15px;
   }
 

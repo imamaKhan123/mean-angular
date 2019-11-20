@@ -17,21 +17,20 @@ a {
 	width: 100%;
 	height: 30px;
 	background-color: #ffffff;
-	
 
 }
+
+
 .Chead3{
 	display: block;
     width: 100%;
-	color: #868686;
     border: 1px solid #e7e8eb;
-    background-color: #f5f6fa;
+	color: #868686;
+	border-bottom: 1px solid #e7e8eb;
     /* margin: 0px !important; */
-    height: fit-content;
+  height: fit-content;
 	padding: 1% 0%;
-    position: relative;
-    margin-bottom: 20px;  
-    padding-bottom: 1.5%;
+	position: relative;
     /* margin-right: -671px; */
    
 }
@@ -72,12 +71,13 @@ a {
 }
 .hright2{
 	text-align: right;
-    font-weight: 500;
-    border-bottom: 1px solid  #e7e8eb;
+	font-weight: 500;
+   
 }
 
 .heading1 h5{
   margin: 1% 5px;
+  display: inline-block;
 }
 .clear_button{
 	background-color: transparent;
@@ -87,20 +87,6 @@ a {
 	float: left !important;
     color: #626571;
     padding: 11px 0px;
-}
-.btn2{
-  font-size: 15px;
-line-height: 6px;
-color: #797979;
-font-family: "Noto Sans Hebrew";
-text-align: center;
-width: 90px;
-height: 30px;
-background-color: #d9d9d9;
-border: 1px solid #d9d9d9;
-border-radius: 4px;
-margin: 1% 0%;
-
 }
 .select2{
 	
@@ -114,7 +100,13 @@ margin: 1% 0%;
 	margin: 10px 0px;
 	text-align: left !important;
 }
-
+.theme-pink {
+	--radius: 2em;
+	--baseFg: #c70062;
+	--baseBg: #ffe3f1;
+	--accentFg: #c70062;
+	--accentBg: #ffaad4;
+  }
 select {
 	-webkit-appearance: button;
     -moz-appearance: button;
@@ -140,11 +132,11 @@ select {
     margin: 0;
     overflow: hidden;
 	padding-top: 2px;
-	padding-left: 8% !important ;
+	padding-left: 2% !important ;
     padding-bottom: 2px;
     text-overflow: ellipsis;
     white-space: nowrap;      /* Remove default arrow */
-	background-image:url('../../../assets/img/keyboard_arrow_down-24px.svg') ;   /* Add custom arrow */
+	background-image:url('../../../assets/img/down-arrow.png') ;   /* Add custom arrow */
  }
  select option:hover{
 	 width: inherit;
@@ -218,9 +210,7 @@ text-align: right;
   padding-inline-start: 0px !important;
 
   }
-  .mat-form-field-appearance-legacy .mat-form-field-wrapper {
-    padding-bottom: 0px;
-}
+  
   
   .sidenav ul li {
     padding: 5px 5px;
@@ -236,11 +226,10 @@ text-align: right;
 	  margin-top:0px !important; 
   }
   .contentinner{
-	  border: 2px solid #e7e8eb; 
-	  margin-top: 30px;
+//	  border: 2px solid #e7e8eb; 
+	  margin-top: 0px;
 	  padding-bottom: 5% !important;
 	
-	   margin: 0% 20px 0% 1.5%;
 	   padding: 0% 2%;
 	   overflow-y: auto;
 
@@ -367,13 +356,12 @@ text-align: right;
 	
    }
 input{    
-    height:30px;
-    width: 150px;
+    height:36px;
+    width: max-content;
     margin:  1% 0% 0% 1%;
     padding-left:5px;
-    border-radius: 6px;
-  
-    border: 2px solid #e7e8eb;  
+    border-radius: 2px;
+    border: 1px solid #e7e8eb; 
     
 	}
 	input ::placeholder{
@@ -384,14 +372,48 @@ input{
         font-size: 12px !important;
     }
     textarea {
-        width: 40%;
+        width: 80%;
         height: 100px;
         padding: 12px 20px;
         box-sizing: border-box;
-        border: 2px solid #d9d9d9;;
-        border-radius: 4px;        
+        border: 1px solid #d9d9d9;;
+        border-radius: 2px;        
         resize: none;
-        margin: 10px 0px;
+        margin: 0px 0px;
+      }
+      .my-btn{
+        width: 130px !important;
+          color: #707070 !important;
+          height: 34px !important;
+          background-color: #d9d9d9 !important;
+          border: 1px solid #d9d9d9 !important;
+          border-radius: 3px !important;
+      }
+      .plus{
+        display: inline-block;
+        color: #707070 !important;
+        font-size: 30px !important;
+        font-weight: bolder !important;
+        margin-top: -3px !important;
+        margin-left: 5px;
+        padding: 0% !important;
+      }
+      .btn-text{
+        display: inline-flex !important;
+          position: relative !important;
+          padding: 5px 20px 0 50px !important;
+          margin: 0px !important;
+          right: 0;
+          font-size: 14px !important;
+      }
+      .date_time{
+        display: block;
+    width: 80%;
+    right: 30px;
+    margin-top: 5px;
+    float: right;
+    position: absolute;
+       
       }
     .tbl1 th, td{
         border: none !important; 
@@ -452,7 +474,12 @@ input{
 
 // ---------------------------------------
 // important stuff starts here
-
+.lbl{
+  font-size: 16px;
+  color: #707070;
+  font-family: "Noto Sans Hebrew";
+  text-align: right;
+}
   label {
     font-size: 16px;
     color: #707070;
@@ -461,7 +488,7 @@ text-align: right;
     /* text-align: right; */
     position: absolute;
     display: inline-block;
-    margin: -1.5% 2%;
+    margin: -0.5% 2%;
 	transform-origin: top right;
 	font-weight: 400;
 	
@@ -521,8 +548,7 @@ width: fit-content;
 	text-decoration: none !important;
 }
 .tbl5 ul li span h6{
-  padding-right: 15px;
-  font-size:10px
+	padding-right: 15px;
 }
 
 .cols{
@@ -547,7 +573,7 @@ width: fit-content;
 	width: 13%;
   }
   .col5{
-	width: 17%;
+	width: 10%;
   }
   .col6{
 	width: 10%;
@@ -581,7 +607,15 @@ width: fit-content;
     height: 30px;
 
   }
-  span {
-    font-size: 12px;
+  .s2{
+    width: 150px;
+    height: 36px;
+    margin: 0% 0% 0% 2%;
   }
-
+  .example-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+  }
+ 

@@ -1,0 +1,126 @@
+<div class="Chead">
+    <div class="hleft">
+        <form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)">
+            <section class="example-section">
+                <button type="submit" class="primary-btn" [disabled]="!Form.valid" mat-raised-button>save</button>
+                <button class="clear-btn" routerLink="/companies">cancel</button>
+            </section>
+        </form>
+    </div>
+    <div class="heading1">
+        <h5>{{title}}</h5>
+        <img src="../../../assets/img/alfiler2.png" />
+    </div>
+</div>
+
+<div class="content-inner">
+
+
+    <div class="Chead3 " style="margin-bottom: 0px;  padding-bottom: 5.5%;">
+        <div class="hright2">
+
+            <form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)" style="justify-items: last baseline">
+                <label>תאריך סיום</label>
+                <select class="s2">
+                    <option>client type</option>
+                    <option>client type</option>
+                </select>
+                <label>סטטוס</label>
+                <select class="s2">
+                    <option value="nottreated">לא טופל</option>
+                    <option value="Taken care of">טופל</option>
+                </select>
+                <label>תאריך סיום</label>
+                <input class="input2" type="date" formControlName="deadline" placeholder="Deadline">
+                <label>שם משימה</label>
+                <input class="input2" type="text" formControlName="name" placeholder="Name">
+                <br />
+                <br />
+                <span class="lbl">תיאור</span>
+                <br />
+                <textarea></textarea>
+            </form>
+            <br />
+            <div class="hright2">
+                <h6 style="float: right; font-size: 12px ;">הוסף שדה</h6>
+            </div>
+            <br />
+            <div style="border: 1px solid #e7e8eb; height: 1px;"></div>
+            <br />
+            <div class="hright2" style="float:right;">
+                <div class="my-btn">
+                    <ul class="nav navbar-nav ">
+                        <li class="dropdown" dropdown>
+                            <a dropdownToggle role="button" style="display: flex; position: relative;">
+                                <!-- {2} -->
+                                <i class="material-icons plus">+</i> <span class="btn-text"> פעולות </span></a>
+                            <div *dropdownMenu class="dropdown-menu wid90" style="    width: 100%;
+                            margin-top: 2px;">
+                                <a class="dropdown-item" href="/manage-clients">
+                                    <span style="font-size: 13px;"> משימה </span>
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <span style="font-size: 13px;"> פניה </span>
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <span style="font-size: 13px;"> לקוח</span>
+                                </a>
+                                <a class="dropdown-item" style="padding: 1px 0px;
+                                border-bottom: none; border-top: 9px solid #f6f6f6;">
+                                    <i class="material-icons" style="display: inline-flex;
+                                    position: absolute;
+                                    left: 0;
+                                    width: 33px;
+                                    height: 28px;
+                                    margin-left: 11px;
+                                    margin-top: 7px;
+                                    padding-top: 3px;">settings</i>
+                                    <span style="    display: inline-flex; position: static;
+                                     margin-top: 10px !important;
+                                      padding-right: 10px;
+                                      width: max-content;
+                                      color: #797878;
+                                      font-size: 13px;"> הגדרות </span>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <br />
+            <div class="Chead3" style="    margin-top: 50px; padding-bottom: 2.5% !important">
+                <h6>סיכומי משימה (2)</h6>
+            </div>
+            <div class="Chead3" style="    padding-bottom: 3.5%;">
+                <div class="hright2">
+                    <h6 style="float: right; font-size: 12px ;">הוסף </h6>
+                </div>
+                <br />
+                <br />
+                <div style="height: fit-content;">
+                    <div class="date_time">jjhj</div>
+                    <textarea>
+
+                </textarea>
+                </div>
+                <br />
+                <div style="height: fit-content;">
+                    <div class="date_time">jjhj</div>
+                    <textarea>
+
+                </textarea>
+                </div>
+                <div style="height: 200px;"></div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+</div>
