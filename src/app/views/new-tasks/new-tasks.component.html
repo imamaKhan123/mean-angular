@@ -2,8 +2,8 @@
     <div class="hleft">
         <form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)">
             <section class="example-section">
-                <button type="submit" class="primary-btn" [disabled]="!Form.valid" mat-raised-button>save</button>
-                <button class="clear-btn" routerLink="/companies">cancel</button>
+                <button type="submit" class="primary-btn" (click)="onCreate()" [disabled]="!Form.valid">save</button>
+                <button class="clear-btn" (click)="onCreate2()"> cancel</button>
             </section>
         </form>
     </div>
@@ -18,29 +18,43 @@
 
     <div class="Chead3 " style="margin-bottom: 0px;  padding-bottom: 5.5%;">
         <div class="hright2">
+            <div class="hright2" style="border: none;">
+                <form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)" style="justify-items: last baseline">
+                    <div style="    width: 100%; height: 70px;">
+                        <div class="box1">
+                            <span style="display: block;">שם משימה</span>
+                            <input class="input2" style="width: 100%" type="text" placeholder="name" />
+                        </div>
+                        <div class="box2">
+                                <span style="display: block;">תאריך סיום</span>
+                                <input class="input2" style="width: 100%" type="text" placeholder="" />
+                            </div>
+                        <div class="box2">
+                                <span style="display: block;">סטטוס</span>
+                            <select formControlName="type" class="box-select" aria-placeholder="type"
+                            >
+                                <option>fixed task</option>
+                                <option>not fixed</option>
+                            </select>
+                        </div>
+                        <div class="box2" >
+                                <span style="display: block;">נציג מטפל</span>
+                            <select class="box-select" 
+                                (change)="onType1Change($event.target.value)">
+                                <option value="return_as_per">return as per</option>
+                                <option value="no_days">מס' ימים</option>
+                                <option value="days_week">days a week</option>
+                                <option value="days_month">days a month</option>
+                            </select>
+                        </div>
+                      
 
-            <form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)" style="justify-items: last baseline">
-                <label>תאריך סיום</label>
-                <select class="s2">
-                    <option>client type</option>
-                    <option>client type</option>
-                </select>
-                <label>סטטוס</label>
-                <select class="s2">
-                    <option value="nottreated">לא טופל</option>
-                    <option value="Taken care of">טופל</option>
-                </select>
-                <label>תאריך סיום</label>
-                <input class="input2" type="date" formControlName="deadline" placeholder="Deadline">
-                <label>שם משימה</label>
-                <input class="input2" type="text" formControlName="name" placeholder="Name">
+                    </div>
+                </form>
                 <br />
-                <br />
-                <span class="lbl">תיאור</span>
-                <br />
+                <span style="    display: block;">תיאור</span>
                 <textarea></textarea>
-            </form>
-            <br />
+            </div>
             <div class="hright2">
                 <h6 style="float: right; font-size: 12px ;">הוסף שדה</h6>
             </div>
@@ -98,14 +112,14 @@
                 <br />
                 <br />
                 <div style="height: fit-content;">
-                    <div class="date_time">jjhj</div>
+                    <div class="date_time">08:31 | 26/09/2019 </div>
                     <textarea>
 
                 </textarea>
                 </div>
                 <br />
                 <div style="height: fit-content;">
-                    <div class="date_time">jjhj</div>
+                    <div class="date_time">08:31 | 26/09/2019 </div>
                     <textarea>
 
                 </textarea>

@@ -31,17 +31,17 @@
         <li class="nav-item " routerLinkActive="active">
           <a class="" [routerLink]="['/companies']">
             <span>
-              <i matBadge="15" matBadgePosition="before" class="material-icons">mail_outline</i>
+              <i matBadge={{companies}} matBadgePosition="before" class="material-icons">mail_outline</i>
   
             </span>
             <span>COMPANIES</span>
           </a>
         </li>
   
-        <li class="nav-item" routerLinkActive="active">
+        <li class="nav-item" routerLinkActive="active1">
           <a class="" [routerLink]="['/orders']">
-            <span>
-              <img src="../../../assets/img/Rectangle 844.png" />
+            <span >
+             <img src="../../../assets/img/Rectangle 844.png" />
             </span>
             <span>ORDERS</span>
           </a>
@@ -62,6 +62,40 @@
             <span>PRODUCTS</span>
           </a>
         </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class=" disabled" [routerLink]="['/inquiries']">
+            <span>
+              <i  class="material-icons">view_list</i>
+            </span>
+            <span>INQUIRIES</span>
+          </a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a  [routerLink]="['/create-new-task']">
+            <span>
+              <i  class="material-icons">horizontal_split</i>
+  
+            </span>
+            <span>TASKS</span>
+          </a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class=" disabled" [routerLink]="['/clients']">
+            <span>
+              <img src="../../../assets/img/produc.png" />
+            </span>
+            <span>CLIENTS</span>
+          </a>
+        </li>
+      
+        <li class="nav-item" routerLinkActive="active">
+          <a class=" disabled" [routerLink]="['/account-details']">
+            <span>
+              <i  class="material-icons">list</i>
+            </span>
+            <span>ACCOUNTS</span>
+          </a>
+        </li>
         <li class="nav-item" (click)="toogle()" routerLinkActive="active">
           <a class="" [routerLink]="['/settings']">
             <span>
@@ -74,7 +108,7 @@
           <a class="" >
             <span>
               <img src="../../../assets/img/Path 1064.png" />
-            <button (click)="logout()"> LOGOUT</button>
+            <span > LOGOUT</span>
             </span>
           </a>
         </li>

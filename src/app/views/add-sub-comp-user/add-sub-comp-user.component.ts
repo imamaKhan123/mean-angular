@@ -45,7 +45,7 @@ export class AddSubCompUserComponent implements OnInit {
     }, err => {
       console.log(err);
     });
-    this.Com.getBooks()
+    this.Com.getCompanies()
     .subscribe(res => {
       //console.log(res);
       this.companies = res;
@@ -81,7 +81,7 @@ export class AddSubCompUserComponent implements OnInit {
    
   }
   onFormSubmit(form:NgForm) {
-   this.UserApi.postBook (form)
+   this.UserApi.postUser(form)
       .subscribe(res => {
           let id = res['_id'];
           //this.router.navigate(['/addusers']);

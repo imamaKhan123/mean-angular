@@ -48,7 +48,15 @@ router.get('/usersList',verifyToken,function (req, res, next) {
     }
   });
  });
-
+/* GET ALL USER */
+router.get('/users',function (req, res, next) {
+ 
+      User.find(function (err, products) {
+        if (err) return next(err);
+        res.json(products);
+      });
+   
+ });
 router.get('/userProfile',jwtHelper.verifyJwtToken,function(req,res,next){
   User.find(function (err, products) {
     if (err) return next(err);

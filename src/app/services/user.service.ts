@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { catchError, tap, map } from 'rxjs/operators';
-import * as moment from "moment";
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
@@ -31,14 +30,14 @@ export class UserService {
     let body = res;
     return body || { };
   }
-
-
-  postBook(data): Observable<any> {
-    return this._http.post('http://localhost:3000/users/usersList', data, httpOptions)
-      .pipe(
-        catchError(this.handleError)
-      );
+  getUser(id: string): Observable<any> {
+    const url = `${apiUrl}/${id}`;
+    return this._http.get(url, httpOptions).pipe(
+      map(this.extractData),
+      catchError(this.handleError));
   }
+
+ 
  
   register(body:any){
     return this._http.post('http://localhost:3000/users/register', body, httpOptions)
@@ -61,13 +60,13 @@ export class UserService {
       catchError(this.handleError)
     );
   }
-
-  private setSession(authResult) {
-    const expiresAt = moment().add(authResult.expiresIn,'second');
-
-    localStorage.setItem('id_token', authResult.idToken);
-    localStorage.setItem("expires_at", JSON.stringify(expiresAt.valueOf()) );
-}  
+  postUser(data): Observable<any> {
+    return this._http.post(apiUrl, data, httpOptions)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+  
 SingleUser(){
   return this._http.get('http://127.0.0.1:3000/users/user',{
     observe:'body',
@@ -87,7 +86,7 @@ isLoggedOut() {
 getExpiration() {
     const expiration = localStorage.getItem("expires_at");
     const expiresAt = JSON.parse(expiration);
-    return moment(expiresAt);
+    return expiresAt;
 } 
 
 
@@ -100,7 +99,7 @@ getExpiration() {
   }
 
   getUsers(): Observable<any> {
-    return this._http.get('http://localhost:3000/users/usersList', httpOptions).pipe(
+    return this._http.get('http://localhost:3000/users/users', httpOptions).pipe(
       map(this.extractData),
       catchError(this.handleError));
   }
@@ -111,6 +110,22 @@ getExpiration() {
       withCredentials:true,
       headers:new HttpHeaders().append('Content-Type','application/json')
     })
+  }
+  
+  updateUser(id, data): Observable<any> {
+    const url = `${apiUrl}/${id}`;
+    return this._http.put(url, data, httpOptions)
+    .pipe(
+    catchError(this.handleError)
+    );
+    }
+  
+  deleteUser(id: string): Observable<{}> {
+    const url = `${apiUrl}/${id}`;
+    return this._http.delete(url, httpOptions)
+      .pipe(
+        catchError(this.handleError)
+      );
   }
   setToken(token: string) {
     localStorage.setItem('token', token);
@@ -150,25 +165,5 @@ getExpiration() {
     else
       return false;
   }
-  
-/*
 
-  registerUser(user){
-    let headers = new Headers();
-    headers.append('Content-Type','application/json');
-    return this._http.post('http://localhost:3000/users/register', user)
-      .map(res => res.json());
-  }
-
- logout(){
-  return this._http.get('http://localhost:3000/users/logout_',{
-    observe:'body',
-    withCredentials:true,
-    headers:new HttpHeaders().append('Content-Type','application/json')
-  })
-}
- 
-
-  
-*/
 }

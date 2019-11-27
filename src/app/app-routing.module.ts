@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BookComponent } from './views/companies/book.component';
-import { BookDetailComponent } from './views/book-detail/book-detail.component';
-import { BookCreateComponent } from './views/book-create/book-create.component';
+import { BookDetailComponent } from './views/company-detail/book-detail.component';
+import { BookCreateComponent } from './views/company-create/book-create.component';
 import { AdminComponent } from './views/admin/admin.component';
 import { LoginComponent } from './views/login/login.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
@@ -35,7 +35,7 @@ import { AddClentsComponent } from './views/add-clents/add-clents.component';
 import { EditClentsComponent } from './views/edit-clents/edit-clents.component';
 import { ShowClentsComponent } from './views/show-clents/show-clents.component';
 import { AuthGuard } from './services/authguard.guard';
-import { BookEditComponent } from './views/book-edit/book-edit.component';
+import { BookEditComponent } from './views/company-edit/book-edit.component';
 import { SettingsComponent } from './views/settings/settings.component';
 import { OrdersComponent } from './views/orders/orders.component';
 import { CustomersComponent } from './views/customers/customers.component';
@@ -56,6 +56,11 @@ import { SetTemplateComponent } from './views/set-template/set-template.componen
 import { SidebarComponent } from './views/sidebar/sidebar.component';
 import { NewTasksComponent } from './views/new-tasks/new-tasks.component';
 import { AutomaticTaskComponent } from './views/automatic-task/automatic-task.component';
+import { FilterCustomerRecordsComponent } from './views/filter-customer-records/filter-customer-records.component';
+import { CreateSecondaryTaskComponent } from './views/create-secondary-task/create-secondary-task.component';
+import { BelongsToCustomerComponent } from './views/belongs-to-customer/belongs-to-customer.component';
+import { AddFileComponent } from './views/add-file/add-file.component';
+import { UpdateUserComponent } from './views/update-user/update-user.component';
 
 
 
@@ -76,7 +81,8 @@ const appRoutes: Routes = [
   {path: 'users',
   children: [
     { path: '',  component: UsersComponent,pathMatch: 'full' },
-    { path: 'addusers', component: AddUsersComponent }
+    { path: 'addusers', component: AddUsersComponent },
+    { path: 'updateUser/:id', component: UpdateUserComponent }
   ]
 } , { path: 'admin',component: AdminComponent} ,
   { path: 'messages',component: EmailComponent} ,
@@ -98,7 +104,7 @@ const appRoutes: Routes = [
   { path: 'accounts', component: AccountSearchComponent  },
   { path: 'account-details', component:AccountDetailsComponent },
   { path: 'payments', component:PaymentsComponent },
-  { path: 'inquiries', component: InquireiesComponent,canActivate:[AuthGuard] },
+  { path: 'inquiries', component: InquireiesComponent /*,canActivate:[AuthGuard]*/ },
   { path: 'manage-account', component: ManageAccountComponent },
   { path: 'manage-account-types', component: ManageAccountTypesComponent },
   { path: 'add-new-face', component: AddNewFaceComponent},
@@ -125,7 +131,12 @@ const appRoutes: Routes = [
   { path: 'list-of-reports', component: ListOfReportsComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'create-new-task', component: NewTasksComponent},
-  { path: 'automatic-task', component: AutomaticTaskComponent}
+  { path: 'automatic-task', component: AutomaticTaskComponent},  
+  { path: 'add-file', component: AddFileComponent},  
+  { path: 'secondary-task', component: CreateSecondaryTaskComponent},  
+  { path: 'filter-cutomer-task', component: FilterCustomerRecordsComponent},  
+  { path: 'belong-t-customer', component: BelongsToCustomerComponent}
+
 ];
 
 @NgModule({

@@ -22,7 +22,7 @@ export class CompanyTemplateComponent implements OnInit {
   constructor(private router: Router, private api: ApiService , private CTS: CompanyTemplateService, private formBuilder: FormBuilder) { }
 companies:any;
   ngOnInit() {
-    this.api.getBooks()
+    this.api.getCompanies()
     .subscribe(res => {
       //console.log(res);
       this.companies= res;

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { ApiService } from './services/api.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -24,7 +25,19 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 export class AppComponent {
   title = 'mean-angular6';
   currentState = 'initial';
+  companies:any;
+  constructor(private _companies:ApiService) {}
+  ngOnInit() {
+    this._companies.getCompanies()
+    .subscribe(res => {
+      console.log(res);
+      this.companies = res.length;
+      console.log(this.companies );
+    }, err => {
+      console.log(err);
+    });
 
+  }
 changeState() {
   this.currentState = this.currentState === 'initial' ? 'final' : 'initial';
 }

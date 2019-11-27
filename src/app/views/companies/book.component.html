@@ -26,41 +26,37 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="['/book-details/', row._id]"></tr>
   </table>
 </div>-->
-  
+
 
 
 <div class="Chead">
   <div class="hleft">
     <a routerLink="company-create" routerLinkActive="active">
-      
-          <i class="material-icons">add</i><span>&nbsp;add company</span> 
-          
+
+      <i class="material-icons">add</i><span>&nbsp;add company</span>
+
     </a>
-  
-  
-</div>
-  <div class="heading1">
-    <h5>COMPANIES</h5>
+
+
   </div>
-  
-</div> 
-<div class="content-inner">
-
-  <table mat-table #table style="width: -webkit-fill-available;" [dataSource]="dataSource">
-
+  <div class="heading1">
+    <h5>מותגים</h5>
     
-    <ng-container matColumnDef="name">
-      <th  *matHeaderCellDef style="display: none;">CompanyID </th>
-      <td mat-cell *matCellDef="let element" class="isbn-col">  
-        <img src="../../../assets/img/1.png" alt="company">|{{element.name}} |
-        <a mat-raised-button color="primary" routerLink="company-edit/', book._id"><mat-icon>edit</mat-icon></a>
+  </div>
 
+</div>
+<div class="content-inner">
+  <table mat-table #table style="margin-top: -60px;width: -webkit-fill-available;" [dataSource]="dataSource">
+
+
+    <ng-container matColumnDef="name">
+      <th *matHeaderCellDef style="display: none; height: 0px !important;" >CompanyID </th>
+      <td mat-cell *matCellDef="let element" class="isbn-col">
+        <img src="../../../assets/img/1.png" alt="company">
+        <p>{{element.name}} </p>
       </td>
-    </ng-container>    
+    </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="['company-details/', row._id]"></tr>
   </table>
-  
-</div>	
-
-
+</div>

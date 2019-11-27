@@ -11,14 +11,14 @@ export class BookDetailComponent implements OnInit {
   book = {};
   constructor(private route: ActivatedRoute, private api: ApiService,private router: Router) { }
   getBookDetails(id) {
-    this.api.getBook(id)
+    this.api.getCompany(id)
       .subscribe(data => {
         console.log(data);
         this.book = data;
       });
   }
   deleteBook(id) {
-    this.api.deleteBook(id)
+    this.api.deleteCompany(id)
       .subscribe(res => {
           this.router.navigate(['/companies']);
         }, (err) => {

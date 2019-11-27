@@ -24,6 +24,7 @@
     "@angular/router": "~8.2.9",
     "@auth0/angular-jwt": "^3.0.1",
     "@fortawesome/fontawesome-free": "^5.11.2",
+    "@material/select": "^4.0.0",
     "@ngx-translate/core": "^11.0.1",
     "@types/chart.js": "^2.8.9",
     "angular-6-datatable": "^0.8.0",
@@ -77,6 +78,5 @@
     "tslint": "~5.15.0",
     "typescript": "~3.5.3",
     "validator": "^12.0.0"
-    
   }
 }

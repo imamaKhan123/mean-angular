@@ -23,7 +23,7 @@ constructor(private router: Router, private route: ActivatedRoute, private api: 
 
 
 getBook(id) {
-  this.api.getBook(id).subscribe(data => {
+  this.api.getCompany(id).subscribe(data => {
     this.id = data._id;
     this.bookForm.setValue({
       isbn: data.companyID,
@@ -37,7 +37,7 @@ getBook(id) {
 } 
 
 onFormSubmit(form:NgForm) {
-  this.api.updateBook(this.id, form)
+  this.api.updateCompany(this.id, form)
     .subscribe(res => {
         let id = res['_id'];
         this.router.navigate(['/company-details', id]);

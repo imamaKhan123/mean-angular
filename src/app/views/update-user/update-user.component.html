@@ -1,0 +1,198 @@
+<div class="Chead">
+		<div class="hleft">
+				<form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)" >
+					<section class="example-section">
+						<button type="submit" class="primary-btn" [disabled]="!Form.valid" mat-raised-button >save</button>
+						<button class="clear-btn" routerLink="/companies">cancel</button>
+					</section>
+				</form>	
+            
+            
+		</div>
+		<div class="heading1">
+			<h5>משתמש חדש במערכת
+			</h5>
+		</div>
+		
+</div>
+	 
+<div class="content-inner">
+	<div class="Chead3 " style="margin-bottom: 0px;  padding-bottom: 0px;">
+		<div class="hright2">
+			<form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)" style="justify-items: last baseline">
+				<mat-form-field class="wid">
+					<input matInput type="text" placeholder="profile-image" formControlName="profilePic" [errorStateMatcher]="matcher">
+						<mat-error>
+							<span *ngIf="!Form.get('profilePic').valid && Form.get('profilePic').touched">Please enter profilePic</span>
+						</mat-error>
+				</mat-form-field>
+				
+				<mat-form-field class="wid">
+							<input matInput type="text" placeholder="bio" formControlName="bio" [errorStateMatcher]="matcher">
+							<mat-error>
+							<span *ngIf="!Form.get('bio').valid && Form.get('bio').touched">Please enter bio</span>
+							</mat-error>
+				</mat-form-field>
+				<mat-form-field class="wid">
+							<input matInput type="text" placeholder="Address" formControlName="address" [errorStateMatcher]="matcher">
+								<mat-error>
+								<span *ngIf="!Form.get('address').valid && Form.get('address').touched">Please enter Address</span>
+								</mat-error>
+				</mat-form-field>
+				<mat-form-field class="wid">
+							<input matInput type="password" placeholder="אימייל" formControlName="password" [errorStateMatcher]="matcher">
+							<mat-error>
+							<span *ngIf="!Form.get('password').valid && Form.get('password').touched">Please enter password</span>
+							</mat-error>
+				</mat-form-field>	
+						<mat-form-field class="wid">
+							<input matInput type="email"  pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" placeholder="אימייל" formControlName="email" [errorStateMatcher]="matcher">
+							<mat-error>
+							<span *ngIf="!Form.get('email').valid && Form.get('email').touched">Please enter valid email</span>
+							</mat-error>
+				</mat-form-field>
+				<mat-form-field class="wid">
+							<input matInput type="text" placeholder="שם משתמש" formControlName="name" [errorStateMatcher]="matcher">
+							<mat-error>
+							<span *ngIf="!Form.get('name').valid && Form.get('name').touched">Please enter Name</span>
+							</mat-error>
+				</mat-form-field>
+				<mat-form-field class="wid">
+					<input matInput type="text" placeholder="Phone" formControlName="phone" [errorStateMatcher]="matcher">
+						<mat-error>
+							<span *ngIf="!Form.get('phone').valid && Form.get('phone').touched">Please enter Phone</span>
+						</mat-error>
+				</mat-form-field>
+			</form>
+			Set permissions & Roles
+        </div>
+                 
+	</div>
+	<div class="Chead3">
+		<div class=" hright2 sel">
+		<form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)" style="justify-items: last baseline">
+
+			<mat-form-field>
+				<mat-select  formControlName="SysUserRole" placeholder="Select Role" [(ngModel)]="selectedOption">
+				  <mat-option *ngFor="let data of roles" [value]="data._id">
+					{{ data.name }}
+				  </mat-option>
+				</mat-select>
+				<mat-hint>{{selectedOption}}</mat-hint>
+			  </mat-form-field>
+		</form>		
+
+				
+		Select Company	
+		</div>   
+	             
+	</div>
+      <div class="Chead3" >
+		 <div class=" hright2 sel">
+				<form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)" style="justify-items: last baseline">
+					<mat-form-field>
+							<mat-select  formControlName="company" placeholder="Select company" [(ngModel)]="selectedCompany"  (ngModelChange)="onChange($event)" >
+							  <mat-option *ngFor="let data of companies" [value]="data._id">
+								{{ data.name }}
+							  </mat-option>
+							</mat-select>
+							<mat-hint>{{selectedCompany}}</mat-hint>
+						  </mat-form-field>
+					</form>	
+				Select Company Template 
+		</div>  
+		                
+	  </div>
+	  <div class="Chead3" >
+			<div class=" hright2 sel">
+			<form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)" style="justify-items: last baseline">
+	
+				<mat-form-field>
+					<mat-select  formControlName="template" placeholder="Select Template"  [(ngModel)]="selectedTemp">
+					  <mat-option *ngFor="let data of Ct" [value]="data._id">
+						{{ data._id }}
+					  </mat-option>
+					</mat-select>
+					<mat-hint>{{selectedTemp}}</mat-hint>
+				  </mat-form-field>
+			</form>		
+
+			</div>   
+					 
+		</div>
+		<div class="Chead3" style="display: none;" >
+				<div class=" hright2 sel">
+				<form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)" >
+					<section class="example-section">
+						<mat-checkbox class="example-margin"  formControlName="isEmailVerified" [(ngModel)]="isEmailVerified">isEmailVerified</mat-checkbox>
+						<mat-checkbox class="example-margin"  formControlName="isSubCompanyUser" [(ngModel)]="isSubCompanyUser">isSubCompanyUser</mat-checkbox>
+						<mat-checkbox class="example-margin"  formControlName="premium" [(ngModel)]="premium">premium</mat-checkbox>
+
+					</section>
+					
+				</form>		
+	
+				</div>   
+						 
+			</div>
+  <div>
+				<table class="tbl2">
+					<colgroup>
+						<col span="1" style="width: 70%;">
+						<col span="1" style="width: 15%;">
+		 				<col span="1" style="width: 15%;">
+					 </colgroup>
+					 
+					<tr>
+					  <th>edit</th>
+					  <th>access </th>
+					  <th>company</th>
+					</tr>
+					
+					<tr>
+						<td>
+							<i class="material-icons">edit</i>
+						</td>
+						<td>
+							<div class="" style="width:100%">
+								<select style="width: 100%">
+									<option value="0">Select permissions</option>
+									<option value="1">Audi</option>
+									<option value="2">BMW</option>
+									<option value="3">Citroen</option>									  
+								 </select>
+						    </div>
+					    </td>
+						<td>
+							<span style="margin: 2px">
+								<span style="margin: 2px">kj bkj</span>
+							 	<img class="img2 profile-image" src="../../../assets/img/1.png" width="30px" height="30px">
+							</span>
+						</td>
+					</tr>
+					<tr>
+							<td>
+								<i class="material-icons">edit</i>
+							</td>
+							<td>
+								<div class="" style="width:100%">
+									<select style="width: 100%">
+										<option value="0">Select permissions</option>
+										<option value="1">Audi</option>
+										<option value="2">BMW</option>
+										<option value="3">Citroen</option>									  
+									 </select>
+								</div>
+							</td>
+							<td>
+								<span style="margin: 2px">
+									<span style="margin: 2px">kj bkj</span>
+									 <img class="img2 profile-image" src="../../../assets/img/1.png" width="30px" height="30px">
+								</span>
+							</td>
+						</tr>
+			  </table>
+		    </div>
+			
+	</div>	
+

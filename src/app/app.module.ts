@@ -12,8 +12,8 @@ import { AddusersService} from './services/addusers.service';
 import { AddSubCompUserRolesService} from './services/add-sub-comp-user-roles.service';
 import { AppComponent } from './app.component';
 import { BookComponent } from './views/companies/book.component';
-import { BookDetailComponent } from './views/book-detail/book-detail.component';
-import { BookCreateComponent } from './views/book-create/book-create.component';
+import { BookDetailComponent } from './views/company-detail/book-detail.component';
+import { BookCreateComponent } from './views/company-create/book-create.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
@@ -66,13 +66,15 @@ import {
   MatDialogModule,
   MatRadioModule,
   MatBadgeModule,
+  MatNativeDateModule, 
   MatSelectModule,
+  MatTooltipModule,
   MatCheckboxModule,
+  MatDatepickerModule,
   MatFormFieldModule } from "@angular/material";
   import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { ApiService } from './services/api.service';
-import { BookEditComponent } from './views/book-edit/book-edit.component';
+import { BookEditComponent } from './views/company-edit/book-edit.component';
 import { SettingsComponent } from './views/settings/settings.component';
 import { OrdersComponent } from './views/orders/orders.component';
 import { CustomersComponent } from './views/customers/customers.component';
@@ -94,6 +96,11 @@ import { SetTemplateComponent } from './views/set-template/set-template.componen
 import { SidebarComponent } from './views/sidebar/sidebar.component';
 import { NewTasksComponent } from './views/new-tasks/new-tasks.component';
 import { AutomaticTaskComponent } from './views/automatic-task/automatic-task.component';
+import { FilterCustomerRecordsComponent } from './views/filter-customer-records/filter-customer-records.component';
+import { BelongsToCustomerComponent } from './views/belongs-to-customer/belongs-to-customer.component';
+import { AddFileComponent } from './views/add-file/add-file.component';
+import { CreateSecondaryTaskComponent } from './views/create-secondary-task/create-secondary-task.component';
+import { UpdateUserComponent } from './views/update-user/update-user.component';
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');
@@ -156,11 +163,17 @@ export function tokenGetter() {
     SetTemplateComponent,
     SidebarComponent,
     NewTasksComponent,
-    AutomaticTaskComponent
+    AutomaticTaskComponent,
+    FilterCustomerRecordsComponent,
+    BelongsToCustomerComponent,
+    AddFileComponent,
+    CreateSecondaryTaskComponent,
+    UpdateUserComponent
   ],
   imports: [
     AngularSlickgridModule.forRoot(),
     MatSidenavModule,
+    MatTooltipModule,
     DataTableModule,
     MatBadgeModule,
     MatSelectModule,
@@ -174,6 +187,8 @@ export function tokenGetter() {
   MatRadioModule,
   MatInputModule,
   MatTableModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
   MatPaginatorModule,
   MatSortModule,
   MatProgressSpinnerModule,

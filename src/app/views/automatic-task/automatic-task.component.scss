@@ -1,4 +1,11 @@
- 
+@import "@material/list/mdc-list";
+@import "@material/menu-surface/mdc-menu-surface";
+@import "@material/menu/mdc-menu";
+@import "@material/select/mdc-select";
+
+.demo-width-class {
+  width: 40px;
+}
 a {
 	text-decoration: none;
 }
@@ -121,7 +128,7 @@ margin: 1% 0%;
 	margin: 10px 0px;
 	text-align: left !important;
 }
-
+ 
 select {
 	-webkit-appearance: button;
     -moz-appearance: button;
@@ -139,7 +146,7 @@ select {
     background-image: url('../../../assets/img/keyboard_arrow_down-24px.svg'), linear-gradient(to bottom, #E5E5E5, #F4F4F4); /* Standard syntax; must be last */
     background-position: center left;
     background-repeat: no-repeat;
-    border: 1px solid #e7e8eb;
+    border: 2px solid #e7e8eb;
     border-radius: 2px;
     box-shadow: none;
     color: #b1b1b1;
@@ -148,7 +155,7 @@ select {
     margin: 0;
     overflow: hidden;
 	padding-top: 2px;
-	padding-left: 8% !important ;
+	padding-left: 25px !important ;
     padding-bottom: 2px;
     text-overflow: ellipsis;
     white-space: nowrap;      /* Remove default arrow */
@@ -393,7 +400,7 @@ input{
         font-size: 12px !important;
     }
     textarea {
-        width: 40%;
+        width: 60%;
         height: 100px;
         padding: 12px 20px;
         box-sizing: border-box;
@@ -508,6 +515,15 @@ text-align: right;
   width: 27%;
   float: right;
   display: block;
+}
+.box2{
+  width: 11.5%;
+  float: right;
+  display: block;
+}
+.box-select{
+  height:40px; width: 130px;
+  margin-top: 26px;
 }
 .my-btn{
   width: 130px !important;

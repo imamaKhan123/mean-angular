@@ -26,6 +26,16 @@
     text-align: center;
     align-items: center;
 }
+.logo1{
+  height: 30px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+    display: block;
+    background-image: url('../assets/img/product-blue.png');
+    text-align: center;
+    align-items: center;
+}
 .badge{
   color: black;
   border: 1px solid #626571;
@@ -103,7 +113,23 @@
 .sidenav a:hover {
   color: #064579;
 }
+.sidenav ul .active1{
+  border-right: 3px solid #0093d8; 
 
+}
+
+.sidenav ul .active1 a i{
+color: #0093d8 !important; 
+
+}
+.sidenav ul .active1 a span{
+color: #0093d8; 
+
+}
+.sidenav ul .active1 a span{
+  color: #0093d8; 
+  
+  }
   
   .sidenav ul li {
     padding: 5px 5px;

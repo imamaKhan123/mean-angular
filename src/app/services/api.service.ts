@@ -34,27 +34,27 @@ export class ApiService {
     return body || { };
   }
 
-  getBooks(): Observable<any> {
+  getCompanies(): Observable<any> {
     return this.http.get(apiUrl, httpOptions).pipe(
       map(this.extractData),
       catchError(this.handleError));
   }
   
-  getBook(id: string): Observable<any> {
+  getCompany(id: string): Observable<any> {
     const url = `${apiUrl}/${id}`;
     return this.http.get(url, httpOptions).pipe(
       map(this.extractData),
       catchError(this.handleError));
   }
   
-  postBook(data): Observable<any> {
+  postCompany(data): Observable<any> {
     return this.http.post(apiUrl, data, httpOptions)
       .pipe(
         catchError(this.handleError)
       );
   }
   
-  updateBook(id, data): Observable<any> {
+  updateCompany(id, data): Observable<any> {
     const url = `${apiUrl}/${id}`;
     return this.http.put(url, data, httpOptions)
     .pipe(
@@ -62,7 +62,7 @@ export class ApiService {
     );
     }
   
-  deleteBook(id: string): Observable<{}> {
+  deleteCompany(id: string): Observable<{}> {
     const url = `${apiUrl}/${id}`;
     return this.http.delete(url, httpOptions)
       .pipe(

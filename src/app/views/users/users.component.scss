@@ -31,7 +31,7 @@ select {
     padding-bottom: 2px;
     text-overflow: ellipsis;
     white-space: nowrap;      /* Remove default arrow */
-	background-image:url('../../../assets/img/keyboard_arrow_down-24px.svg') ;   /* Add custom arrow */
+	background-image:url('../../../assets/img/down-arrow.png') ;   /* Add custom arrow */
  }
  select option:hover{
 	 width: inherit;
@@ -40,6 +40,7 @@ select {
 .space{
 	height: 200px;
 }
+
 .nav-top {
 	display: flex;
 	align-items: center;
@@ -118,7 +119,7 @@ border: 1px solid #f2f3f5;
     color: #626571;
     padding: 11px 0px;
 }
-table, td, th {  
+table, td{  
 	border: 1px solid #e7e8eb ;
 	font-weight: 200;
 color: #707070;
@@ -128,7 +129,14 @@ text-align: right;
   td ,th{
 	  width: 50px !important;
   }
-  
+  th{
+    border: 1px solid #e7e8eb ;
+    height:70px;
+    font-weight: 600;
+  color: #707070;
+  font-family: "Noto Sans Hebrew";
+  text-align: right;  
+  }
   table {
 	border-collapse: collapse;
 	width: 100%;
@@ -174,10 +182,11 @@ text-align: right;
 
 box-shadow: 0px 3px 7px rgba(0,0,0,0.21);
 }
-
-
-
-   
+th .mat-header-cell{
+  padding-left: 24px;
+  text-align: right !important;
+  padding-right: 24px;
+}  
   
   .sidenav ul  {
   padding-inline-start: 0px !important;
@@ -348,7 +357,20 @@ box-shadow: 0px 3px 7px rgba(0,0,0,0.21);
 	
 	overflow-y: auto;
   }
-
+  td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
+    padding: 0px 20px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    text-align: right !important;
+}
+  td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type, th.mat-header-cell:last-of-type {
+    padding-right: 24px !important;
+    padding-left: 24px !important;
+    text-align: right !important;
+}
+.cell{
+  padding: 20px;
+}
   .company{
 	  width: 100px;
 	  height: 100px;

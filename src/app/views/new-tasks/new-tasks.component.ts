@@ -6,6 +6,10 @@ import { UserService } from '../../services/user.service';
 import { CompanyTemplateService } from '../../services/company-template.service';
 import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 
+import { MatDialog, MatDialogConfig} from '@angular/material';
+import { CreateSecondaryTaskComponent } from '../create-secondary-task/create-secondary-task.component';
+import { AddFileComponent } from '../add-file/add-file.component';
+import { BelongsToCustomerComponent } from '../belongs-to-customer/belongs-to-customer.component';
 
 @Component({
   selector: 'app-new-tasks',
@@ -15,7 +19,7 @@ import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Valida
 export class NewTasksComponent implements OnInit {
 title:string="משימה חדשה";
 
-constructor(private router: Router, private api: AddRolesService,private UserApi: UserService,private CT: CompanyTemplateService,  private Com: ApiService, private formBuilder: FormBuilder) { }
+constructor(private dialog: MatDialog,private router: Router, private api: AddRolesService,private UserApi: UserService,private CT: CompanyTemplateService,  private Com: ApiService, private formBuilder: FormBuilder) { }
 Form: FormGroup;
 selectedCompany:String="";
 name: String="";
@@ -42,5 +46,22 @@ context:  String="";
 
    });
   }
-
+  onCreate(){
+    console.log("ksduifhiud");
+    const dialogConfig= new MatDialogConfig();
+    dialogConfig.disableClose=true;
+    dialogConfig.autoFocus=true;
+    dialogConfig.width="70%";
+    dialogConfig.height="82%";
+    this.dialog.open(CreateSecondaryTaskComponent, dialogConfig);
+  }
+  onCreate2(){
+    console.log("ksduifhiud");
+    const dialogConfig= new MatDialogConfig();
+    dialogConfig.disableClose=true;
+    dialogConfig.autoFocus=true;
+    dialogConfig.width="70%";
+    dialogConfig.height="85%";
+    this.dialog.open(BelongsToCustomerComponent, dialogConfig);
+  }
 }

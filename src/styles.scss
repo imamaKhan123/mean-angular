@@ -114,7 +114,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
         padding: 10px 2%;
         position: relative;
         /* margin-right: -671px; */
-       border-bottom: 1px solid #e7e8eb !important;
+       border-bottom: 3px solid #f5f4f4 !important;
 }
 .blue-active{
     border-left: 4px solid #0093d8 !important; 
@@ -222,4 +222,15 @@ button:not(:disabled), [type="button"]:not(:disabled), [type="reset"]:not(:disab
   .mat-form-field-appearance-legacy .mat-form-field-ripple {
     top: 0;
     height: 0px !important;
+}
+.mat-dialog-container {
+    padding : 0px !important;
+    overflow: overlay;
+
+}
+.mat-form-field-appearance-legacy .mat-form-field-prefix .mat-datepicker-toggle-default-icon, .mat-form-field-appearance-legacy .mat-form-field-suffix .mat-datepicker-toggle-default-icon {
+    width: 3rem !important;
+}
+.mat-form-field-appearance-legacy .mat-form-field-infix {
+    width: 150px !important;
 }
