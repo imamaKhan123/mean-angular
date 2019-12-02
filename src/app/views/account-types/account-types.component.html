@@ -1,11 +1,12 @@
-<div class="Chead" style="height: 65px !important;">
-    <div class="hleft" style="margin-top: 10px;">
+<div class="Chead" >
+    <div class="hleft">
+       <button class="pbtn">save</button>
         <div class="hleft0 my-btn">
             <ul class="nav navbar-nav ">
                 <li class="dropdown" dropdown>
                     <a dropdownToggle role="button" style="display: flex; position: relative;">
                         <!-- {2} -->
-                        <i class="material-icons plus">+</i> <span class="btn-text"> פעולות </span></a>
+                        <i class="material-icons plus">+</i> <span class="btn-text">הוסף סוג חשבון</span></a>
                     <div *dropdownMenu class="dropdown-menu wid90">
                         <a class="dropdown-item" href="/manage-clients">
                             <span style="font-size: 13px;"> משימה </span>
@@ -41,11 +42,11 @@
 
     <div class="heading1">
         <small style="float: right;">(36)</small>
-        <h5  matTooltip="{{mytext}}">הודעות</h5>
+        <h5>סוגי חשבונות</h5>
     </div>
 
 </div>
-<div class="Chead3 no-border">
+<div class="Chead3 no-border" style="padding-bottom: 17px !important;">
     <div class="hleft">
         <div class="hleft0">
             <i class="material-icons">delete</i>
@@ -142,7 +143,6 @@
     <div class="hleft0 bottom2">
         <i class="material-icons">add</i>
         <span style="margin: 0px 15px !important;">&nbsp;הוסף סינון</span>
-
     </div>
 </div>
 
@@ -152,24 +152,25 @@
             <li>
                 
                 <span class="cols col6">
-                    <h6>ID</h6>
+                    <h6>קישורי דאטות</h6>
+                </span>
+                
+                <span class="cols col4">
+                    <h6>עלות</h6>
+
+                </span>
+                <span class="cols col3">
+                     
+                    <h6 >סוג מנוי</h6>
                 </span>
                 <span class="cols col8">
                     <h6 style="    width: -webkit-fill-available;" >תיאור</h6>
                 </span>
-                <span class="cols col4">
-                    <h6>נציג מטפל</h6>
-
-                </span>
-                <span class="cols col3">
-                   
-                    <h6 >תאריך סיום</h6>
-                </span>
                 <span class="cols col2">
-                    <h6>שם הודעה</h6>
+                    <h6>שם סוג חשבון</h6>
                 </span>
                 <span class="cols col1">
-                    <h6>סוג</h6>
+                    <h6>תמונה</h6>
                 </span>
             </li>
 
@@ -179,22 +180,23 @@
                 <span class="cols col6">
                         <h6>{{count}}</h6>
                 </span>
-                <span class="cols col8">
-                    <h6 style="    width: -webkit-fill-available;" matTooltipClass="primary-tooltip" matTooltip="{{mytext}}">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</h6>
-                </span>
+              
                 <span class="cols col4">
                     <h6>{{user.name}}</h6>
                 </span>
                 <span class="cols col3">
                    <h6>31/10/2019</h6>
                 </span>
+                <span class="cols col8">
+                    <h6 style="    width: -webkit-fill-available;"  matTooltip="{{mytext}}">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</h6>
+                </span>
                 <span class="cols col2">
                  <h6>שם המשימה</h6>
                 </span>
                  <span class="cols col1">
                    <span class="m2">
-                        <img src="./../../../assets/img/mesg.png" />                     
+                        <img src="./../../../assets/img/z.png" />                     
                     </span>
                   
                 </span>

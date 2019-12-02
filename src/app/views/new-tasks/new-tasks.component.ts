@@ -35,6 +35,7 @@ context:  String="";
   ngOnInit() {
     this.Form = new FormGroup({
       name : new FormControl(),
+      type : new FormControl(),
       context: new FormControl(),
       description: new FormControl(),
       deadline: new FormControl(),

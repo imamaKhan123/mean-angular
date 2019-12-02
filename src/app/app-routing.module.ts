@@ -61,28 +61,40 @@ import { CreateSecondaryTaskComponent } from './views/create-secondary-task/crea
 import { BelongsToCustomerComponent } from './views/belongs-to-customer/belongs-to-customer.component';
 import { AddFileComponent } from './views/add-file/add-file.component';
 import { UpdateUserComponent } from './views/update-user/update-user.component';
+import { ManageTypesOfCompanyComponent } from './views/manage-types-of-company/manage-types-of-company.component';
+import { AccountTypesComponent } from './views/account-types/account-types.component';
+import { CreateAccountTypeComponent } from './views/create-account-type/create-account-type.component';
 
 
 
 const appRoutes: Routes = [
   {
     path: 'companies',
-    
     children: [
       { path: '',  component: BookComponent ,pathMatch: 'full' },
       { path: 'company-create', component: BookCreateComponent    },
       { path: 'company-details/:id', component: BookDetailComponent },
-     
-    ]
-  
-  }, 
+      { path: 'manage-typesof-company', component: ManageTypesOfCompanyComponent},
+     ]
+    },
+    {
+      path: 'accounts',
+      children: [
+        { path: '',  component: AccountSearchComponent ,pathMatch: 'full' },
+        { path: 'add-new-account', component: AddNewAccountComponent},
+         { path: 'account-types', component: AccountTypesComponent },
+         { path: 'create-account-type', component: CreateAccountTypeComponent }
+       ]
+      }, 
   { path: 'company-edit/:id', component: BookEditComponent   },
+  { path: 'manage-typesof-company', component: ManageTypesOfCompanyComponent},
   { path: '', component: LoginComponent },
   {path: 'users',
   children: [
     { path: '',  component: UsersComponent,pathMatch: 'full' },
     { path: 'addusers', component: AddUsersComponent },
-    { path: 'updateUser/:id', component: UpdateUserComponent }
+    { path: 'updateUser/:id', component: UpdateUserComponent },
+    { path: 'new-user', component: NewUserComponent},
   ]
 } , { path: 'admin',component: AdminComponent} ,
   { path: 'messages',component: EmailComponent} ,
@@ -94,7 +106,7 @@ const appRoutes: Routes = [
   { path: 'setup-product-report', component: SetupProductReportComponent },
   { path: 'set-template', component: SetTemplateComponent },
   { path: 'settings', component: SettingsComponent },
-  { path: 'orders', component: OrdersComponent,outlet: "sidebar" },
+  { path: 'orders', component: OrdersComponent},
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'add-account', component: AddAccountComponent },

@@ -122,11 +122,29 @@
 color: #0093d8 !important; 
 
 }
+.sidenav ul .active1 a .abc{
+  
+  background: url('../assets/img/client-blue.png') no-repeat;
+  }
+  .sidenav ul .active1 a .products{
+  
+    background: url('../assets/img/product-blue.png') no-repeat;
+    }
+.products{
+  height: 33px;
+  margin: 0px 10px !important;
+  background: url('../assets/img/produc.png') no-repeat;
+}
+.abc{
+  height: 17px;
+  margin: 0px 10px !important;
+  background: url('../assets/img/Ellipse\ 7.png') no-repeat;
+}
 .sidenav ul .active1 a span{
 color: #0093d8; 
 
 }
-.sidenav ul .active1 a span{
+.sidenav ul .active1 a p{
   color: #0093d8; 
   
   }

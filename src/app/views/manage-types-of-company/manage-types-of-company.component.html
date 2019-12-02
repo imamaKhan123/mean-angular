@@ -1,0 +1,212 @@
+<div class="Chead">
+    <div class="hleft">
+
+        <button class="primary-btn">save</button>
+
+
+        <button class="clear-btn">cancel</button>
+
+    </div>
+
+    <div class="heading1">
+        <h5>סוג חשבון חדש</h5>
+    </div>
+
+</div>
+
+<div class="content-inner">
+    <div class="hright2">
+        <div class="hright2" style="border: none;">
+
+            <!--TAB1-->
+            <div class="Chead4" style="background-color:#f5f6fa;border-bottom: none;">
+                <h6>הגדרות מודולים</h6>
+            </div>
+            <div class="Chead6">
+                <form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)">
+                    <div style="width: 100%;">
+                        <div class="box7">
+                            <span style="display: block;">שם חשבון</span>
+                            <input class="input2" style="width: 230px;" type="text" placeholder="Account name" />
+                        </div>
+                        <br />
+                        <div class="box7">
+
+                            <span class="text5">הוסף שדה</span>
+                        </div>
+                        <div class="box7">
+
+                            <span class="text5" style="margin-bottom: 15px;">הוסף
+                                תיאור</span>
+                        </div>
+                        <div class="line"></div>
+                        <!-- BUTTONS HERE-->
+                        <div class="right-buttons" style="border: none !important;">
+                            <form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)">
+                                <section class="box6">
+
+                                    <button class="filled_button" (click)="onCreate2()">שמור</button>
+                                </section>
+
+                            </form>
+                        </div>
+
+                    </div>
+                </form>
+
+            </div>
+
+            <!--TAB2-->
+            <div class="Chead4" style="background-color:#ffffff;border: none !important;">
+                <h6>סוגי לקוחות שנוצרו</h6>
+            </div>
+
+            <!--DATA LIST-->
+            <div class="tbl5">
+                <ul>
+                    <li>
+
+
+                        <span class="cols col5">
+                            <i class="material-icons">delete_outline</i>
+                        </span>
+                        <span class="cols col4">
+                            <i class="material-icons">edit</i>
+                        </span>
+                        <span class="cols col7">
+                            <h6>025-5698-99</h6>
+                        </span>
+                        <span class="cols col6">
+                            <h6>ברלנד</h6>
+                        </span>
+                        <span class="cols col3">
+                            <h6>ברלנד</h6>
+                        </span>
+
+
+                    </li>
+                    <li>
+
+
+                        <span class="cols col5">
+                            <i class="material-icons">delete_outline</i>
+                        </span>
+                        <span class="cols col4">
+                            <i class="material-icons">edit</i>
+                        </span>
+                        <span class="cols col7">
+                            <h6>025-5698-99</h6>
+                        </span>
+                        <span class="cols col6">
+                            <h6>ברלנד</h6>
+                        </span>
+                        <span class="cols col3">
+                            <h6>ברלנד</h6>
+                        </span>
+
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <!--TAB3-->
+            <div class="Chead3 box7-shadow">
+                <form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)">
+                    <div style="width: 100%;">
+                        <div class="box7">
+                            <span style="display: block;">שם סוג חברה</span>
+                            <input class="input2" style="width: 230px;" type="text" placeholder="" />
+                        </div>
+                        <br />
+                        <div class="box7">
+                            <span style="display: block;">מגורים</span>
+                            <input class="input2" style="width: 155px;" type="text" placeholder="" />
+                            <span class="text5">הוסף שדה</span>
+                        </div>
+                        <div class="box7">
+
+                            <span class="text5">הוסף שדה</span>
+                        </div>
+                        <div class="line"></div>
+                        <!-- BUTTONS HERE-->
+                        <div class="right-buttons" style="border: none !important;">
+                            <form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)">
+                                <section class="box6">
+
+                                    <button class="filled_button" (click)="onCreate2()">שמור</button>
+                                </section>
+                                <section class="box6">
+
+                                    <button class="clear_button2" (click)="onCreate2()">מחק</button>
+                                </section>
+                                <section class="box6">
+
+                                    <button class="clear_button2" (click)="onCreate2()"><i class="material-icons"> delete_outline</i></button>
+                                </section>
+                            </form>
+                        </div>
+
+                    </div>
+                </form>
+
+            </div>
+            <br />
+            <br />
+            <!--TAB3 ENDS-->
+
+        </div>
+         <!--DATA LIST-->
+         <div class="tbl5">
+            <ul>
+                <li>
+
+
+                    <span class="cols col5">
+                        <i class="material-icons">delete_outline</i>
+                    </span>
+                    <span class="cols col4">
+                        <i class="material-icons">edit</i>
+                    </span>
+                    <span class="cols col7">
+                        <h6>025-5698-99</h6>
+                    </span>
+                    <span class="cols col6">
+                        <h6>ברלנד</h6>
+                    </span>
+                    <span class="cols col3">
+                        <h6>ברלנד</h6>
+                    </span>
+
+
+                </li>
+                <li>
+
+
+                    <span class="cols col5">
+                        <i class="material-icons">delete_outline</i>
+                    </span>
+                    <span class="cols col4">
+                        <i class="material-icons">edit</i>
+                    </span>
+                    <span class="cols col7">
+                        <h6>025-5698-99</h6>
+                    </span>
+                    <span class="cols col6">
+                        <h6>ברלנד</h6>
+                    </span>
+                    <span class="cols col3">
+                        <h6>ברלנד</h6>
+                    </span>
+
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+</div>
+<div style="height: 200px; width: 100%;"></div>

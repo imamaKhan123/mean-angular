@@ -61,6 +61,8 @@ border-bottom: 2px solid #e7e8eb !important;
     color: #545454;
     font-family: "Noto Sans Hebrew";
     text-align: right;
+    margin-bottom: 0px !important;
+    display: inline-block;
     font-weight: 200 !important;
 }
 .heading1{
@@ -233,4 +235,16 @@ button:not(:disabled), [type="button"]:not(:disabled), [type="reset"]:not(:disab
 }
 .mat-form-field-appearance-legacy .mat-form-field-infix {
     width: 150px !important;
+}
+.mat-tab-labels {
+    float: right !important;
+    display: flex;
+}
+.mat-tab-label {
+    height: 48px !important;
+    min-width: 55px !important;
+}
+.mat-tab-list {
+    flex-grow: 1;
+    background-color: #f5f6fa;
 }

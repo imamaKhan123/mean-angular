@@ -362,11 +362,12 @@ box-shadow: 0px 3px 7px rgba(0,0,0,0.21);
     line-height: 1.5rem;
 }
 .bottom2{
-	position: fixed;
-    bottom: 0;
-    margin-left: 30px;
-    margin-bottom: 50px;
-    
+  position: fixed;
+  bottom: 0;
+  height: 30px !important;
+  margin-left: 35px !important;
+  margin-bottom: 30px !important;
+     
 }
 
 td i{
@@ -481,7 +482,7 @@ width: fit-content;
 	  margin-top: 30px;
 	  padding-bottom: 20% !important;
 	
-	   margin: 0% 20px 0% 16.5%;
+	   margin: 0% 20px 0% 17.5%;
 	   padding: 0% 0%;
 	   overflow-y: auto;
 

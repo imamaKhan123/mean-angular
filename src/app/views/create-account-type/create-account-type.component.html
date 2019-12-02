@@ -1,0 +1,238 @@
+<div class="Chead">
+    <div class="hleft">
+
+        <button class="primary-btn">save</button>
+
+
+        <button class="clear-btn">cancel</button>
+
+    </div>
+
+    <div class="heading1">
+        <h5>סוג חשבון חדש</h5>
+        
+    </div>
+
+</div>
+        <div class="content-inner">
+
+            <div class="Chead3 " style="margin-bottom: 0px;  padding-bottom: 5.5%;">
+                <div class="hright2">
+                    <div class="hright2" style="border: none;">
+                        <form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)"
+                            style="justify-items: last baseline">
+                            <div style="    width: 100%; height: 70px;">
+                                <div class="box1" style="width: 300px;">
+                                    <span style="display: block;">שם חשבון</span>
+                                    <input class="input2" style="width: 100%" type="text" placeholder="Account name" />
+                                </div>
+                               
+
+                                <div class="box1">
+                                    <span style="display: block;">נציג מטפל</span>
+                                    <select class="box-select" (change)="onType1Change($event.target.value)">
+                                        <option value="return_as_per">return as per</option>
+                                        <option value="no_days">מס' ימים</option>
+                                        <option value="days_week">days a week</option>
+                                        <option value="days_month">days a month</option>
+                                    </select>
+                                </div>
+                                <br/>
+
+
+
+                            </div>
+                            <div class="box10">
+                                <span style="display: block;">שם חשבון</span>
+                            <textarea name="description" id="" cols="30" rows="10"></textarea> 
+                            
+                            </div>
+                        </form>
+                        <br />
+                        <br />
+                        <!--TAB1-->
+                        <div class="Chead4" style="    background-color: #fbfbfb;border-bottom: none;">
+                            <h6>הגדרות מודולים</h6>
+                        </div>
+                        <div class="Chead3" style="     background-color: #fbfbfb;   padding-bottom: 3.5%;">
+                            <form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)"
+                                style="justify-items: last baseline">
+                                <div style="    width: 100%; height: 70px;">
+                                    <div class="outer-box">
+                                        <div class="box3">
+                                            <input type="checkbox">
+                                            <span class="text1">נציג מטפל</span>
+                                            <span class="text2">
+                                                <img src="../../../assets/img/mail.png" />
+                                            </span>
+                                        </div>
+                                        <input class="input-small" type="text" placeholder="abc">
+                                    </div>
+                                    <div class="outer-box">
+                                        <div class="box3">
+                                                <input type="checkbox">
+                                            <span class="text1">נציג מטפל</span>
+                                            <span class="text2">
+                                                <img src="../../../assets/img/mail.png" />
+                                            </span>
+                                        </div>
+                                        <input class="input-small" type="text" placeholder="">
+                                    </div>
+                                    <div class="outer-box">
+                                        <div class="box3">
+                                            <input type="checkbox">
+                                            <span class="text1">נציג מטפל</span>
+                                            <span class="text2">
+                                                <img src="../../../assets/img/mail.png" />
+                                            </span>
+                                        </div>
+                                        <input class="input-small" type="text" placeholder="">
+                                    </div>
+                                    <div class="outer-box">
+                                        <div class="box3">
+                                            <input type="checkbox">
+                                            <span class="text1">נציג מטפל</span>
+                                            <span class="text2">
+                                                <img src="../../../assets/img/mail.png" />
+                                            </span>
+                                        </div>
+                                        <input class="input-small" type="text" placeholder="">
+                                    </div>
+                                    <div class="outer-box">
+                                        <div class="box3">
+                                            <input type="checkbox">
+                                            <span class="text1">נציג מטפל</span>
+                                            <span class="text2">
+                                                <img src="../../../assets/img/mail.png" />
+                                            </span>
+                                        </div>
+                                        <input class="input-small" type="text" placeholder="">
+                                    </div>
+
+
+                                </div>
+                            </form>
+
+                        </div>
+                        <br />
+                        <br />
+
+                        <!--TAB2-->
+                        <div class="Chead4" style="border-bottom: none; ">
+                            <h6>מנוי</h6>
+                        </div>
+                        <div class="Chead3" style="    padding-bottom: 3.5%;">
+                            <form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)"
+                                style="justify-items: last baseline">
+                                <div style="    width: 100%; height: 70px;">
+                                    <div class="box1">
+
+                                        <select class="box-select" (change)="onType1Change($event.target.value)">
+                                            <option value="return_as_per">בתשלום</option>
+                                            <option value="no_days">מס' ימים</option>
+                                            <option value="days_week">days a week</option>
+                                            <option value="days_month">days a month</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="box1">
+
+                                        <select class="box-select" (change)="onType1Change($event.target.value)">
+                                            <option value="return_as_per">לפי חודש</option>
+                                            <option value="no_days">מס' ימים</option>
+                                            <option value="days_week">days a week</option>
+                                            <option value="days_month">days a month</option>
+                                        </select>
+                                    </div>
+                                    <div class="box1">
+
+                                        <select class="box-select" (change)="onType1Change($event.target.value)">
+                                            <option value="return_as_per">לפי שקל</option>
+                                            <option value="no_days">מס' ימים</option>
+                                            <option value="days_week">days a week</option>
+                                            <option value="days_month">days a month</option>
+                                        </select>
+                                    </div>
+                                    
+                                   
+                                        <section class="box1">
+
+                                            <button class="clear_button" (click)="onCreate2()">קשר דאטות</button>
+                                        </section>
+                                   
+
+
+
+                                </div>
+                            </form>
+
+                        </div>
+                       
+                       
+
+                    </div>
+
+                    <!-- BUTTON HERE-->
+                    <div class="right-button" style="border: none !important;">
+                        <form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)">
+                            <section class="box1">
+
+                                <button class="clear_button" (click)="onCreate2()">קשר דאטות</button>
+                            </section>
+                        </form>
+                    </div>
+
+                    <!--INFO HERE-->
+                    <div class="Chead4">
+                        <span class="info">
+                            <h5>מוצרים </h5>
+                        </span>
+                        <span class="info">
+                            <h5>4 סינונים </h5>
+                        </span>
+                        <span class="info">
+                            <h5>3569 רשומות</h5>
+                        </span>
+                    </div>
+                    <!--TEXT HERE-->
+
+                    <div class="hright-text">
+
+
+                        <h6>דף אינטרנט ליצירת החשבון</h6>
+
+                    </div>
+
+
+                    <!-- BUTTONS HERE-->
+                    <div class="right-buttons" style="border: none !important;">
+                        <form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)">
+                                <section class="box6">
+                                        <div class="clear-btn1">
+                                             <input type="checkbox" style="float: right;    margin: 3px 0px !important;">
+                                            <span class="text-btn"> צור דף</span>
+                                           </div>
+                                    </section>
+                            <section class="box6">
+                                <button class="clear-btn1">URL</button>
+                            </section>
+                            <section class="box6">
+                                <button class="clear-btn1">LOGO</button>
+                            </section>
+                            <section class="box6">
+                                <button class="clear-btn1">בחר תבנית</button>
+                            </section>
+                           
+                            
+                        </form>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+           
+        </div>
+        <div style="height: 200px; width: 100%;"></div>
+ 

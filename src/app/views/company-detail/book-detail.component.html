@@ -1,27 +1,897 @@
-<div class="button-row">
-    <a mat-raised-button color="primary" [routerLink]="['/companies']"><mat-icon>list</mat-icon></a>
-  </div>
-  <mat-card class="example-card">
-    <mat-card-header>
-      <mat-card-title><h2>{{book.name}}</h2></mat-card-title>
-      <mat-card-subtitle>{{book.description}}</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <dl>
-        <dt>Company ID</dt>
-        <dd>{{book.name}}</dd>
-        <dt>Company Name</dt>
-        <dd>{{book.description}}</dd>
-        <dt>Company phone</dt>
-        <dd>{{book.phone}}</dd>
-        <dt>Company Address</dt>
-        <dd>{{book.address}}</dd>
-        <dt>Company Desription</dt>
-        <dd>{{book.additionalData}}</dd>
-      </dl>
-    </mat-card-content>
-    <mat-card-actions>
-      <a mat-raised-button color="primary" routerLink="company-edit/', book._id"><mat-icon>edit</mat-icon></a>
-      <a mat-raised-button color="warn" (click)="deleteBook(book._id)"><mat-icon>delete</mat-icon></a>
-    </mat-card-actions>
-  </mat-card>
+<div class="Chead">
+    <div class="hleft">
+
+        <button class="primary-btn">save</button>
+
+
+        <button class="clear-btn">cancel</button>
+
+    </div>
+
+    <div class="heading1">
+        <h5>{{book.name}}</h5>
+        <img style=" display: inline-block; margin-top: -12px;" src="../../../assets/img/z.png" />
+    </div>
+
+</div>
+<mat-tab-group animationDuration="0ms">
+    <!--USERS TAB STARTS-->
+    <mat-tab label=" משתמשים">
+        <div class="content-inner">
+            <div class="tbl5">
+                <ul>
+
+                    <li>
+                        <span class="cols col8" style="float: left;">
+                            <i class="material-icons"> delete_outline</i>
+                        </span>
+                        <span class="cols col7">
+
+                        </span>
+                        <span class="cols col6">
+
+                        </span>
+                        <span class="cols col5">
+                            <h6>iu999754@gmail.com</h6>
+                        </span>
+                        <span class="cols col4">
+                            <h6>8788651</h6>
+                        </span>
+                        <span class="cols col3">
+                            <h6>ברלנד</h6>
+                        </span>
+                        <span class="cols col2">
+                            <span class="m2">
+
+                                <span class="m2 t padded">צבי ברלנד</span>
+                                <img class="img2 profile-image" src="../../../assets/img/1.png" width="30px"
+                                    height="30px">
+                            </span>
+                        </span>
+
+                    </li>
+                    <li>
+                        <span class="cols col8" style="float: left;">
+                            <i class="material-icons"> delete_outline</i>
+                        </span>
+                        <span class="cols col7">
+
+                        </span>
+                        <span class="cols col6">
+
+                        </span>
+                        <span class="cols col5">
+                            <h6>iu999754@gmail.com</h6>
+                        </span>
+                        <span class="cols col4">
+                            <h6>8788651</h6>
+                        </span>
+                        <span class="cols col3">
+                            <h6>ברלנד</h6>
+                        </span>
+                        <span class="cols col2">
+                            <span class="m2">
+
+                                <span class="m2 t padded">צבי ברלנד</span>
+                                <img class="img2 profile-image" src="../../../assets/img/1.png" width="30px"
+                                    height="30px">
+                            </span>
+                        </span>
+
+                    </li>
+                    <li>
+                        <span class="cols col8" style="float: left;">
+                            <i class="material-icons"> delete_outline</i>
+                        </span>
+                        <span class="cols col7">
+
+                        </span>
+                        <span class="cols col6">
+
+                        </span>
+                        <span class="cols col5">
+                            <h6>iu999754@gmail.com</h6>
+                        </span>
+                        <span class="cols col4">
+                            <h6>8788651</h6>
+                        </span>
+                        <span class="cols col3">
+                            <h6>ברלנד</h6>
+                        </span>
+                        <span class="cols col2">
+                            <span class="m2">
+
+                                <span class="m2 t padded">צבי ברלנד</span>
+                                <img class="img2 profile-image" src="../../../assets/img/1.png" width="30px"
+                                    height="30px">
+                            </span>
+                        </span>
+
+                    </li>
+
+                </ul>
+
+
+
+            </div>
+            <h6 style="color: #292f4c;">הוסף משתמש</h6>
+        </div>
+    </mat-tab>
+    <!--USERS TABS ENDS-->
+    <mat-tab label=" פניות ">
+        <div class="contentinner">
+
+            <br />
+
+            <div class="Chead3 " style="padding: 1.5%; margin-bottom: 5px; border: 2px solid #e7e8eb">
+                <div class="hright2">
+
+
+                    <form style="justify-items: last baseline">
+                        <input class="input2" type="text" placeholder="חשבון מקביל">
+                        <label>סיסמה</label>
+                        <input class="input2" type="password" placeholder="password">
+                        <label>אימייל</label>
+                        <input class="input2" type="email" placeholder="email">
+                        <label>טלפון</label>
+                        <input class="input2" type="number" placeholder="phone">
+                        <label>ח.פ/ת.ז</label>
+                        <input class="input2" type="text" placeholder="hf/tz">
+                        <label>שם חברה</label>
+                        <input class="input2" type="text" placeholder="campany name">
+
+                        <label>סוג חשבון</label>
+                        <input class="input2" type="text" placeholder="kind of bill">
+                    </form>
+                    <br />
+                    <br />
+                    <label>שם סוג חשבון</label>
+                    <textarea id="subject" name="subject" placeholder="Write something.."></textarea>
+
+                </div>
+
+            </div>
+            <div class="Chead3" style="padding: 1.5%; border: 2px solid #e7e8eb">
+
+                <div class=" hright2 sel">
+
+
+
+                </div>
+
+                <div class="hright2">
+                    <h6 style="float: right; font-size: 12px ; ">איש קשר 1</h6>
+                </div>
+                <br />
+                <div class="hright2" style="border-bottom:1px solid #e7e8eb;"></div>
+
+                <div class=" hright2 sel">
+
+                    <label>סטטוס</label>
+                    <input type="text" placeholder="status">
+                    <label>Email</label>
+                    <input type="text" placeholder="Email">
+                    <label>FON</label>
+                    <input type="text" placeholder="FON">
+                    <label>משפחה</label>
+                    <input type="text" placeholder="family">
+                    <label>שם</label>
+                    <input type="text" placeholder="name">
+
+
+                </div>
+                <br />
+                <br />
+
+                <div class=" hright2 sel">
+
+
+
+                </div>
+
+                <div class="hright2">
+                    <h6 style="float: right; font-size: 12px ; ">איש קשר 2</h6>
+                </div>
+                <br />
+                <div class="hright2" style="border-bottom:1px solid #e7e8eb;"></div>
+
+                <div class=" hright2 sel">
+                    <label>סטטוס</label>
+                    <input type="text" placeholder="status">
+                    <label>Email</label>
+                    <input type="text" placeholder="Email">
+                    <label>FON</label>
+                    <input type="text" placeholder="FON">
+                    <label>משפחה</label>
+                    <input type="text" placeholder="family">
+                    <label>שם</label>
+                    <input type="text" placeholder="name">
+
+
+                </div>
+                <div class="hright2">
+                    <h6 style="float: right; font-size: 12px ; ">הוסף איש קשר</h6>
+                </div>
+            </div>
+
+
+            <div class="Chead3" style="    padding-bottom: 1.5%;">
+
+
+                <div class="hright2">
+                    <h6 style="float: right; font-size: 12px ;">הגדרות חשבון</h6>
+                </div>
+
+            </div>
+            <div class="Chead3" style="    padding-bottom: 1.5%;">
+
+                <div class=" hright2 sel">
+                    <label>תמונה ראשית</label>
+                    <input type="text" placeholder="first picture">
+                    <label>מודולים</label>
+                    <input type="text" placeholder="modules">
+
+
+
+                </div>
+                <div class=" hright2 sel" style="margin-bottom : 20px;">
+
+                    <small>נהל מודולים
+
+                        &nbsp; ( 4 מודולים | 3 שינויי שם) </small>
+
+
+
+                </div>
+                <div class="hright2">
+                    <h6 style="float: right; font-size: 12px ; ">מנוי</h6>
+                </div>
+
+            </div>
+            <div class="Chead3" style="    padding-bottom: 1.5%;">
+
+                <div class=" hright2 sel">
+                    <input type="text" placeholder="Specify Cost">
+                    <label>לפי שקל</label>
+                    <input type="text" placeholder="by NIC">
+                    <label>לפי חודש</label>
+                    <input type="text" placeholder="by month">
+                    <label>בתשלום</label>
+                    <input type="text" placeholder="payment">
+
+
+
+                </div>
+
+                <div class="hright2">
+                    <h6 style="float: right; font-size: 12px ; ">אמצעי תשלום</h6>
+                </div>
+
+            </div>
+            <div class="Chead3" style="    padding-bottom: 1.5%;">
+
+                <div class=" hright2 sel">
+
+                    <label>ת.ז/ח.פ</label>
+                    <input type="text" placeholder="by NIC">
+                    <label>משפחה</label>
+                    <input type="text" placeholder="family">
+                    <label>שם </label>
+                    <input type="text" placeholder="name">
+
+
+
+                </div>
+                <br />
+                <br />
+
+                <div class=" hright2 sel">
+
+                    <label>3 ספרות</label>
+                    <input type="text" placeholder="3 digits">
+                    <label>תוקף</label>
+                    <input type="text" placeholder="validity">
+                    <label>מס' כרטיס</label>
+                    <input type="text" placeholder="card number">
+
+
+
+                </div>
+
+                <div class="hright2">
+
+                </div>
+
+
+
+
+
+
+
+            </div>
+            <div class="Chead3" style="    padding-bottom: 1.5%;">
+
+                <div class=" hright2 sel">
+
+                    <label>קשר דאטות</label>
+                    <input type="text" placeholder="data connection">
+
+
+
+                </div>
+
+                <br />
+
+                <div class=" hright2 sel">
+
+                    <label>3 ספרות</label>
+                    <input type="text" placeholder="3 digits">
+                    <label>תוקף</label>
+                    <input type="text" placeholder="validity">
+                    <label>מס' כרטיס</label>
+                    <input type="text" placeholder="card number">
+
+
+
+                </div>
+                <br />
+                <div class=" hright2 sel" style="margin-bottom : 20px; border: 2px solid #e7e8eb;">
+
+                    <small>נהל מודולים
+
+                        &nbsp; ( 4 מודולים | 3 שינויי שם) </small>
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab label=" תשלומים ">
+        <div class="button-row">
+            <a mat-raised-button color="primary" [routerLink]="['/companies']">
+                <mat-icon>list</mat-icon>
+            </a>
+        </div>
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>
+                    <h2>{{book.name}}</h2>
+                </mat-card-title>
+                <mat-card-subtitle>{{book.description}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <dl>
+                    <dt>Company ID</dt>
+                    <dd>{{book.name}}</dd>
+                    <dt>Company Name</dt>
+                    <dd>{{book.description}}</dd>
+                    <dt>Company phone</dt>
+                    <dd>{{book.phone}}</dd>
+                    <dt>Company Address</dt>
+                    <dd>{{book.address}}</dd>
+                    <dt>Company Desription</dt>
+                    <dd>{{book.additionalData}}</dd>
+                </dl>
+            </mat-card-content>
+            <mat-card-actions>
+                <a mat-raised-button color="primary" routerLink="company-edit/', book._id">
+                    <mat-icon>edit</mat-icon>
+                </a>
+                <a mat-raised-button color="warn" (click)="deleteBook(book._id)">
+                    <mat-icon>delete</mat-icon>
+                </a>
+            </mat-card-actions>
+        </mat-card>
+    </mat-tab>
+
+
+    <mat-tab label="פרטי חשבון">
+
+    </mat-tab>
+
+
+    <mat-tab label="יומן שיחו">Content 1</mat-tab>
+    <mat-tab label=" פניות ">Content 1</mat-tab>
+    <!-- CREATE COMPANY TAB-->
+    <mat-tab label=" תשלומים ">
+
+        <div class="content-inner">
+
+            <div class="Chead3 " style="margin-bottom: 0px;  padding-bottom: 5.5%;">
+                <div class="hright2">
+                    <div class="hright2" style="border: none;">
+                        <form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)"
+                            style="justify-items: last baseline">
+                            <div style="    width: 100%; height: 70px;">
+                                <div class="box1">
+                                    <span style="display: block;">שם חשבון</span>
+                                    <input class="input2" style="width: 100%" type="text" placeholder="Account name" />
+                                </div>
+                                <div class="box1">
+                                    <span style="display: block;">סוג חשבון</span>
+                                    <select class="box-select" aria-placeholder="type of bill">
+                                        <option>fixed task</option>
+                                        <option>not fixed</option>
+                                    </select>
+                                </div>
+                                <div class="box1">
+                                    <span style="display: block;">אימייל</span>
+                                    <input class="input2" style="width: 100%" type="email" placeholder="email" />
+                                </div>
+                                <div class="box1">
+                                    <span style="display: block;"> סיסמה</span>
+                                    <input class="input2" style="width: 100%" type="password" placeholder="password" />
+                                </div>
+
+                                <div class="box1">
+                                    <span style="display: block;">נציג מטפל</span>
+                                    <select class="box-select" (change)="onType1Change($event.target.value)">
+                                        <option value="return_as_per">return as per</option>
+                                        <option value="no_days">מס' ימים</option>
+                                        <option value="days_week">days a week</option>
+                                        <option value="days_month">days a month</option>
+                                    </select>
+                                </div>
+
+
+                            </div>
+                        </form>
+                        <br />
+                        <br />
+                        <!--TAB1-->
+                        <div class="Chead4" style="    background-color: #fbfbfb;border-bottom: none;">
+                            <h6>הגדרות מודולים</h6>
+                        </div>
+                        <div class="Chead3" style="     background-color: #fbfbfb;   padding-bottom: 3.5%;">
+                            <form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)"
+                                style="justify-items: last baseline">
+                                <div style="    width: 100%; height: 70px;">
+                                    <div class="outer-box">
+                                        <div class="box3">
+                                            <input type="checkbox">
+                                            <span class="text1">נציג מטפל</span>
+                                            <span class="text2">
+                                                <img src="../../../assets/img/mail.png" />
+                                            </span>
+                                        </div>
+                                        <input class="input-small" type="text" placeholder="abc">
+                                    </div>
+                                    <div class="outer-box">
+                                        <div class="box3">
+                                            <input type="checkbox">
+                                            <span class="text1">נציג מטפל</span>
+                                            <span class="text2">
+                                                <img src="../../../assets/img/mail.png" />
+                                            </span>
+                                        </div>
+                                        <input class="input-small" type="text" placeholder="">
+                                    </div>
+                                    <div class="outer-box">
+                                        <div class="box3">
+                                            <input type="checkbox">
+                                            <span class="text1">נציג מטפל</span>
+                                            <span class="text2">
+                                                <img src="../../../assets/img/mail.png" />
+                                            </span>
+                                        </div>
+                                        <input class="input-small" type="text" placeholder="">
+                                    </div>
+                                    <div class="outer-box">
+                                        <div class="box3">
+                                            <input type="checkbox">
+                                            <span class="text1">נציג מטפל</span>
+                                            <span class="text2">
+                                                <img src="../../../assets/img/mail.png" />
+                                            </span>
+                                        </div>
+                                        <input class="input-small" type="text" placeholder="">
+                                    </div>
+                                    <div class="outer-box">
+                                        <div class="box3">
+                                            <input type="checkbox">
+                                            <span class="text1">נציג מטפל</span>
+                                            <span class="text2">
+                                                <img src="../../../assets/img/mail.png" />
+                                            </span>
+                                        </div>
+                                        <input class="input-small" type="text" placeholder="">
+                                    </div>
+
+
+                                </div>
+                            </form>
+
+                        </div>
+                        <br />
+                        <br />
+
+                        <!--TAB2-->
+                        <div class="Chead4" style="border-bottom: none; ">
+                            <h6>הגדרות מודולים</h6>
+                        </div>
+                        <div class="Chead3" style="    padding-bottom: 3.5%;">
+                            <form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)"
+                                style="justify-items: last baseline">
+                                <div style="    width: 100%; height: 70px;">
+                                    <div class="box1">
+
+                                        <select class="box-select" (change)="onType1Change($event.target.value)">
+                                            <option value="return_as_per">return as per</option>
+                                            <option value="no_days">מס' ימים</option>
+                                            <option value="days_week">days a week</option>
+                                            <option value="days_month">days a month</option>
+                                        </select>
+                                    </div>
+                                    <div class="box1">
+
+                                        <select class="box-select" aria-placeholder="type of bill">
+                                            <option>fixed task</option>
+                                            <option>not fixed</option>
+                                        </select>
+                                    </div>
+                                    <div class="box1">
+
+                                        <input class="input2" style="width: 100%" type="email" placeholder="By  NIS" />
+                                    </div>
+                                    <div class="box1">
+
+                                        <input class="input2" style="width: 100%" type="text"
+                                            placeholder="specify Cost" />
+                                    </div>
+
+
+
+                                </div>
+                            </form>
+
+                        </div>
+                        <br />
+                        <br />
+                        <!--TAB3-->
+                        <div class="Chead4" style="border-bottom: none; ">
+                            <h6>אמצעי תשלום</h6>
+                        </div>
+
+                        <div class="Chead3" style="    padding-bottom: 3.5%;">
+                            <form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)"
+                                style="justify-items: last baseline">
+                                <div style="    width: 100%; height: 70px;">
+                                    <!--NAME-->
+                                    <div class="box1">
+                                        <span style="display: block;">שם </span>
+                                        <input class="input2" style="width: 100%" type="text" placeholder="Name" />
+                                    </div>
+                                    <!--NAME-->
+                                    <div class="box1">
+                                        <span style="display: block;">משפחה</span>
+                                        <input class="input2" style="width: 100%" type="email" placeholder="email" />
+                                    </div>
+                                    <!--NAME-->
+                                    <div class="box1">
+                                        <span style="display: block;">ת.ז/ח.פ</span>
+                                        <select class="box-select" aria-placeholder="type of bill">
+                                            <option>fixed task</option>
+                                            <option>not fixed</option>
+                                        </select>
+                                    </div>
+                                    <!--NAME-->
+
+                                    <div class="box1">
+                                        <span style="display: block;">מס' כרטיס</span>
+                                        <input class="input2" style="width: 100%" type="text"
+                                            placeholder="card number" />
+                                    </div>
+                                    <!--NAME-->
+                                    <div class="box1">
+                                        <span style="display: block;">תוקף</span>
+                                        <input class="input2" style="width: 100%" type="text" placeholder="validity" />
+                                    </div>
+                                    <!--NAME-->
+                                    <div class="box1">
+                                        <span style="display: block;">3 ספרות</span>
+                                        <input class="input2" style="width: 100%" type="password"
+                                            placeholder="3 digits" />
+                                    </div>
+
+
+                                </div>
+                            </form>
+
+                        </div>
+                        <br />
+                        <br />
+                        <!--TAB3 ENDS-->
+
+                    </div>
+
+                    <!--LINE HERE-->
+                    <div style="border-bottom: 1px solid #d4d4d4; height: 1px;"></div>
+
+                    <!-- BUTTON HERE-->
+                    <div class="right-button" style="border: none !important;">
+                        <form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)">
+                            <section class="box1">
+
+                                <button class="clear_button" (click)="onCreate2()">קשר דאטות</button>
+                            </section>
+                        </form>
+                    </div>
+
+                   
+                    <!--INFO HERE-->
+                    <div class="Chead4">
+                        <span class="info">
+                            <h5>מוצרים </h5>
+                        </span>
+                        <span class="info">
+                            <h5>4 סינונים </h5>
+                        </span>
+                        <span class="info">
+                            <h5>3569 רשומות</h5>
+                        </span>
+                    </div>
+                    <!--TEXT HERE-->
+
+                    <div class="hright-text">
+
+
+                        <h6>הגדר כחשבון מקביל</h6>
+
+                    </div>
+
+
+                    <!-- BUTTONS HERE-->
+                    <div class="right-buttons" style="border: none !important;">
+                        <form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)">
+                            <section class="box6">
+
+                                <button class="filled_button" (click)="onCreate2()">שמור</button>
+                            </section>
+                            <section class="box6">
+
+                                <button class="clear_button2" (click)="onCreate2()">מחק</button>
+                            </section>
+                        </form>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+            <h6 style="color: #292f4c;">הוסף משתמש</h6>
+        </div>
+        <div style="height: 200px; width: 100%;"></div>
+    </mat-tab>
+    <!--CREATE COMPANY ENDS-->
+    <!--COMPANY DETAILS START HERE-->
+    <mat-tab label="פרטי חשבון">
+        <div class="content-inner">
+
+            <div class="Chead3 " style="margin-bottom: 0px;  padding-bottom: 5.5%;">
+                <div class="hright2">
+                    <div class="hright2" style="border: none;">
+                        <form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)"
+                            style="justify-items: last baseline">
+                            <div style="    width: 100%; height: 70px;">
+                                <div class="box1">
+                                    <span style="display: block;">שם חברה</span>
+                                    <input class="input2" style="width: 100%" type="text" placeholder="COMPANY name" />
+                                </div>
+
+                                <div class="box1">
+                                    <span style="display: block;">ח.פ/ת.ז</span>
+                                    <input class="input2" style="width: 100%" type="text" placeholder="" />
+                                </div>
+                                <div class="box1">
+                                    <span style="display: block;">טלפון</span>
+                                    <input class="input2" style="width: 100%" type="number" placeholder="" />
+                                </div>
+                                <div class="box1">
+                                    <span style="display: block;">אימייל</span>
+                                    <input class="input2" style="width: 100%" type="email" placeholder="" />
+                                </div>
+                                <div class="box1">
+                                    <span style="height: 20px;"></span>
+                                    <span style="display: block;    margin-top: 28px;">הוסף שדה</span>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="box1">
+                                <span style="display: block;">סוג חברה</span>
+                                <select class="box-select" style="background-color: #f5f6fa;"
+                                    (change)="onType1Change($event.target.value)">
+                                    <option value="return_as_per">return as per</option>
+                                    <option value="no_days">מס' ימים</option>
+                                    <option value="days_week">days a week</option>
+                                    <option value="days_month">days a month</option>
+                                </select>
+                            </div>
+                            <br />
+                            <div style="width: 100%; height: 50px">
+
+                            </div>
+                        </form>
+
+                        <!--TAB1-->
+                        <div class="Chead5" style="background-color: #fbfbfb;border-bottom: none;">
+                            <h6>איש קשר 1</h6>
+                        </div>
+                        <div class="Chead3" style="background-color: #fbfbfb;padding-bottom: 3.5%;">
+                            <form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)"
+                                style="justify-items: last baseline">
+                                <div style="    width: 100%; height: 70px;">
+                                    <div class="box1">
+                                        <span style="display: block;">שם</span>
+                                        <input class="input2" style="width: 100%" type="text"
+                                            placeholder="COMPANY name" />
+                                    </div>
+
+                                    <div class="box1">
+                                        <span style="display: block;">משפחה</span>
+                                        <input class="input2" style="width: 100%" type="text" placeholder="" />
+                                    </div>
+                                    <div class="box1">
+                                        <span style="display: block;">FON</span>
+                                        <input class="input2" style="width: 100%" type="number" placeholder="" />
+                                    </div>
+                                    <div class="box1">
+                                        <span style="display: block;">EMAIL</span>
+                                        <input class="input2" style="width: 100%" type="email" placeholder="" />
+                                    </div>
+                                    <div class="box1">
+                                        <span style="display: block;">סטטוס</span>
+                                        <select class="box-select" (change)="onType1Change($event.target.value)">
+                                            <option value="return_as_per"></option>
+                                            <option value="owner">בעלים</option>
+                                            <option value="Director">מנהל</option>
+                                            <option value="employee">עובד</option>
+                                        </select>
+                                    </div>
+                                    <div class="box1">
+                                        <span style="height: 20px;"></span>
+                                        <span style="display: block;    margin-top: 28px;">הוסף שדה</span>
+                                    </div>
+                                    <br />
+
+                                </div>
+                                <div class="box1">
+                                    <span style="height: 20px;"></span>
+                                    <span style="display: block;     margin-top: 28px;">הוסף איש קשר</span>
+                                </div>
+
+                                <br />
+                                <div style="width: 100%; height: 50px">
+
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+                    <h6 id="addcontact" style="color: #292f4c; margin-bottom: 50px;">הוסף חשבון</h6>
+                    <br />
+                    <br />
+                    <!--LINE HERE-->
+                    <div class="new-heading">
+                        <span>חברות תואמים (1)</span>
+                    </div>
+                    <!-- ROW HERE-->
+                    <div class="tbl5" style="margin-top: 50px;">
+                        <ul>
+                            <li>
+
+                                <span class="cols col7">
+                                    <h6>025-5698-99</h6>
+                                </span>
+                                <span class="cols col6">
+                                    <h6>ברלנד</h6>
+                                </span>
+                                <span class="cols col5">
+                                    <h6>iu999754@gmail.com</h6>
+                                </span>
+                                <span class="cols col4">
+                                    <h6>8788651</h6>
+                                </span>
+                                <span class="cols col3">
+                                    <h6>ברלנד</h6>
+                                </span>
+                                <span class="cols col2">
+                                    <span class="m2">
+
+                                        <span class="m2 t padded">צבי ברלנד</span>
+                                        <img class="img2 profile-image" src="../../../assets/img/1.png" width="30px"
+                                            height="30px">
+                                    </span>
+                                </span>
+                                <span class="cols col1">
+                                    <h6>5765</h6>
+                                </span>
+                                <span class="cols col0">
+                                    <input type="checkbox">
+                                </span>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                    <!--LINE HERE-->
+                    <div class="new-heading">
+                        <span>חברות תואמים (1)</span>
+                    </div>
+                    <br />
+                    <!-- ROW HERE-->
+                    <div class="tbl5" style="margin-top: 30px;">
+                        <ul>
+                            <li>
+
+                                <span class="cols col7">
+                                    <h6>025-5698-99</h6>
+                                </span>
+                                <span class="cols col6">
+                                    <h6>ברלנד</h6>
+                                </span>
+                                <span class="cols col5">
+                                    <h6>iu999754@gmail.com</h6>
+                                </span>
+                                <span class="cols col4">
+                                    <h6>8788651</h6>
+                                </span>
+                                <span class="cols col3">
+                                    <h6>ברלנד</h6>
+                                </span>
+                                <span class="cols col2">
+                                    <span class="m2">
+
+                                        <span class="m2 t padded">צבי ברלנד</span>
+                                        <img class="img2 profile-image" src="../../../assets/img/1.png" width="30px"
+                                            height="30px">
+                                    </span>
+                                </span>
+                                <span class="cols col1">
+                                    <h6>5765</h6>
+                                </span>
+                                <span class="cols col0">
+                                    <input type="checkbox">
+                                </span>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                    <!--TAB2-->
+                    <div class="Chead5" style="margin-top: 50px; border-bottom: none;">
+                        <h6>סיכומי התקשות (2)</h6>
+                    </div>
+                    <div class="Chead3" style="margin-bottom: 7.5% !important;">
+                        <form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)"
+                            style="justify-items: last baseline">
+
+                            <!-- BUTTONS HERE-->
+                            <div class="right-buttons" style="height: 40px !important;border: none !important;">
+                                <form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)">
+
+                                    <section class="box6">
+
+                                        <button class="clear_button2" (click)="onCreate2()">הוסף </button>
+                                    </section>
+                                </form>
+                            </div>
+
+                            <br />
+                        </form>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+        <div style="width: 100%; height: 300px">  </div>
+    </mat-tab>
+</mat-tab-group>

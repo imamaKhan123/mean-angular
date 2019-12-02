@@ -74,6 +74,13 @@ SingleUser(){
     headers:new HttpHeaders().append('Content-Type','application/json')
   })
 }
+getusersofcompany(id){
+  const Url = "http://localhost:3000/users/find";
+  const url = `${Url}/${id}`;
+  return this._http.get(url, httpOptions).pipe(
+    map(this.extractData),
+    catchError(this.handleError));
+}
 /*
 public isLoggedIn() {
     return moment().isBefore(this.getExpiration());

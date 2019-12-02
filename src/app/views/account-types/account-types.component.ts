@@ -3,16 +3,13 @@ import { Component, OnInit } from '@angular/core';
 import { MdbTablePaginationComponent, MdbTableDirective } from 'angular-bootstrap-md';
 
 import {  ElementRef, HostListener, AfterViewInit, ViewChild, ChangeDetectorRef } from '@angular/core';
+
 @Component({
-  selector: 'app-clients',
-  templateUrl: './clients.component.html',
-  styleUrls: ['./clients.component.scss']
+  selector: 'app-account-types',
+  templateUrl: './account-types.component.html',
+  styleUrls: ['./account-types.component.scss']
 })
-
-
-
-
-export class ClientsComponent implements OnInit {
+export class AccountTypesComponent implements OnInit {
 
   @ViewChild(MdbTableDirective, { static: true }) mdbTable: MdbTableDirective;
   @ViewChild(MdbTablePaginationComponent, { static: true }) mdbTablePagination: MdbTablePaginationComponent;

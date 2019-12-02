@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute , Router } from '@angular/router';
 import { ApiService } from '../../services/api.service';
-
+import { UserService} from '../../services/user.service';
+import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 @Component({
   selector: 'app-book-detail',
   templateUrl: './book-detail.component.html',
@@ -9,9 +10,18 @@ import { ApiService } from '../../services/api.service';
 })
 export class BookDetailComponent implements OnInit {
   book = {};
-  constructor(private route: ActivatedRoute, private api: ApiService,private router: Router) { }
-  getBookDetails(id) {
+  
+  Form: FormGroup;
+  constructor( private router: Router,private route: ActivatedRoute, private api: ApiService, private userapi:UserService ) { }
+  getCompanyDetails(id) {
     this.api.getCompany(id)
+      .subscribe(data => {
+        console.log(data);
+        this.book = data;
+      });
+  }
+  getUsers(id) {
+    this.userapi.getusersofcompany(id)
       .subscribe(data => {
         console.log(data);
         this.book = data;
@@ -27,7 +37,9 @@ export class BookDetailComponent implements OnInit {
       );
   }
   ngOnInit() {
-    this.getBookDetails(this.route.snapshot.params['id']);
+    this.getCompanyDetails(this.route.snapshot.params['id']);
+    this.getUsers(this.route.snapshot.params['id']);
+    this.Form =  new FormGroup({});
   }
 
 }

@@ -20,7 +20,7 @@ export class AccountSearchComponent implements OnInit {
     number2: number = 10;
     previous: string;
    
-    maxVisibleItems: number = 8;
+    maxVisibleItems: number = 10;
   
     constructor(private cdRef: ChangeDetectorRef) {}
   

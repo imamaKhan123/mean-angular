@@ -63,6 +63,7 @@ import {
   MatIconModule,
   MatButtonModule,
   MatCardModule,
+  MatTabsModule,
   MatDialogModule,
   MatRadioModule,
   MatBadgeModule,
@@ -101,6 +102,9 @@ import { BelongsToCustomerComponent } from './views/belongs-to-customer/belongs-
 import { AddFileComponent } from './views/add-file/add-file.component';
 import { CreateSecondaryTaskComponent } from './views/create-secondary-task/create-secondary-task.component';
 import { UpdateUserComponent } from './views/update-user/update-user.component';
+import { ManageTypesOfCompanyComponent } from './views/manage-types-of-company/manage-types-of-company.component';
+import { AccountTypesComponent } from './views/account-types/account-types.component';
+import { CreateAccountTypeComponent } from './views/create-account-type/create-account-type.component';
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');
@@ -168,7 +172,10 @@ export function tokenGetter() {
     BelongsToCustomerComponent,
     AddFileComponent,
     CreateSecondaryTaskComponent,
-    UpdateUserComponent
+    UpdateUserComponent,
+    ManageTypesOfCompanyComponent,
+    AccountTypesComponent,
+    CreateAccountTypeComponent
   ],
   imports: [
     AngularSlickgridModule.forRoot(),
@@ -177,6 +184,7 @@ export function tokenGetter() {
     DataTableModule,
     MatBadgeModule,
     MatSelectModule,
+    MatTabsModule,
     MatPasswordStrengthModule.forRoot(),
     MatCheckboxModule,
   BrowserModule,

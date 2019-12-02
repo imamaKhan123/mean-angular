@@ -5,6 +5,14 @@
 			<span>&nbsp;הוסף משתמש</span>
 		</a>
 	</div>
+	<div class="hleft">
+			<a [routerLink]="['new-user']" >
+				<span><i class="material-icons">add</i></span>
+				<span>&nbsp;new user</span>
+			</a>
+		</div>
+
+
 	<div class="heading1">
 		<h5>משתמשים</h5>
 	</div>
@@ -57,7 +65,7 @@
 		<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
 		<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 	</table>
-	<table>
+	<!--<table>
 		<colgroup>
 			<col span="1" style="width: 70%;">
 			<col span="1" style="width: 15%;">
@@ -185,5 +193,5 @@
 
 			</td>
 		</tr>
-	</table>
+	</table>-->
 </div>
