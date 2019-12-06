@@ -119,6 +119,7 @@
     </mat-tab>
     <!--USERS TABS ENDS-->
     <mat-tab label=" פניות ">
+        <!--
         <div class="contentinner">
 
             <br />
@@ -346,54 +347,562 @@
                 </div>
 
             </div>
-        </div>
-    </mat-tab>
-    <mat-tab label=" תשלומים ">
-        <div class="button-row">
-            <a mat-raised-button color="primary" [routerLink]="['/companies']">
-                <mat-icon>list</mat-icon>
-            </a>
-        </div>
-        <mat-card class="example-card">
-            <mat-card-header>
-                <mat-card-title>
-                    <h2>{{book.name}}</h2>
-                </mat-card-title>
-                <mat-card-subtitle>{{book.description}}</mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-content>
-                <dl>
-                    <dt>Company ID</dt>
-                    <dd>{{book.name}}</dd>
-                    <dt>Company Name</dt>
-                    <dd>{{book.description}}</dd>
-                    <dt>Company phone</dt>
-                    <dd>{{book.phone}}</dd>
-                    <dt>Company Address</dt>
-                    <dd>{{book.address}}</dd>
-                    <dt>Company Desription</dt>
-                    <dd>{{book.additionalData}}</dd>
-                </dl>
-            </mat-card-content>
-            <mat-card-actions>
-                <a mat-raised-button color="primary" routerLink="company-edit/', book._id">
-                    <mat-icon>edit</mat-icon>
-                </a>
-                <a mat-raised-button color="warn" (click)="deleteBook(book._id)">
-                    <mat-icon>delete</mat-icon>
-                </a>
-            </mat-card-actions>
-        </mat-card>
-    </mat-tab>
+        </div>-->
 
+                <div class="Chead3 no-border">
+                    <div class="hleft">
+                        <div class="hleft01">
+                            <i class="material-icons">delete</i>
+                        </div>
+                        <div class="hleft01">
+                            <i class="material-icons">add</i><span>&nbsp;תיווך</span>
+                        </div>
+        
+                    </div>
+                    <div class=" hright3">
+        
+                        <div class="buttons">
+        
+                            <span class=" no-padding">
+                                <select class="wid">
+                                    <option value="0">מיין</option>
+                                    <option value="1">סוגי חשבונות</option>
+                                    <option value="2">BMW</option>
+                                    <option value="3">Citroen</option>
+                                </select>
+        
+        
+                            </span>
+        
+                        </div>
+                        <div class="buttons">
+                            1/5
+        
+                            <input class="border" type="number" min="1" max="10" value="10" />
+        
+                            הצג
+                        </div>
+                        <div class="buttons">
+                            <input class="input-search" style="    padding-left: 24px;" type="text" placeholder="חיפוש חשבון">
+                        </div>
+        
+        
+                    </div>
+        
+        
+                    <br />
+                    <br />
+        
+                </div>
+                <div class="sidenav-left">
+                    <ul>
+                        <li>
+                            <i class="material-icons">keyboard_arrow_down</i>
+                            <span>
+                                <i class="material-icons" style="float: right !important; padding-left: 5px">settings</i>
+                                <h6>סינונים שמורים</h6>
+                            </span>
+                        </li>
+                        <li class="blue-active">
+                            <img style="float: left; margin-left:20px" src="../../../assets/img/search-blue.png" />
+                            <span>
+                                <h6>חפש חופשי</h6>
+                            </span>
+                        </li>
+                        <li class="blue-active">
+                            <i class="material-icons blueme">keyboard_arrow_down</i>
+                            <span>
+                                <h6>קטגוריה</h6>
+                            </span>
+                        </li>
+                        <li class="blue-active">
+                            <i class="material-icons blueme">keyboard_arrow_down</i>
+                            <span>
+                                <h6>סטטוס</h6>
+                            </span>
+                        </li>
+                        <li>
+                            <i class="material-icons">keyboard_arrow_down</i>
+                            <span>
+                                <h6> טווח תאריכים לטיפול</h6>
+                            </span>
+                        </li>
+                        <li>
+                            <i class="material-icons">keyboard_arrow_down</i>
+                            <span>
+                                <h6> טווח תאריכים שנוצרו</h6>
+        
+                            </span>
+                        </li>
+                    </ul>
+        
+                    <div class="hleft0 bottom2">
+                        <i class="material-icons">add</i>
+                        <span style="margin: 0px 15px !important;">&nbsp;הוסף סינון</span>
+        
+                    </div>
+                </div>
+                <div class="contentinner" style="    margin-left: 190px !important;">
+                    <div class="tbl5">
+                        <ul>
+                            <li>
+        
+                                <span class="cols col6">
+                                    <h6>ID</h6>
+                                </span>
+                                <span class="cols col8">
+                                    <h6 style="    width: -webkit-fill-available;">תיאור</h6>
+                                </span>
+                                <span class="cols col4">
+                                    <h6>נציג מטפל</h6>
+        
+                                </span>
+                                <span class="cols col3">
+                                    
+                                    <h6>תאריך סיום</h6>
+                                </span>
+                                <span class="cols col2">
+                                    <h6>שם הודעה</h6>
+                                </span>
+                                <span class="cols col1">
+                                    <h6>סוג</h6>
+                                </span>
+                            </li>
+        
+        
+                            <li *ngFor="let user of mf.data">
+        
+                                <span class="cols col6">
+                                    <h6>{{count}}</h6>
+                                </span>
+                                <span class="cols col8">
+                                    <h6 style="    width: -webkit-fill-available;" matTooltipClass="primary-tooltip"
+                                        matTooltip="{{mytext}}">
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                                        has been the industry's standard dummy text ever since the 1500s, when an unknown
+                                        printer took a galley of type and scrambled it to make a type specimen book. It has
+                                        survived not only five centuries, but also the leap into electronic typesetting,
+                                        remaining essentially unchanged. It was popularised in the 1960s with the release of
+                                        Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                                        publishing software like Aldus PageMaker including versions of Lorem Ipsum.</h6>
+                                </span>
+                                <span class="cols col4">
+                                    <h6>{{user.name}}</h6>
+                                </span>
+                                <span class="cols col3">
+                                    <h6>31/10/2019</h6>
+                                </span>
+                                <span class="cols col2">
+                                    <h6>שם המשימה</h6>
+                                </span>
+                                <span class="cols col1">
+                                    <span class="m2">
+                                        <img src="./../../../assets/img/mesg.png" />
+                                    </span>
+        
+                                </span>
+                            </li>
+        
+        
+                        </ul>
+                    </div>
+        
+        
+                </div>
+           
+    </mat-tab>
+    <!--PAYMENTS-->
+    <mat-tab label=" תשלומים ">
+        <div class="content-inner">
+            <div class="tbl5">
+                <ul>
+
+
+                    <li>
+                        <span class="cols col6">
+
+                        </span>
+                        <span class="cols col5">
+                            <h6>תאריך יצירה</h6>
+                        </span>
+                        <span class="cols col4">
+                            <h6>מנוי</h6>
+                        </span>
+                        <span class="cols col3">
+                            <h6>ח.פ/ת.ז</h6>
+                        </span>
+                        <span class="cols col2">
+                            <h6>שם חברה</h6>
+                        </span>
+                        <span class="cols col1">
+                            <h6>מס חשבון</h6>
+
+                        </span>
+                    </li>
+                    <li>
+                        <span class="cols col6">
+
+                        </span>
+                        <span class="cols col5">
+                            <h6>78</h6>
+                        </span>
+                        <span class="cols col4">
+                            <h6>78</h6>
+                        </span>
+                        <span class="cols col3">
+                            <h6>zxc00012@gmail.com</h6>
+                        </span>
+                        <span class="cols col2">
+                            <h6>8532</h6>
+                        </span>
+                        <span class="cols col1">
+                            <h6>8532</h6>
+
+                        </span>
+                    </li>
+                    <li>
+                        <span class="cols col6">
+
+                        </span>
+                        <span class="cols col5">
+                            <h6>78</h6>
+                        </span>
+                        <span class="cols col4">
+                            <h6>78</h6>
+                        </span>
+                        <span class="cols col3">
+                            <h6>zxc00012@gmail.com</h6>
+                        </span>
+                        <span class="cols col2">
+                            <h6>8532</h6>
+                        </span>
+                        <span class="cols col1">
+                            <h6>8532</h6>
+
+                        </span>
+                    </li>
+
+
+
+                </ul>
+
+                <!--   <table class="tbl2">
+                            <colgroup>
+                                <col span="1" style="width: 30%;">
+                                <col span="1" style="width: 25%;">
+                                <col span="1" style="width: 10%;">
+                                <col span="1" style="width: 10%;">
+                                <col span="1" style="width: 10%;">
+                                <col span="1" style="width: 15%;">
+                                
+                             </colgroup>
+                             
+                            <tr>
+                              <th>edit</th>
+                              <th>access </th>
+                              <th>company</th>
+                              <th>edit</th>
+                              <th>access </th>
+                              <th>company</th>
+                              
+            
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                  <span style="margin: 2px">986868</span>
+                                 </td>
+                                <td>
+                                   <span style="margin: 2px">986868</span>
+                                </td>
+                                <td>
+                                    <span style="margin: 2px">
+                                        <img class="img2 profile-image" src="../../../assets/img/1.png" width="30px" height="30px">
+                                    </span>
+                                </td>
+                                <td>
+                                        <span style="margin: 2px">emaildjc sdsd</span>
+                                </td>    
+                                <td>
+                                    <span style="margin: 2px">986868</span>
+                                </td>
+                                <td>
+                                    <i class="material-icons">edit</i>
+                                    <span style="margin: 2px">
+                                           
+                                        <span style="margin: 2px">kj bkj</span>
+                                         <img class="img2 profile-image" src="../../../assets/img/1.png" width="30px" height="30px">
+                                    </span>
+                                </td>
+                            </tr>
+                           
+                      </table>-->
+            </div>
+
+        </div>
+    </mat-tab>
+    <!--PAYMENTS ENDS-->
+
+    <!--ACCOUNT DETAILS-->
 
     <mat-tab label="פרטי חשבון">
+        <div class="content-inner">
+            <div class="tbl5">
+                <ul>
+
+
+                    <li>
+                        <span class="cols col6">
+
+                        </span>
+                        <span class="cols col5">
+                            <h6>תאריך יצירה</h6>
+                        </span>
+                        <span class="cols col4">
+                            <h6>מנוי</h6>
+                        </span>
+                        <span class="cols col3">
+                            <h6>ח.פ/ת.ז</h6>
+                        </span>
+                        <span class="cols col2">
+                            <h6>שם חברה</h6>
+                        </span>
+                        <span class="cols col1">
+                            <h6>מס חשבון</h6>
+
+                        </span>
+                    </li>
+                    <li>
+                        <span class="cols col6">
+
+                        </span>
+                        <span class="cols col5">
+                            <h6>78</h6>
+                        </span>
+                        <span class="cols col4">
+                            <h6>78</h6>
+                        </span>
+                        <span class="cols col3">
+                            <h6>zxc00012@gmail.com</h6>
+                        </span>
+                        <span class="cols col2">
+                            <h6>8532</h6>
+                        </span>
+                        <span class="cols col1">
+                            <h6>8532</h6>
+
+                        </span>
+                    </li>
+                    <li>
+                        <span class="cols col6">
+
+                        </span>
+                        <span class="cols col5">
+                            <h6>78</h6>
+                        </span>
+                        <span class="cols col4">
+                            <h6>78</h6>
+                        </span>
+                        <span class="cols col3">
+                            <h6>zxc00012@gmail.com</h6>
+                        </span>
+                        <span class="cols col2">
+                            <h6>8532</h6>
+                        </span>
+                        <span class="cols col1">
+                            <h6>8532</h6>
+
+                        </span>
+                    </li>
+
+
+
+                </ul>
+
+            </div>
+
+        </div>
 
     </mat-tab>
 
+    <!--ACCOUNT DETAILS ENDS-->
 
-    <mat-tab label="יומן שיחו">Content 1</mat-tab>
-    <mat-tab label=" פניות ">Content 1</mat-tab>
+    <mat-tab label="יומן שיחו">
+
+        <div class="Chead3 no-border">
+            <div class="hleft">
+                <div class="hleft01">
+                    <i class="material-icons">delete</i>
+                </div>
+                <div class="hleft01">
+                    <i class="material-icons">add</i><span>&nbsp;תיווך</span>
+                </div>
+
+            </div>
+            <div class=" hright3">
+
+                <div class="buttons">
+
+                    <span class=" no-padding">
+                        <select class="wid">
+                            <option value="0">מיין</option>
+                            <option value="1">סוגי חשבונות</option>
+                            <option value="2">BMW</option>
+                            <option value="3">Citroen</option>
+                        </select>
+
+
+                    </span>
+
+                </div>
+                <div class="buttons">
+                    1/5
+
+                    <input class="border" type="number" min="1" max="10" value="10" />
+
+                    הצג
+                </div>
+                <div class="buttons">
+                    <input class="input-search" style="    padding-left: 24px;" type="text" placeholder="חיפוש חשבון">
+                </div>
+
+
+            </div>
+
+
+            <br />
+            <br />
+
+        </div>
+        <div class="sidenav-left">
+            <ul>
+                <li>
+                    <i class="material-icons">keyboard_arrow_down</i>
+                    <span>
+                        <i class="material-icons" style="float: right !important; padding-left: 5px">settings</i>
+                        <h6>סינונים שמורים</h6>
+                    </span>
+                </li>
+                <li class="blue-active">
+                    <img style="float: left; margin-left:20px" src="../../../assets/img/search-blue.png" />
+                    <span>
+                        <h6>חפש חופשי</h6>
+                    </span>
+                </li>
+                <li class="blue-active">
+                    <i class="material-icons blueme">keyboard_arrow_down</i>
+                    <span>
+                        <h6>קטגוריה</h6>
+                    </span>
+                </li>
+                <li class="blue-active">
+                    <i class="material-icons blueme">keyboard_arrow_down</i>
+                    <span>
+                        <h6>סטטוס</h6>
+                    </span>
+                </li>
+                <li>
+                    <i class="material-icons">keyboard_arrow_down</i>
+                    <span>
+                        <h6> טווח תאריכים לטיפול</h6>
+                    </span>
+                </li>
+                <li>
+                    <i class="material-icons">keyboard_arrow_down</i>
+                    <span>
+                        <h6> טווח תאריכים שנוצרו</h6>
+
+                    </span>
+                </li>
+            </ul>
+
+            <div class="hleft0 bottom2">
+                <i class="material-icons">add</i>
+                <span style="margin: 0px 15px !important;">&nbsp;הוסף סינון</span>
+
+            </div>
+        </div>
+        <div class="contentinner" style="    margin-left: 190px !important;">
+            <div class="tbl5">
+                <ul>
+                    <li>
+
+                        <span class="cols col6">
+                            <h6>ID</h6>
+                        </span>
+                        <span class="cols col8">
+                            <h6 style="    width: -webkit-fill-available;">תיאור</h6>
+                        </span>
+                        <span class="cols col4">
+                            <h6>נציג מטפל</h6>
+
+                        </span>
+                        <span class="cols col3">
+                            
+                            <h6>תאריך סיום</h6>
+                        </span>
+                        <span class="cols col2">
+                            <h6>שם הודעה</h6>
+                        </span>
+                        <span class="cols col1">
+                            <h6>סוג</h6>
+                        </span>
+                    </li>
+
+
+                    <li *ngFor="let user of mf.data">
+
+                        <span class="cols col6">
+                            <h6>{{count}}</h6>
+                        </span>
+                        <span class="cols col8">
+                            <h6 style="    width: -webkit-fill-available;" matTooltipClass="primary-tooltip"
+                                matTooltip="{{mytext}}">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                                has been the industry's standard dummy text ever since the 1500s, when an unknown
+                                printer took a galley of type and scrambled it to make a type specimen book. It has
+                                survived not only five centuries, but also the leap into electronic typesetting,
+                                remaining essentially unchanged. It was popularised in the 1960s with the release of
+                                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                                publishing software like Aldus PageMaker including versions of Lorem Ipsum.</h6>
+                        </span>
+                        <span class="cols col4">
+                            <h6>{{user.name}}</h6>
+                        </span>
+                        <span class="cols col3">
+                            <h6>31/10/2019</h6>
+                        </span>
+                        <span class="cols col2">
+                            <h6>שם המשימה</h6>
+                        </span>
+                        <span class="cols col1">
+                            <span class="m2">
+                                <img src="./../../../assets/img/mesg.png" />
+                            </span>
+
+                        </span>
+                    </li>
+
+
+                </ul>
+            </div>
+
+
+            <table class="tbl5 table-striped" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]=selectedPage>
+
+
+                <tfoot>
+                    <tr>
+                        <td colspan="4">
+                            <mfBootstrapPaginator></mfBootstrapPaginator>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </mat-tab>
+
+
     <!-- CREATE COMPANY TAB-->
     <mat-tab label=" תשלומים ">
 
@@ -619,7 +1128,7 @@
                         </form>
                     </div>
 
-                   
+
                     <!--INFO HERE-->
                     <div class="Chead4">
                         <span class="info">
@@ -666,6 +1175,9 @@
         <div style="height: 200px; width: 100%;"></div>
     </mat-tab>
     <!--CREATE COMPANY ENDS-->
+
+
+
     <!--COMPANY DETAILS START HERE-->
     <mat-tab label="פרטי חשבון">
         <div class="content-inner">
@@ -892,6 +1404,6 @@
             </div>
 
         </div>
-        <div style="width: 100%; height: 300px">  </div>
+        <div style="width: 100%; height: 300px"> </div>
     </mat-tab>
 </mat-tab-group>

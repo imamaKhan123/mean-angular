@@ -16,57 +16,99 @@
 </div>
  
 <div class="content-inner">
-<div class="Chead3 " style="margin-bottom: 0px;  padding-bottom: 0px;">
-    <div class="hright2">
-        <form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)" style="justify-items: last baseline">
-            <mat-form-field class="wid">
-                <input matInput type="text" placeholder="profile-image" formControlName="profilePic" [errorStateMatcher]="matcher">
-                    <mat-error>
-                        <span *ngIf="!Form.get('profilePic').valid && Form.get('profilePic').touched">Please enter profilePic</span>
-                    </mat-error>
-            </mat-form-field>
-            
-            <mat-form-field class="wid">
-                        <input matInput type="text" placeholder="bio" formControlName="bio" [errorStateMatcher]="matcher">
-                        <mat-error>
-                        <span *ngIf="!Form.get('bio').valid && Form.get('bio').touched">Please enter bio</span>
-                        </mat-error>
-            </mat-form-field>
-            <mat-form-field class="wid">
-                        <input matInput type="text" placeholder="Address" formControlName="address" [errorStateMatcher]="matcher">
-                            <mat-error>
-                            <span *ngIf="!Form.get('address').valid && Form.get('address').touched">Please enter Address</span>
-                            </mat-error>
-            </mat-form-field>
-            <mat-form-field class="wid">
-                        <input matInput type="password" placeholder="אימייל" formControlName="password" [errorStateMatcher]="matcher">
-                        <mat-error>
-                        <span *ngIf="!Form.get('password').valid && Form.get('password').touched">Please enter password</span>
-                        </mat-error>
-            </mat-form-field>	
-                    <mat-form-field class="wid">
-                        <input matInput type="email"  pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" placeholder="אימייל" formControlName="email" [errorStateMatcher]="matcher">
-                        <mat-error>
-                        <span *ngIf="!Form.get('email').valid && Form.get('email').touched">Please enter valid email</span>
-                        </mat-error>
-            </mat-form-field>
-            <mat-form-field class="wid">
-                        <input matInput type="text" placeholder="שם משתמש" formControlName="name" [errorStateMatcher]="matcher">
-                        <mat-error>
-                        <span *ngIf="!Form.get('name').valid && Form.get('name').touched">Please enter Name</span>
-                        </mat-error>
-            </mat-form-field>
-             <mat-form-field class="wid">
-                <input matInput type="text" ng-minlength=9 ng-maxlength=9 placeholder="Phone" formControlName="phone" [errorStateMatcher]="matcher">
-                    <mat-error>
-                        <span *ngIf="!Form.get('phone').valid && Form.get('phone').touched">Please enter Phone</span>
-                    </mat-error>
-            </mat-form-field>
-        </form>
-        Set permissions & Roles
-    </div>
-             
-</div>
+        <div class="Chead3 " style="margin-bottom: 0px;height: 300px;  padding-bottom: 0px;">
+                <div class="hright2">
+                    <form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)" style="justify-items: last baseline">
+                        <div class="box1">
+                            <span style="display: block;">שם משתמש</span>
+                            <mat-form-field class="wid">
+                                <input matInput type="text" placeholder="" formControlName="name" [errorStateMatcher]="matcher">
+                                <mat-error>
+                                    <span *ngIf="!Form.get('name').valid && Form.get('name').touched">Please enter Name</span>
+                                </mat-error>
+                            </mat-form-field>
+        
+                        </div>
+                        <div class="box1">
+                            <span style="display: block;">אימייל</span>
+                            <mat-form-field class="wid">
+                                <input matInput type="email" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"
+                                    placeholder="" formControlName="email" [errorStateMatcher]="matcher">
+                                <mat-error>
+                                    <span *ngIf="!Form.get('email').valid && Form.get('email').touched">Please enter valid
+                                        email</span>
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="box1">
+                            <span style="display: block;">אימייל</span>
+                            <mat-form-field class="wid">
+                                <input matInput type="password" placeholder="" formControlName="password"
+                                    [errorStateMatcher]="matcher">
+                                <mat-error>
+                                    <span *ngIf="!Form.get('password').valid && Form.get('password').touched">Please enter
+                                        password</span>
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="box1">
+                            <span style="display: block;">Address</span>
+                            <mat-form-field class="wid">
+                                <input matInput type="text" placeholder="" formControlName="address"
+                                    [errorStateMatcher]="matcher">
+                                <mat-error>
+                                    <span *ngIf="!Form.get('address').valid && Form.get('address').touched">Please enter
+                                        Address</span>
+                                </mat-error>
+                            </mat-form-field>
+        
+                        </div>
+        
+                        <div class="box1">
+                            <span style="display: block;">Phone</span>
+                            <mat-form-field class="wid">
+                                <input matInput type="text" placeholder="" formControlName="phone"
+                                    [errorStateMatcher]="matcher">
+                                <mat-error>
+                                    <span *ngIf="!Form.get('phone').valid && Form.get('phone').touched">Please enter
+                                        Phone</span>
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="box1">
+                            <span style="display: block;">שם משתמש</span>
+                            <mat-form-field class="wid">
+                                <input matInput type="text" placeholder="" formControlName="profilePic"
+                                    [errorStateMatcher]="matcher">
+                                <mat-error>
+                                    <span *ngIf="!Form.get('profilePic').valid && Form.get('profilePic').touched">Please enter
+                                        profilePic</span>
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+        
+                        <div class="box2">
+                            <span style="display: block;">bio</span>
+        
+                            <mat-form-field style="width: 100%">
+                                <textarea matInput placeholder="" formControlName="bio" [errorStateMatcher]="matcher">
+                                    </textarea>
+                                <mat-error>
+                                    <span *ngIf="!Form.get('bio').valid && Form.get('bio').touched">Please enter bio</span>
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+        
+        
+        
+        
+                    </form>
+                    <br />
+        
+        
+                </div>
+        
+            </div>
 <div class="Chead3">
     <div class=" hright2 sel">
     <form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)" style="justify-items: last baseline">

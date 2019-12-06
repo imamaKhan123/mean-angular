@@ -1,3 +1,18 @@
 <router-outlet  name="sidebar"></router-outlet>  
-
-<p>orders works!</p>
+<div class="Chead">
+        <div class="hleft">
+            <form [formGroup]="Form" (ngSubmit)="onFormSubmit(Form.value)">
+                <section class="example-section">
+                    <button type="submit" class="primary-btn"  routerLink="/manage-modules">manage modules</button>
+                 
+                </section>
+            </form>
+    
+    
+        </div>
+        <div class="heading1">
+            <h5>משתמש חדש במערכת
+            </h5>
+        </div>
+    
+    </div>

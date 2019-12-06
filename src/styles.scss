@@ -55,6 +55,7 @@ border-bottom: 2px solid #e7e8eb !important;
 
     padding: 1% 10% !important;
   }
+  
   .heading1 h5{
     font-size: 31px;
     line-height: 28px;
@@ -113,7 +114,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
         color: #868686;
         /* margin: 0px !important; */
         height: fit-content !important;
-        padding: 10px 2%;
+        padding: 25px 2%;
         position: relative;
         /* margin-right: -671px; */
        border-bottom: 3px solid #f5f4f4 !important;
@@ -169,7 +170,7 @@ a :focus{
     margin: 0% 0% 0% 0.5% !important;
 }
 .Chead3{
-    padding: 1% 2% !important;
+    padding: 20px 30px !important;
 }
 .hleft {
     width: -webkit-fit-content;
@@ -234,7 +235,7 @@ button:not(:disabled), [type="button"]:not(:disabled), [type="reset"]:not(:disab
     width: 3rem !important;
 }
 .mat-form-field-appearance-legacy .mat-form-field-infix {
-    width: 150px !important;
+    width: 170px !important;
 }
 .mat-tab-labels {
     float: right !important;
@@ -247,4 +248,12 @@ button:not(:disabled), [type="button"]:not(:disabled), [type="reset"]:not(:disab
 .mat-tab-list {
     flex-grow: 1;
     background-color: #f5f6fa;
+}
+.mat-form-field-infix {
+    padding: .5em 0;
+    border-top: none !important;
+}
+.tabs{
+    background-color: #f5f4f4;
+
 }

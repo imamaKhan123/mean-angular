@@ -83,9 +83,17 @@ const appRoutes: Routes = [
         { path: '',  component: AccountSearchComponent ,pathMatch: 'full' },
         { path: 'add-new-account', component: AddNewAccountComponent},
          { path: 'account-types', component: AccountTypesComponent },
-         { path: 'create-account-type', component: CreateAccountTypeComponent }
+         { path: 'create-account-type', component: CreateAccountTypeComponent }, 
+         { path: 'account-details', component:AccountDetailsComponent }
        ]
       }, 
+      {
+        path: 'orders',
+        children: [
+          { path: '',  component: OrdersComponent ,pathMatch: 'full' },
+          { path: 'manage-modules', component: ManageModulesComponent }
+         ]
+        }, 
   { path: 'company-edit/:id', component: BookEditComponent   },
   { path: 'manage-typesof-company', component: ManageTypesOfCompanyComponent},
   { path: '', component: LoginComponent },
